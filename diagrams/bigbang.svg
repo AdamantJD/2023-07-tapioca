@@ -1,0 +1,1199 @@
+<?xml version="1.0" standalone="no"?>
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="1642pt" height="2299pt" viewBox="0.00 0.00 1642.05 2299.11">
+<g id="graph0" class="graph" transform="translate(-223.7993679046631,4422.755252628046) scale(1.9999999999999996)" data-name="G">
+
+<polygon fill="#2e3e56" stroke="none" points="-4,4 -4,-2295.11 1638.05,-2295.11 1638.05,4 -4,4"/>
+<g id="clust8" class="cluster" data-name="clustercollateral">
+
+<path fill="#3b4b63" stroke="#e8726d" stroke-dasharray="5,2" d="M1082.1,-1756.09C1082.1,-1756.09 1200.2,-1756.09 1200.2,-1756.09 1206.2,-1756.09 1212.2,-1762.09 1212.2,-1768.09 1212.2,-1768.09 1212.2,-1821.09 1212.2,-1821.09 1212.2,-1827.09 1206.2,-1833.09 1200.2,-1833.09 1200.2,-1833.09 1082.1,-1833.09 1082.1,-1833.09 1076.1,-1833.09 1070.1,-1827.09 1070.1,-1821.09 1070.1,-1821.09 1070.1,-1768.09 1070.1,-1768.09 1070.1,-1762.09 1076.1,-1756.09 1082.1,-1756.09"/>
+<text text-anchor="middle" x="1141.15" y="-1816.49" font-family="Times,serif" font-size="14.00" fill="#f0f0f0">collateral</text>
+</g>
+<g id="clust2" class="cluster" data-name="clusterIPenrose">
+
+<path fill="#3b4b63" stroke="#e8726d" stroke-dasharray="5,2" d="M1098.71,-636.09C1098.71,-636.09 1183.6,-636.09 1183.6,-636.09 1189.6,-636.09 1195.6,-642.09 1195.6,-648.09 1195.6,-648.09 1195.6,-701.09 1195.6,-701.09 1195.6,-707.09 1189.6,-713.09 1183.6,-713.09 1183.6,-713.09 1098.71,-713.09 1098.71,-713.09 1092.71,-713.09 1086.71,-707.09 1086.71,-701.09 1086.71,-701.09 1086.71,-648.09 1086.71,-648.09 1086.71,-642.09 1092.71,-636.09 1098.71,-636.09"/>
+<text text-anchor="middle" x="1141.15" y="-696.49" font-family="Times,serif" font-size="14.00" fill="#f0f0f0">IPenrose</text>
+</g>
+<g id="clust1" class="cluster" data-name="clusterBigBang">
+
+<path fill="#445773" stroke="#445773" d="M20,-721.09C20,-721.09 1390.77,-721.09 1390.77,-721.09 1396.77,-721.09 1402.77,-727.09 1402.77,-733.09 1402.77,-733.09 1402.77,-1736.09 1402.77,-1736.09 1402.77,-1742.09 1396.77,-1748.09 1390.77,-1748.09 1390.77,-1748.09 20,-1748.09 20,-1748.09 14,-1748.09 8,-1742.09 8,-1736.09 8,-1736.09 8,-733.09 8,-733.09 8,-727.09 14,-721.09 20,-721.09"/>
+<text text-anchor="middle" x="705.38" y="-1731.49" font-family="Times,serif" font-size="14.00" fill="#f0f0f0">BigBang</text>
+</g>
+<g id="clust4" class="cluster" data-name="clusterasset">
+
+<path fill="#3b4b63" stroke="#e8726d" stroke-dasharray="5,2" d="M1082.1,-413.09C1082.1,-413.09 1200.2,-413.09 1200.2,-413.09 1206.2,-413.09 1212.2,-419.09 1212.2,-425.09 1212.2,-425.09 1212.2,-586.09 1212.2,-586.09 1212.2,-592.09 1206.2,-598.09 1200.2,-598.09 1200.2,-598.09 1082.1,-598.09 1082.1,-598.09 1076.1,-598.09 1070.1,-592.09 1070.1,-586.09 1070.1,-586.09 1070.1,-425.09 1070.1,-425.09 1070.1,-419.09 1076.1,-413.09 1082.1,-413.09"/>
+<text text-anchor="middle" x="1141.15" y="-581.49" font-family="Times,serif" font-size="14.00" fill="#f0f0f0">asset</text>
+</g>
+<g id="clust9" class="cluster" data-name="cluster_01">
+
+<polygon fill="#2e3e56" stroke="black" points="25.93,-1906.09 25.93,-2035.09 380.82,-2035.09 380.82,-1906.09 25.93,-1906.09"/>
+<text text-anchor="middle" x="203.37" y="-2018.49" font-family="Times,serif" font-size="14.00">Legend</text>
+</g>
+<g id="clust3" class="cluster" data-name="clusterpenrose">
+
+<path fill="#3b4b63" stroke="#e8726d" stroke-dasharray="5,2" d="M1434.77,-1586.09C1434.77,-1586.09 1614.05,-1586.09 1614.05,-1586.09 1620.05,-1586.09 1626.05,-1592.09 1626.05,-1598.09 1626.05,-1598.09 1626.05,-1975.09 1626.05,-1975.09 1626.05,-1981.09 1620.05,-1987.09 1614.05,-1987.09 1614.05,-1987.09 1434.77,-1987.09 1434.77,-1987.09 1428.77,-1987.09 1422.77,-1981.09 1422.77,-1975.09 1422.77,-1975.09 1422.77,-1598.09 1422.77,-1598.09 1422.77,-1592.09 1428.77,-1586.09 1434.77,-1586.09"/>
+<text text-anchor="middle" x="1524.41" y="-1970.49" font-family="Times,serif" font-size="14.00" fill="#f0f0f0">penrose</text>
+</g>
+<g id="clust5" class="cluster" data-name="clusteryieldBox">
+
+<path fill="#3b4b63" stroke="#e8726d" stroke-dasharray="5,2" d="M1084.76,-58.09C1084.76,-58.09 1197.54,-58.09 1197.54,-58.09 1203.54,-58.09 1209.54,-64.09 1209.54,-70.09 1209.54,-70.09 1209.54,-393.09 1209.54,-393.09 1209.54,-399.09 1203.54,-405.09 1197.54,-405.09 1197.54,-405.09 1084.76,-405.09 1084.76,-405.09 1078.76,-405.09 1072.76,-399.09 1072.76,-393.09 1072.76,-393.09 1072.76,-70.09 1072.76,-70.09 1072.76,-64.09 1078.76,-58.09 1084.76,-58.09"/>
+<text text-anchor="middle" x="1141.15" y="-388.49" font-family="Times,serif" font-size="14.00" fill="#f0f0f0">yieldBox</text>
+</g>
+<g id="clust6" class="cluster" data-name="clusterISwapper">
+
+<path fill="#3b4b63" stroke="#e8726d" stroke-dasharray="5,2" d="M787.46,-344.09C787.46,-344.09 920.61,-344.09 920.61,-344.09 926.61,-344.09 932.61,-350.09 932.61,-356.09 932.61,-356.09 932.61,-463.09 932.61,-463.09 932.61,-469.09 926.61,-475.09 920.61,-475.09 920.61,-475.09 787.46,-475.09 787.46,-475.09 781.46,-475.09 775.46,-469.09 775.46,-463.09 775.46,-463.09 775.46,-356.09 775.46,-356.09 775.46,-350.09 781.46,-344.09 787.46,-344.09"/>
+<text text-anchor="middle" x="854.04" y="-458.49" font-family="Times,serif" font-size="14.00" fill="#f0f0f0">ISwapper</text>
+</g>
+<g id="clust7" class="cluster" data-name="clustertotalBorrow">
+
+<path fill="#3b4b63" stroke="#e8726d" stroke-dasharray="5,2" d="M1100.33,-1947.09C1100.33,-1947.09 1181.98,-1947.09 1181.98,-1947.09 1187.98,-1947.09 1193.98,-1953.09 1193.98,-1959.09 1193.98,-1959.09 1193.98,-2174.09 1193.98,-2174.09 1193.98,-2180.09 1187.98,-2186.09 1181.98,-2186.09 1181.98,-2186.09 1100.33,-2186.09 1100.33,-2186.09 1094.33,-2186.09 1088.33,-2180.09 1088.33,-2174.09 1088.33,-2174.09 1088.33,-1959.09 1088.33,-1959.09 1088.33,-1953.09 1094.33,-1947.09 1100.33,-1947.09"/>
+<text text-anchor="middle" x="1141.15" y="-2169.49" font-family="Times,serif" font-size="14.00" fill="#f0f0f0">totalBorrow</text>
+</g>
+<!-- BigBang.&lt;Constructor&gt; -->
+<g id="node1" class="node" pointer-events="visible" data-name="BigBang.&lt;Constructor&gt;">
+
+<ellipse fill="#ff9797" stroke="#ff9797" stroke-width="3" cx="98.93" cy="-1697.09" rx="67.55" ry="18"/>
+<text text-anchor="middle" x="98.93" y="-1692.89" font-family="Times,serif" font-size="14.00">&lt;Constructor&gt;</text>
+</g>
+<!-- BigBang.init -->
+<g id="node2" class="node" pointer-events="visible" data-name="BigBang.init">
+
+<ellipse fill="#ffbdb9" stroke="#ffbdb9" stroke-width="3" cx="854.04" cy="-1529.09" rx="27" ry="18"/>
+<text text-anchor="middle" x="854.04" y="-1524.89" font-family="Times,serif" font-size="14.00">init</text>
+</g>
+<!-- BigBang.YieldBox --><g id="edge3" class="edge" data-name="BigBang.init-&gt;BigBang.address" data-comment="BigBang.YieldBox">
+
+<path fill="none" stroke="#1bc6a6" stroke-width="2" d="M859.98,-1510.27C880.06,-1477.03 956.87,-1480.36 1006.14,-1448.09 1030.27,-1432.29 1025.45,-1417.62 1042.14,-1394.09 1057.8,-1372.01 1075.46,-1348.26 1091.43,-1330"/>
+<polygon fill="#1bc6a6" stroke="#1bc6a6" stroke-width="2" points="1093.93,-1332.46 1098.07,-1322.71 1088.75,-1327.75 1093.93,-1332.46"/>
+</g>
+<g id="node29" class="node" pointer-events="visible" data-name="BigBang.YieldBox">
+
+<ellipse fill="#edad56" stroke="#edad56" stroke-width="3" cx="1141.15" cy="-1475.09" rx="48.68" ry="18"/>
+<text text-anchor="middle" x="1141.15" y="-1470.89" font-family="Times,serif" font-size="14.00">YieldBox</text>
+</g>
+<!-- BigBang.init&#45;&gt;BigBang.YieldBox -->
+<g id="edge1" class="edge" data-name="BigBang.init-&gt;BigBang.YieldBox">
+
+<path fill="none" stroke="#1bc6a6" stroke-width="2" d="M881.55,-1524.54C911.74,-1519.3 962.55,-1510.37 1006.14,-1502.09 1031.83,-1497.21 1060.24,-1491.53 1084.26,-1486.64"/>
+<polygon fill="#1bc6a6" stroke="#1bc6a6" stroke-width="2" points="1084.68,-1490.12 1093.78,-1484.69 1083.28,-1483.26 1084.68,-1490.12"/>
+</g>
+<!-- BigBang.address -->
+<g id="node30" class="node" pointer-events="visible" data-name="BigBang.address">
+
+<ellipse fill="#edad56" stroke="#edad56" stroke-width="3" cx="1141.15" cy="-1318.09" rx="40" ry="18"/>
+<text text-anchor="middle" x="1141.15" y="-1313.89" font-family="Times,serif" font-size="14.00">address</text>
+</g>
+<!-- BigBang.init&#45;&gt;BigBang.address -->
+
+<!-- BigBang.init&#45;&gt;BigBang.address -->
+<g id="edge5" class="edge" data-name="BigBang.init-&gt;BigBang.address">
+
+<path fill="none" stroke="#1bc6a6" stroke-width="2" d="M866.36,-1511.62C893.06,-1495.34 961.11,-1495.58 1006.14,-1466.09 1030.27,-1450.29 1025.45,-1435.62 1042.14,-1412.09 1060.19,-1386.65 1080.89,-1358.99 1098.6,-1338.63" style=""/>
+<polygon fill="#1bc6a6" stroke="#1bc6a6" stroke-width="2" points="1101.18,-1341 1105.27,-1331.23 1095.98,-1336.31 1101.18,-1341"/>
+</g>
+<!-- BigBang.init&#45;&gt;BigBang.address -->
+<g id="edge6" class="edge" data-name="BigBang.init-&gt;BigBang.address">
+
+<path fill="none" stroke="#1bc6a6" stroke-width="2" d="M877.79,-1518.34C909.23,-1512.96 966.57,-1510 1006.14,-1484.09 1030.27,-1468.29 1025.45,-1453.62 1042.14,-1430.09 1063.7,-1399.7 1089.04,-1366.14 1108.55,-1343.19" style=""/>
+<polygon fill="#1bc6a6" stroke="#1bc6a6" stroke-width="2" points="1111.14,-1345.55 1115.08,-1335.72 1105.87,-1340.95 1111.14,-1345.55"/>
+</g>
+<!-- BigBang.init&#45;&gt;BigBang.address -->
+<g id="edge7" class="edge" data-name="BigBang.init-&gt;BigBang.address">
+
+<path fill="none" stroke="#1bc6a6" stroke-width="2" d="M882.19,-1530.4C914.36,-1530.65 968.35,-1526.84 1006.14,-1502.09 1030.27,-1486.29 1025.45,-1471.62 1042.14,-1448.09 1067.47,-1412.39 1098.02,-1372.3 1118.21,-1346.21" style=""/>
+<polygon fill="#1bc6a6" stroke="#1bc6a6" stroke-width="2" points="1120.96,-1348.37 1124.33,-1338.32 1115.43,-1344.08 1120.96,-1348.37"/>
+</g>
+<!-- BigBang.init&#45;&gt;BigBang.address -->
+<g id="edge8" class="edge" data-name="BigBang.init-&gt;BigBang.address">
+
+<path fill="none" stroke="#1bc6a6" stroke-width="2" d="M875.45,-1541.82C906.31,-1549.1 965.57,-1546.66 1006.14,-1520.09 1030.27,-1504.29 1025.45,-1489.62 1042.14,-1466.09 1071.14,-1425.21 1107,-1378.58 1126.29,-1347.8" style=""/>
+<polygon fill="#1bc6a6" stroke="#1bc6a6" stroke-width="2" points="1129.17,-1349.81 1131.28,-1339.43 1123.16,-1346.23 1129.17,-1349.81"/>
+</g>
+<!-- BigBang.init&#45;&gt;BigBang.address -->
+<g id="edge9" class="edge" data-name="BigBang.init-&gt;BigBang.address">
+
+<path fill="none" stroke="#1bc6a6" stroke-width="2" d="M864.82,-1547.09C890.36,-1567.32 960.22,-1568.17 1006.14,-1538.09 1030.27,-1522.29 1025.45,-1507.62 1042.14,-1484.09 1074.02,-1439.16 1114.17,-1387.29 1131.52,-1349.2" style=""/>
+<polygon fill="#1bc6a6" stroke="#1bc6a6" stroke-width="2" points="1134.67,-1350.74 1135.17,-1340.15 1128.18,-1348.11 1134.67,-1350.74"/>
+</g>
+<!-- BigBang.init&#45;&gt;BigBang.address -->
+<g id="edge10" class="edge" data-name="BigBang.init-&gt;BigBang.address">
+
+<path fill="none" stroke="#1bc6a6" stroke-width="2" d="M859.44,-1547.79C878.67,-1584.97 956.43,-1588.65 1006.14,-1556.09 1030.27,-1540.29 1025.45,-1525.62 1042.14,-1502.09 1076.22,-1454.06 1119.75,-1398.09 1134.77,-1349.81" style=""/>
+<polygon fill="#1bc6a6" stroke="#1bc6a6" stroke-width="2" points="1138.11,-1350.88 1137.26,-1340.32 1131.34,-1349.11 1138.11,-1350.88"/>
+</g>
+<!-- BigBang.IERC20 -->
+<g id="node31" class="node" pointer-events="visible" data-name="BigBang.IERC20">
+
+<ellipse fill="#edad56" stroke="#edad56" stroke-width="3" cx="1141.15" cy="-1529.09" rx="42.88" ry="18"/>
+<text text-anchor="middle" x="1141.15" y="-1524.89" font-family="Times,serif" font-size="14.00">IERC20</text>
+</g>
+<!-- BigBang.init&#45;&gt;BigBang.IERC20 -->
+<g id="edge11" class="edge" data-name="BigBang.init-&gt;BigBang.IERC20">
+
+<path fill="none" stroke="#1bc6a6" stroke-width="2" d="M882.38,-1529.09C928.73,-1529.09 1023.64,-1529.09 1084.46,-1529.09"/>
+<polygon fill="#1bc6a6" stroke="#1bc6a6" stroke-width="2" points="1084.24,-1532.59 1094.24,-1529.09 1084.24,-1525.59 1084.24,-1532.59"/>
+</g>
+<!-- BigBang.updateExchangeRate -->
+<g id="node32" class="node" pointer-events="visible" data-name="BigBang.updateExchangeRate">
+
+<ellipse fill="#edad56" stroke="#edad56" stroke-width="3" cx="1141.15" cy="-1583.09" rx="92.59" ry="18"/>
+<text text-anchor="middle" x="1141.15" y="-1578.89" font-family="Times,serif" font-size="14.00">updateExchangeRate</text>
+</g>
+<!-- BigBang.init&#45;&gt;BigBang.updateExchangeRate -->
+<g id="edge13" class="edge" data-name="BigBang.init-&gt;BigBang.updateExchangeRate">
+
+<path fill="none" stroke="#1bc6a6" stroke-width="2" d="M881.35,-1534.07C921.31,-1541.64 998.98,-1556.35 1058.85,-1567.69"/>
+<polygon fill="#1bc6a6" stroke="#1bc6a6" stroke-width="2" points="1057.89,-1571.07 1068.36,-1569.49 1059.19,-1564.19 1057.89,-1571.07"/>
+</g>
+<!-- IPenrose.yieldBox -->
+<g id="node43" class="node" pointer-events="visible" data-name="IPenrose.yieldBox">
+
+<ellipse fill="#edad56" stroke="#edad56" stroke-width="3" cx="1141.15" cy="-662.09" rx="46.39" ry="18"/>
+<text text-anchor="middle" x="1141.15" y="-657.89" font-family="Times,serif" font-size="14.00">yieldBox</text>
+</g>
+<!-- BigBang.init&#45;&gt;IPenrose.yieldBox -->
+<g id="edge2" class="edge" data-name="BigBang.init-&gt;IPenrose.yieldBox">
+
+<path fill="none" stroke="white" stroke-width="2" d="M881.61,-1533.22C916.07,-1536.9 975.39,-1537.15 1006.14,-1502.09 1063.71,-1436.44 996.31,-791.41 1042.14,-717.09 1053.06,-699.38 1071.89,-686.88 1090.15,-678.32"/>
+<polygon fill="white" stroke="white" stroke-width="2" points="1091.38,-681.61 1099.19,-674.45 1088.62,-675.17 1091.38,-681.61"/>
+</g>
+<!-- penrose.usdoToken -->
+<g id="node44" class="node" pointer-events="visible" data-name="penrose.usdoToken">
+
+<ellipse fill="#edad56" stroke="#edad56" stroke-width="3" cx="1524.41" cy="-1612.09" rx="53.9" ry="18"/>
+<text text-anchor="middle" x="1524.41" y="-1607.89" font-family="Times,serif" font-size="14.00">usdoToken</text>
+</g>
+<!-- BigBang.init&#45;&gt;penrose.usdoToken -->
+<g id="edge4" class="edge" data-name="BigBang.init-&gt;penrose.usdoToken">
+
+<path fill="none" stroke="white" stroke-width="2" d="M881.64,-1533.24C916.12,-1536.94 975.47,-1537.22 1006.14,-1502.09 1069.77,-1429.2 972.33,-699.07 1042.14,-632.09 1073.89,-601.62 1204.99,-605.64 1240.16,-632.09 1400.24,-752.45 1498.55,-1425.08 1519.29,-1580.18"/>
+<polygon fill="white" stroke="white" stroke-width="2" points="1515.77,-1580.33 1520.55,-1589.78 1522.71,-1579.41 1515.77,-1580.33"/>
+</g>
+<!-- penrose.usdoAssetId -->
+<g id="node45" class="node" pointer-events="visible" data-name="penrose.usdoAssetId">
+
+<ellipse fill="#edad56" stroke="#edad56" stroke-width="3" cx="1524.41" cy="-1882.09" rx="58.57" ry="18"/>
+<text text-anchor="middle" x="1524.41" y="-1877.89" font-family="Times,serif" font-size="14.00">usdoAssetId</text>
+</g>
+<!-- BigBang.init&#45;&gt;penrose.usdoAssetId -->
+<g id="edge12" class="edge" data-name="BigBang.init-&gt;penrose.usdoAssetId">
+
+<path fill="none" stroke="white" stroke-width="2" d="M882.48,-1529.19C917.03,-1530.93 975.57,-1539.52 1006.14,-1576.09 1089.71,-1676.09 945.86,-1779.27 1042.14,-1867.09 1100.78,-1920.57 1337.2,-1902.97 1455.41,-1890.31"/>
+<polygon fill="white" stroke="white" stroke-width="2" points="1455.63,-1893.81 1465.19,-1889.24 1454.86,-1886.85 1455.63,-1893.81"/>
+</g>
+<!-- penrose.wethAssetId -->
+<g id="node46" class="node" pointer-events="visible" data-name="penrose.wethAssetId">
+
+<ellipse fill="#edad56" stroke="#edad56" stroke-width="3" cx="1524.41" cy="-1666.09" rx="59.12" ry="18"/>
+<text text-anchor="middle" x="1524.41" y="-1661.89" font-family="Times,serif" font-size="14.00">wethAssetId</text>
+</g>
+<!-- BigBang.init&#45;&gt;penrose.wethAssetId -->
+<g id="edge14" class="edge" data-name="BigBang.init-&gt;penrose.wethAssetId">
+
+<path fill="none" stroke="white" stroke-width="2" d="M882.4,-1529.26C916.87,-1531.07 975.32,-1539.73 1006.14,-1576.09 1081.86,-1665.41 953.87,-1760.15 1042.14,-1837.09 1108.49,-1894.91 1156.18,-1863.41 1240.16,-1837.09 1324.14,-1810.78 1341.62,-1787.38 1402.77,-1724.09 1414.16,-1712.3 1409.52,-1702.75 1422.77,-1693.09 1432.58,-1685.93 1444.18,-1680.67 1455.94,-1676.81"/>
+<polygon fill="white" stroke="white" stroke-width="2" points="1456.65,-1680.24 1465.28,-1674.1 1454.71,-1673.52 1456.65,-1680.24"/>
+</g>
+<!-- BigBang.getTotalDebt -->
+<g id="node3" class="node" pointer-events="visible" data-name="BigBang.getTotalDebt">
+
+<ellipse fill="#ffbdb9" stroke="#ffbdb9" stroke-width="3" cx="98.93" cy="-1643.09" rx="61.97" ry="18"/>
+<text text-anchor="middle" x="98.93" y="-1638.89" font-family="Times,serif" font-size="14.00">getTotalDebt</text>
+</g>
+<!-- BigBang.getDebtRate -->
+<g id="node4" class="node" pointer-events="visible" data-name="BigBang.getDebtRate">
+
+<ellipse fill="#ff9797" stroke="#ff9797" stroke-width="3" cx="1335.46" cy="-1697.09" rx="59.11" ry="18"/>
+<text text-anchor="middle" x="1335.46" y="-1692.89" font-family="Times,serif" font-size="14.00">getDebtRate</text>
+</g>
+<!-- penrose.bigBangEthDebtRate -->
+<g id="node47" class="node" pointer-events="visible" data-name="penrose.bigBangEthDebtRate">
+
+<ellipse fill="#edad56" stroke="#edad56" stroke-width="3" cx="1524.41" cy="-1774.09" rx="93.78" ry="18"/>
+<text text-anchor="middle" x="1524.41" y="-1769.89" font-family="Times,serif" font-size="14.00">bigBangEthDebtRate</text>
+</g>
+<!-- BigBang.getDebtRate&#45;&gt;penrose.bigBangEthDebtRate -->
+<g id="edge15" class="edge" data-name="BigBang.getDebtRate-&gt;penrose.bigBangEthDebtRate">
+
+<path fill="none" stroke="white" stroke-width="2" d="M1362.36,-1714.51C1379.03,-1725.11 1401.5,-1738.26 1422.77,-1747.09 1430.68,-1750.38 1439.11,-1753.37 1447.6,-1756.07"/>
+<polygon fill="white" stroke="white" stroke-width="2" points="1446.53,-1759.4 1457.11,-1758.94 1448.55,-1752.7 1446.53,-1759.4"/>
+</g>
+<!-- penrose.bigBangEthMarket -->
+<g id="node48" class="node" pointer-events="visible" data-name="penrose.bigBangEthMarket">
+
+<ellipse fill="#edad56" stroke="#edad56" stroke-width="3" cx="1524.41" cy="-1720.09" rx="85.11" ry="18"/>
+<text text-anchor="middle" x="1524.41" y="-1715.89" font-family="Times,serif" font-size="14.00">bigBangEthMarket</text>
+</g>
+<!-- BigBang.getDebtRate&#45;&gt;penrose.bigBangEthMarket -->
+<g id="edge16" class="edge" data-name="BigBang.getDebtRate-&gt;penrose.bigBangEthMarket">
+
+<path fill="none" stroke="white" stroke-width="2" d="M1392.05,-1703.93C1405.7,-1705.61 1420.65,-1707.45 1435.42,-1709.26"/>
+<polygon fill="white" stroke="white" stroke-width="2" points="1434.95,-1712.73 1445.3,-1710.48 1435.81,-1705.79 1434.95,-1712.73"/>
+</g>
+<!-- BigBang.execute --><g id="edge18" class="edge" data-name="BigBang.execute-&gt;BigBang._getRevertMsg" data-comment="BigBang.execute">
+
+<path fill="none" stroke="#1bc6a6" stroke-width="2" d="M894.68,-1692.25C937.09,-1690.26 1005.51,-1689.83 1059.36,-1690.94"/>
+<polygon fill="#1bc6a6" stroke="#1bc6a6" stroke-width="2" points="1059.25,-1694.44 1069.33,-1691.17 1059.42,-1687.44 1059.25,-1694.44"/>
+</g>
+<g id="node5" class="node" pointer-events="visible" data-name="BigBang.execute">
+
+<ellipse fill="#ffbdb9" stroke="#ffbdb9" stroke-width="3" cx="854.04" cy="-1697.09" rx="40.54" ry="18"/>
+<text text-anchor="middle" x="854.04" y="-1692.89" font-family="Times,serif" font-size="14.00">execute</text>
+</g>
+<!-- BigBang.execute&#45;&gt;BigBang.address -->
+<g id="edge17" class="edge" data-name="BigBang.execute-&gt;BigBang.address">
+
+<path fill="none" stroke="#1bc6a6" stroke-width="2" d="M893.4,-1690.41C928.19,-1682.29 978.19,-1665.06 1006.14,-1630.09 1057.63,-1565.68 1008.47,-1523.36 1042.14,-1448.09 1059.89,-1408.41 1091.69,-1369.48 1114.25,-1344.73"/>
+<polygon fill="#1bc6a6" stroke="#1bc6a6" stroke-width="2" points="1116.68,-1347.26 1120.93,-1337.55 1111.55,-1342.49 1116.68,-1347.26"/>
+</g>
+<!-- BigBang._getRevertMsg -->
+<g id="node33" class="node" pointer-events="visible" data-name="BigBang._getRevertMsg">
+
+<ellipse fill="#edad56" stroke="#edad56" stroke-width="3" cx="1141.15" cy="-1697.09" rx="70.65" ry="18"/>
+<text text-anchor="middle" x="1141.15" y="-1692.89" font-family="Times,serif" font-size="14.00">_getRevertMsg</text>
+</g>
+<!-- BigBang.execute&#45;&gt;BigBang._getRevertMsg -->
+
+<!-- BigBang.execute&#45;&gt;BigBang._getRevertMsg -->
+<g id="edge19" class="edge" data-name="BigBang.execute-&gt;BigBang._getRevertMsg">
+
+<path fill="none" stroke="#1bc6a6" stroke-width="2" d="M894.68,-1701.94C937.09,-1703.92 1005.51,-1704.35 1059.36,-1703.24" style=""/>
+<polygon fill="#1bc6a6" stroke="#1bc6a6" stroke-width="2" points="1059.42,-1706.74 1069.33,-1703.01 1059.25,-1699.74 1059.42,-1706.74"/>
+</g>
+<!-- BigBang.updateOperator -->
+<g id="node6" class="node" pointer-events="visible" data-name="BigBang.updateOperator">
+
+<ellipse fill="#ffbdb9" stroke="#ffbdb9" stroke-width="3" cx="98.93" cy="-1589.09" rx="71.19" ry="18"/>
+<text text-anchor="middle" x="98.93" y="-1584.89" font-family="Times,serif" font-size="14.00">updateOperator</text>
+</g>
+<!-- BigBang.accrue -->
+<g id="node7" class="node" pointer-events="visible" data-name="BigBang.accrue">
+
+<ellipse fill="#ff9797" stroke="#ff9797" stroke-width="3" cx="854.04" cy="-1603.09" rx="36.45" ry="18"/>
+<text text-anchor="middle" x="854.04" y="-1598.89" font-family="Times,serif" font-size="14.00">accrue</text>
+</g>
+<!-- BigBang._accrue -->
+<g id="node19" class="node" pointer-events="visible" data-name="BigBang._accrue">
+
+<ellipse fill="#edad56" stroke="#edad56" stroke-width="3" cx="1141.15" cy="-1643.09" rx="41.11" ry="18"/>
+<text text-anchor="middle" x="1141.15" y="-1638.89" font-family="Times,serif" font-size="14.00">_accrue</text>
+</g>
+<!-- BigBang.accrue&#45;&gt;BigBang._accrue -->
+<g id="edge20" class="edge" data-name="BigBang.accrue-&gt;BigBang._accrue">
+
+<path fill="none" stroke="#1bc6a6" stroke-width="2" d="M890.57,-1608.08C940.15,-1615.03 1030.43,-1627.7 1087.74,-1635.74"/>
+<polygon fill="#1bc6a6" stroke="#1bc6a6" stroke-width="2" points="1087.11,-1639.18 1097.5,-1637.11 1088.09,-1632.25 1087.11,-1639.18"/>
+</g>
+<!-- BigBang.borrow -->
+<g id="node8" class="node" pointer-events="visible" data-name="BigBang.borrow">
+
+<ellipse fill="#ff9797" stroke="#ff9797" stroke-width="3" cx="587.86" cy="-917.09" rx="38.86" ry="18"/>
+<text text-anchor="middle" x="587.86" y="-912.89" font-family="Times,serif" font-size="14.00">borrow</text>
+</g>
+<!-- BigBang._borrow -->
+<g id="node27" class="node" pointer-events="visible" data-name="BigBang._borrow">
+
+<ellipse fill="#edad56" stroke="#edad56" stroke-width="3" cx="854.04" cy="-963.09" rx="43.51" ry="18"/>
+<text text-anchor="middle" x="854.04" y="-958.89" font-family="Times,serif" font-size="14.00">_borrow</text>
+</g>
+<!-- BigBang.borrow&#45;&gt;BigBang._borrow -->
+<g id="edge24" class="edge" data-name="BigBang.borrow-&gt;BigBang._borrow">
+
+<path fill="none" stroke="#1bc6a6" stroke-width="2" d="M625.87,-923.53C671.17,-931.42 748.19,-944.83 799.83,-953.83"/>
+<polygon fill="#1bc6a6" stroke="#1bc6a6" stroke-width="2" points="798.94,-957.22 809.4,-955.49 800.15,-950.33 798.94,-957.22"/>
+</g>
+<!-- BigBang._computeAllowanceAmountInAsset -->
+<g id="node34" class="node" pointer-events="visible" data-name="BigBang._computeAllowanceAmountInAsset">
+
+<ellipse fill="#edad56" stroke="#edad56" stroke-width="3" cx="854.04" cy="-909.09" rx="152.21" ry="18"/>
+<text text-anchor="middle" x="854.04" y="-904.89" font-family="Times,serif" font-size="14.00">_computeAllowanceAmountInAsset</text>
+</g>
+<!-- BigBang.borrow&#45;&gt;BigBang._computeAllowanceAmountInAsset -->
+<g id="edge21" class="edge" data-name="BigBang.borrow-&gt;BigBang._computeAllowanceAmountInAsset">
+
+<path fill="none" stroke="#1bc6a6" stroke-width="2" d="M628.13,-915.9C645.92,-915.36 668.25,-914.69 691.88,-913.97"/>
+<polygon fill="#1bc6a6" stroke="#1bc6a6" stroke-width="2" points="691.82,-917.47 701.71,-913.67 691.61,-910.48 691.82,-917.47"/>
+</g>
+<!-- BigBang._allowedBorrow -->
+<g id="node35" class="node" pointer-events="visible" data-name="BigBang._allowedBorrow">
+
+<ellipse fill="#edad56" stroke="#edad56" stroke-width="3" cx="854.04" cy="-1017.09" rx="75.88" ry="18"/>
+<text text-anchor="middle" x="854.04" y="-1012.89" font-family="Times,serif" font-size="14.00">_allowedBorrow</text>
+</g>
+<!-- BigBang.borrow&#45;&gt;BigBang._allowedBorrow -->
+<g id="edge23" class="edge" data-name="BigBang.borrow-&gt;BigBang._allowedBorrow">
+
+<path fill="none" stroke="#1bc6a6" stroke-width="2" d="M608.76,-933.47C630.35,-950.36 666.49,-976.14 701.93,-990.09 723.07,-998.41 746.89,-1004.19 769.25,-1008.18"/>
+<polygon fill="#1bc6a6" stroke="#1bc6a6" stroke-width="2" points="768.43,-1011.6 778.87,-1009.79 769.58,-1004.69 768.43,-1011.6"/>
+</g>
+<!-- asset.safeDecimals -->
+<g id="node51" class="node" pointer-events="visible" data-name="asset.safeDecimals">
+
+<ellipse fill="#edad56" stroke="#edad56" stroke-width="3" cx="1141.15" cy="-547.09" rx="63.1" ry="18"/>
+<text text-anchor="middle" x="1141.15" y="-542.89" font-family="Times,serif" font-size="14.00">safeDecimals</text>
+</g>
+<!-- BigBang.borrow&#45;&gt;asset.safeDecimals -->
+<g id="edge22" class="edge" data-name="BigBang.borrow-&gt;asset.safeDecimals">
+
+<path fill="none" stroke="white" stroke-width="2" d="M614.28,-902.61C631.31,-891.65 652.91,-875.1 665.93,-855.09 699.81,-803.05 660.63,-766.46 701.93,-720.09 798.13,-612.1 970.49,-570.76 1067.91,-555.51"/>
+<polygon fill="white" stroke="white" stroke-width="2" points="1068.21,-559.01 1077.58,-554.06 1067.17,-552.08 1068.21,-559.01"/>
+</g>
+<!-- BigBang.repay -->
+<g id="node9" class="node" pointer-events="visible" data-name="BigBang.repay">
+
+<ellipse fill="#ff9797" stroke="#ff9797" stroke-width="3" cx="587.86" cy="-1566.09" rx="32.46" ry="18"/>
+<text text-anchor="middle" x="587.86" y="-1561.89" font-family="Times,serif" font-size="14.00">repay</text>
+</g>
+<!-- BigBang.repay&#45;&gt;BigBang.accrue -->
+<g id="edge26" class="edge" data-name="BigBang.repay-&gt;BigBang.accrue">
+
+<path fill="none" stroke="#1bc6a6" stroke-width="2" d="M620.73,-1570.55C666.53,-1576.97 751.32,-1588.84 804.81,-1596.34"/>
+<polygon fill="#1bc6a6" stroke="#1bc6a6" stroke-width="2" points="804.31,-1599.8 814.7,-1597.72 805.28,-1592.87 804.31,-1599.8"/>
+</g>
+<!-- BigBang._repay -->
+<g id="node26" class="node" pointer-events="visible" data-name="BigBang._repay">
+
+<ellipse fill="#edad56" stroke="#edad56" stroke-width="3" cx="854.04" cy="-1219.09" rx="37.12" ry="18"/>
+<text text-anchor="middle" x="854.04" y="-1214.89" font-family="Times,serif" font-size="14.00">_repay</text>
+</g>
+<!-- BigBang.repay&#45;&gt;BigBang._repay -->
+<g id="edge27" class="edge" data-name="BigBang.repay-&gt;BigBang._repay">
+
+<path fill="none" stroke="#1bc6a6" stroke-width="2" d="M597.59,-1547.5C612.85,-1514.52 644.77,-1443.35 665.93,-1381.09 685.92,-1322.3 656.22,-1288.12 701.93,-1246.09 728.92,-1221.28 770.52,-1215.34 803.25,-1215.15"/>
+<polygon fill="#1bc6a6" stroke="#1bc6a6" stroke-width="2" points="803.13,-1218.65 813.19,-1215.31 803.25,-1211.65 803.13,-1218.65"/>
+</g>
+<!-- BigBang.repay&#45;&gt;BigBang.updateExchangeRate -->
+<g id="edge25" class="edge" data-name="BigBang.repay-&gt;BigBang.updateExchangeRate">
+
+<path fill="none" stroke="#1bc6a6" stroke-width="2" d="M621.6,-1566.56C691.99,-1567.64 862.95,-1570.64 1006.14,-1576.09 1016.32,-1576.48 1026.93,-1576.94 1037.53,-1577.43"/>
+<polygon fill="#1bc6a6" stroke="#1bc6a6" stroke-width="2" points="1037.24,-1580.92 1047.4,-1577.91 1037.58,-1573.93 1037.24,-1580.92"/>
+</g>
+<!-- BigBang.addCollateral -->
+<g id="node10" class="node" pointer-events="visible" data-name="BigBang.addCollateral">
+
+<ellipse fill="#ff9797" stroke="#ff9797" stroke-width="3" cx="345.82" cy="-855.09" rx="63.11" ry="18"/>
+<text text-anchor="middle" x="345.82" y="-850.89" font-family="Times,serif" font-size="14.00">addCollateral</text>
+</g>
+<!-- BigBang._addCollateral -->
+<g id="node20" class="node" pointer-events="visible" data-name="BigBang._addCollateral">
+
+<ellipse fill="#edad56" stroke="#edad56" stroke-width="3" cx="587.86" cy="-774.09" rx="67.77" ry="18"/>
+<text text-anchor="middle" x="587.86" y="-769.89" font-family="Times,serif" font-size="14.00">_addCollateral</text>
+</g>
+<!-- BigBang.addCollateral&#45;&gt;BigBang._addCollateral -->
+<g id="edge28" class="edge" data-name="BigBang.addCollateral-&gt;BigBang._addCollateral">
+
+<path fill="none" stroke="#1bc6a6" stroke-width="2" d="M405.71,-848.03C427.74,-844 452.56,-837.74 473.79,-828.09 492,-819.82 492.15,-810.51 509.79,-801.09 515.51,-798.04 521.64,-795.22 527.86,-792.64"/>
+<polygon fill="#1bc6a6" stroke="#1bc6a6" stroke-width="2" points="528.96,-795.97 537.01,-789.08 526.42,-789.44 528.96,-795.97"/>
+</g>
+<!-- BigBang.removeCollateral -->
+<g id="node11" class="node" pointer-events="visible" data-name="BigBang.removeCollateral">
+
+<ellipse fill="#ff9797" stroke="#ff9797" stroke-width="3" cx="587.86" cy="-828.09" rx="78.14" ry="18"/>
+<text text-anchor="middle" x="587.86" y="-823.89" font-family="Times,serif" font-size="14.00">removeCollateral</text>
+</g>
+<!-- BigBang._removeCollateral -->
+<g id="node25" class="node" pointer-events="visible" data-name="BigBang._removeCollateral">
+
+<ellipse fill="#edad56" stroke="#edad56" stroke-width="3" cx="854.04" cy="-801.09" rx="82.8" ry="18"/>
+<text text-anchor="middle" x="854.04" y="-796.89" font-family="Times,serif" font-size="14.00">_removeCollateral</text>
+</g>
+<!-- BigBang.removeCollateral&#45;&gt;BigBang._removeCollateral -->
+<g id="edge29" class="edge" data-name="BigBang.removeCollateral-&gt;BigBang._removeCollateral">
+
+<path fill="none" stroke="#1bc6a6" stroke-width="2" d="M661.4,-820.68C693.23,-817.42 730.89,-813.57 764.37,-810.15"/>
+<polygon fill="#1bc6a6" stroke="#1bc6a6" stroke-width="2" points="764.37,-813.67 773.96,-809.17 763.66,-806.71 764.37,-813.67"/>
+</g>
+<!-- BigBang.liquidate -->
+<g id="node12" class="node" pointer-events="visible" data-name="BigBang.liquidate">
+
+<ellipse fill="#ffbdb9" stroke="#ffbdb9" stroke-width="3" cx="98.93" cy="-1535.09" rx="44.65" ry="18"/>
+<text text-anchor="middle" x="98.93" y="-1530.89" font-family="Times,serif" font-size="14.00">liquidate</text>
+</g>
+<!-- BigBang.liquidate&#45;&gt;BigBang._accrue -->
+<g id="edge31" class="edge" data-name="BigBang.liquidate-&gt;BigBang._accrue">
+
+<path fill="none" stroke="#1bc6a6" stroke-width="2" d="M139.61,-1543.89C153.63,-1548.07 169.08,-1553.99 181.85,-1562.09 201.5,-1574.55 197.17,-1589.43 217.85,-1600.09 370.34,-1678.7 912.62,-1655.91 1086.25,-1646.34"/>
+<polygon fill="#1bc6a6" stroke="#1bc6a6" stroke-width="2" points="1086.25,-1649.84 1096.04,-1645.79 1085.85,-1642.85 1086.25,-1649.84"/>
+</g>
+<!-- BigBang._closedLiquidation -->
+<g id="node23" class="node" pointer-events="visible" data-name="BigBang._closedLiquidation">
+
+<ellipse fill="#edad56" stroke="#edad56" stroke-width="3" cx="345.82" cy="-1475.09" rx="85.69" ry="18"/>
+<text text-anchor="middle" x="345.82" y="-1470.89" font-family="Times,serif" font-size="14.00">_closedLiquidation</text>
+</g>
+<!-- BigBang.liquidate&#45;&gt;BigBang._closedLiquidation -->
+<g id="edge32" class="edge" data-name="BigBang.liquidate-&gt;BigBang._closedLiquidation">
+
+<path fill="none" stroke="#1bc6a6" stroke-width="2" d="M139,-1525.52C175.34,-1516.61 230.33,-1503.14 274.33,-1492.36"/>
+<polygon fill="#1bc6a6" stroke="#1bc6a6" stroke-width="2" points="274.9,-1495.83 283.78,-1490.05 273.23,-1489.03 274.9,-1495.83"/>
+</g>
+<!-- BigBang.liquidate&#45;&gt;BigBang.updateExchangeRate -->
+<g id="edge30" class="edge" data-name="BigBang.liquidate-&gt;BigBang.updateExchangeRate">
+
+<path fill="none" stroke="#1bc6a6" stroke-width="2" d="M136.06,-1546.32C258.92,-1582.92 671.47,-1692.87 1006.14,-1630.09 1023.01,-1626.92 1026,-1621.94 1042.14,-1616.09 1053.67,-1611.91 1066.02,-1607.61 1077.93,-1603.56"/>
+<polygon fill="#1bc6a6" stroke="#1bc6a6" stroke-width="2" points="1078.92,-1606.92 1087.27,-1600.4 1076.67,-1600.29 1078.92,-1606.92"/>
+</g>
+<!-- BigBang.buyCollateral --><g id="edge36" class="edge" data-name="BigBang.buyCollateral-&gt;BigBang.address" data-comment="BigBang.buyCollateral">
+
+<path fill="none" stroke="#1bc6a6" stroke-width="2" d="M400.31,-790.43C426.37,-791.25 455.88,-798.38 473.79,-819.09 554.36,-912.23 428.57,-1279.53 509.79,-1372.09 578.22,-1450.06 1001.17,-1411.76 1006.14,-1410.09 1046.45,-1396.6 1084.34,-1365.68 1109.48,-1343.25"/>
+<polygon fill="#1bc6a6" stroke="#1bc6a6" stroke-width="2" points="1111.8,-1345.86 1116.87,-1336.56 1107.11,-1340.67 1111.8,-1345.86"/>
+</g>
+<g id="node13" class="node" pointer-events="visible" data-name="BigBang.buyCollateral">
+
+<ellipse fill="#ffbdb9" stroke="#ffbdb9" stroke-width="3" cx="345.82" cy="-801.09" rx="63.7" ry="18"/>
+<text text-anchor="middle" x="345.82" y="-796.89" font-family="Times,serif" font-size="14.00">buyCollateral</text>
+</g>
+<!-- BigBang.buyCollateral&#45;&gt;BigBang._addCollateral -->
+<g id="edge42" class="edge" data-name="BigBang.buyCollateral-&gt;BigBang._addCollateral">
+
+<path fill="none" stroke="#1bc6a6" stroke-width="2" d="M406.78,-794.35C438.3,-790.8 477.27,-786.42 510.89,-782.64"/>
+<polygon fill="#1bc6a6" stroke="#1bc6a6" stroke-width="2" points="510.93,-786.15 520.47,-781.56 510.15,-779.2 510.93,-786.15"/>
+</g>
+<!-- BigBang.buyCollateral&#45;&gt;BigBang._borrow -->
+<g id="edge37" class="edge" data-name="BigBang.buyCollateral-&gt;BigBang._borrow">
+
+<path fill="none" stroke="#1bc6a6" stroke-width="2" d="M410.95,-801.83C433.21,-805.16 456.81,-812.6 473.79,-828.09 513.67,-864.48 467.24,-910.88 509.79,-944.09 553.05,-977.84 711.23,-972.91 796.94,-967.45"/>
+<polygon fill="#1bc6a6" stroke="#1bc6a6" stroke-width="2" points="797.03,-970.96 806.77,-966.8 796.56,-963.97 797.03,-970.96"/>
+</g>
+<!-- BigBang.buyCollateral&#45;&gt;BigBang.address -->
+
+<!-- BigBang.buyCollateral&#45;&gt;BigBang.address -->
+<g id="edge38" class="edge" data-name="BigBang.buyCollateral-&gt;BigBang.address">
+
+<path fill="none" stroke="#1bc6a6" stroke-width="2" d="M407.46,-807.37C431.62,-810.65 457.5,-818.26 473.79,-837.09 554.36,-930.23 428.57,-1297.53 509.79,-1390.09 578.22,-1468.06 1001.17,-1429.76 1006.14,-1428.09 1052.69,-1412.51 1096.01,-1373.7 1120.19,-1346.41" style=""/>
+<polygon fill="#1bc6a6" stroke="#1bc6a6" stroke-width="2" points="1122.76,-1348.8 1126.54,-1338.9 1117.41,-1344.28 1122.76,-1348.8"/>
+</g>
+<!-- BigBang.buyCollateral&#45;&gt;BigBang._allowedBorrow -->
+<g id="edge41" class="edge" data-name="BigBang.buyCollateral-&gt;BigBang._allowedBorrow">
+
+<path fill="none" stroke="#1bc6a6" stroke-width="2" d="M410.95,-801.43C433.34,-804.7 457.03,-812.19 473.79,-828.09 518.54,-870.53 463.99,-920.8 509.79,-962.09 580.88,-1026.17 695.6,-1031.97 772.63,-1027.1"/>
+<polygon fill="#1bc6a6" stroke="#1bc6a6" stroke-width="2" points="772.86,-1030.59 782.58,-1026.37 772.35,-1023.61 772.86,-1030.59"/>
+</g>
+<!-- penrose.swappers -->
+<g id="node49" class="node" pointer-events="visible" data-name="penrose.swappers">
+
+<ellipse fill="#edad56" stroke="#edad56" stroke-width="3" cx="1524.41" cy="-1936.09" rx="46.94" ry="18"/>
+<text text-anchor="middle" x="1524.41" y="-1931.89" font-family="Times,serif" font-size="14.00">swappers</text>
+</g>
+<!-- BigBang.buyCollateral&#45;&gt;penrose.swappers -->
+<g id="edge33" class="edge" data-name="BigBang.buyCollateral-&gt;penrose.swappers">
+
+<path fill="none" stroke="white" stroke-width="2" d="M410.48,-802.81C433.78,-799.96 458.23,-792.21 473.79,-774.09 563.58,-669.57 429.05,-266.74 509.79,-155.09 604.24,-24.49 691.87,-38.09 853.04,-38.09 853.04,-38.09 853.04,-38.09 1142.15,-38.09 1186.29,-38.09 1209.93,-21.94 1240.16,-54.09 1487.4,-317.03 1369.65,-1310.69 1402.77,-1670.09 1405.21,-1696.63 1405.68,-1888.64 1422.77,-1909.09 1433.06,-1921.41 1448.32,-1928.44 1463.86,-1932.35"/>
+<polygon fill="white" stroke="white" stroke-width="2" points="1462.83,-1935.72 1473.32,-1934.27 1464.22,-1928.85 1462.83,-1935.72"/>
+</g>
+<!-- yieldBox.toShare -->
+<g id="node54" class="node" pointer-events="visible" data-name="yieldBox.toShare">
+
+<ellipse fill="#edad56" stroke="#edad56" stroke-width="3" cx="1141.15" cy="-84.09" rx="40.57" ry="18"/>
+<text text-anchor="middle" x="1141.15" y="-79.89" font-family="Times,serif" font-size="14.00">toShare</text>
+</g>
+<!-- BigBang.buyCollateral&#45;&gt;yieldBox.toShare -->
+<g id="edge34" class="edge" data-name="BigBang.buyCollateral-&gt;yieldBox.toShare">
+
+<path fill="none" stroke="white" stroke-width="2" d="M410.67,-802.64C433.85,-799.74 458.16,-792 473.79,-774.09 545.29,-692.16 448.68,-376.03 509.79,-286.09 640.79,-93.3 959.89,-79.2 1086.81,-81.66"/>
+<polygon fill="white" stroke="white" stroke-width="2" points="1086.44,-85.15 1096.52,-81.9 1086.61,-78.16 1086.44,-85.15"/>
+</g>
+<!-- yieldBox.transfer -->
+<g id="node55" class="node" pointer-events="visible" data-name="yieldBox.transfer">
+
+<ellipse fill="#edad56" stroke="#edad56" stroke-width="3" cx="1141.15" cy="-192.09" rx="40.55" ry="18"/>
+<text text-anchor="middle" x="1141.15" y="-187.89" font-family="Times,serif" font-size="14.00">transfer</text>
+</g>
+<!-- BigBang.buyCollateral&#45;&gt;yieldBox.transfer -->
+<g id="edge35" class="edge" data-name="BigBang.buyCollateral-&gt;yieldBox.transfer">
+
+<path fill="none" stroke="white" stroke-width="2" d="M410.77,-802.4C433.82,-799.44 458.02,-791.73 473.79,-774.09 528.14,-713.34 459.68,-473.37 509.79,-409.09 653.29,-225.02 961.84,-196.29 1086.39,-192.39"/>
+<polygon fill="white" stroke="white" stroke-width="2" points="1086.32,-195.89 1096.22,-192.13 1086.14,-188.9 1086.32,-195.89"/>
+</g>
+<!-- ISwapper.buildSwapData -->
+<g id="node60" class="node" pointer-events="visible" data-name="ISwapper.buildSwapData">
+
+<ellipse fill="#edad56" stroke="#edad56" stroke-width="3" cx="854.04" cy="-424.09" rx="70.65" ry="18"/>
+<text text-anchor="middle" x="854.04" y="-419.89" font-family="Times,serif" font-size="14.00">buildSwapData</text>
+</g>
+<!-- BigBang.buyCollateral&#45;&gt;ISwapper.buildSwapData -->
+<g id="edge39" class="edge" data-name="BigBang.buyCollateral-&gt;ISwapper.buildSwapData">
+
+<path fill="none" stroke="white" stroke-width="2" d="M408.66,-796.3C430.42,-792.52 454.3,-785.84 473.79,-774.09 530.84,-739.72 628.28,-599.02 665.93,-544.09 684.6,-516.85 676.83,-500.54 701.93,-479.09 724.66,-459.67 754.82,-446.87 782.21,-438.55"/>
+<polygon fill="white" stroke="white" stroke-width="2" points="783,-441.97 791.66,-435.87 781.08,-435.24 783,-441.97"/>
+</g>
+<!-- ISwapper.swap -->
+<g id="node61" class="node" pointer-events="visible" data-name="ISwapper.swap">
+
+<ellipse fill="#edad56" stroke="#edad56" stroke-width="3" cx="854.04" cy="-370.09" rx="30.77" ry="18"/>
+<text text-anchor="middle" x="854.04" y="-365.89" font-family="Times,serif" font-size="14.00">swap</text>
+</g>
+<!-- BigBang.buyCollateral&#45;&gt;ISwapper.swap --><g id="edge51" class="edge" data-name="BigBang.sellCollateral-&gt;BigBang._repay" data-comment="BigBang.buyCollateral-&gt;ISwapper.swap">
+
+<path fill="none" stroke="#1bc6a6" stroke-width="2" d="M623.53,-1144C645.18,-1156.55 674.13,-1173.07 701.93,-1183.09 736.22,-1195.45 777,-1202.31 807.55,-1207.39"/>
+<polygon fill="#1bc6a6" stroke="#1bc6a6" stroke-width="2" points="806.95,-1210.84 817.4,-1209.04 808.11,-1203.94 806.95,-1210.84"/>
+</g>
+<g id="edge40" class="edge" data-name="BigBang.buyCollateral-&gt;ISwapper.swap">
+
+<path fill="none" stroke="white" stroke-width="2" d="M410.91,-801.83C433.7,-798.75 457.68,-791.11 473.79,-774.09 544.95,-698.97 456.91,-633.02 509.79,-544.09 564.75,-451.68 603.54,-440.44 701.93,-397.09 736.18,-382 778.33,-375.34 809.4,-372.41"/>
+<polygon fill="white" stroke="white" stroke-width="2" points="809.29,-375.93 818.97,-371.61 808.71,-368.95 809.29,-375.93"/>
+</g>
+<!-- BigBang.sellCollateral -->
+<g id="node14" class="node" pointer-events="visible" data-name="BigBang.sellCollateral">
+
+<ellipse fill="#ffbdb9" stroke="#ffbdb9" stroke-width="3" cx="587.86" cy="-1128.09" rx="62.55" ry="18"/>
+<text text-anchor="middle" x="587.86" y="-1123.89" font-family="Times,serif" font-size="14.00">sellCollateral</text>
+</g>
+<!-- BigBang.sellCollateral&#45;&gt;BigBang._removeCollateral -->
+<g id="edge45" class="edge" data-name="BigBang.sellCollateral-&gt;BigBang._removeCollateral">
+
+<path fill="none" stroke="#1bc6a6" stroke-width="2" d="M597.58,-1108.99C612.55,-1075.83 643.68,-1005.28 665.93,-944.09 684.38,-893.36 661.47,-863.82 701.93,-828.09 717.4,-814.43 737.33,-806.57 757.62,-802.24"/>
+<polygon fill="#1bc6a6" stroke="#1bc6a6" stroke-width="2" points="758.05,-805.72 767.28,-800.51 756.82,-798.83 758.05,-805.72"/>
+</g>
+<!-- BigBang.sellCollateral&#45;&gt;BigBang._repay -->
+
+<!-- BigBang.sellCollateral&#45;&gt;BigBang._repay -->
+<g id="edge53" class="edge" data-name="BigBang.sellCollateral-&gt;BigBang._repay">
+
+<path fill="none" stroke="#1bc6a6" stroke-width="2" d="M605.98,-1146.56C627.39,-1163.85 665.65,-1188.01 701.93,-1201.09 734.8,-1212.94 773.63,-1219.73 803.7,-1222.33" style=""/>
+<polygon fill="#1bc6a6" stroke="#1bc6a6" stroke-width="2" points="803.19,-1225.8 813.41,-1223 803.67,-1218.82 803.19,-1225.8"/>
+</g>
+<!-- BigBang.sellCollateral&#45;&gt;BigBang.address -->
+<g id="edge46" class="edge" data-name="BigBang.sellCollateral-&gt;BigBang.address">
+
+<path fill="none" stroke="#1bc6a6" stroke-width="2" d="M649.54,-1123.15C750.01,-1116.02 945.8,-1106.88 1006.14,-1138.09 1067.9,-1170.04 1108.68,-1244.92 1127.71,-1287.35"/>
+<polygon fill="#1bc6a6" stroke="#1bc6a6" stroke-width="2" points="1124.43,-1288.58 1131.62,-1296.36 1130.86,-1285.79 1124.43,-1288.58"/>
+</g>
+<!-- BigBang.sellCollateral&#45;&gt;BigBang._allowedBorrow -->
+<g id="edge44" class="edge" data-name="BigBang.sellCollateral-&gt;BigBang._allowedBorrow">
+
+<path fill="none" stroke="#1bc6a6" stroke-width="2" d="M607.53,-1109.86C628.63,-1090.36 664.89,-1060.1 701.93,-1044.09 722.48,-1035.21 745.82,-1029.25 767.9,-1025.25"/>
+<polygon fill="#1bc6a6" stroke="#1bc6a6" stroke-width="2" points="768.45,-1028.71 777.74,-1023.61 767.3,-1021.8 768.45,-1028.71"/>
+</g>
+<!-- BigBang.sellCollateral&#45;&gt;penrose.swappers -->
+<g id="edge43" class="edge" data-name="BigBang.sellCollateral-&gt;penrose.swappers">
+
+<path fill="none" stroke="white" stroke-width="2" d="M598.65,-1147.23C615.87,-1181.98 651.17,-1258.26 665.93,-1327.09 681.77,-1400.96 661.55,-1942.24 701.93,-2006.09 793.83,-2151.37 875.5,-2147.91 1042.14,-2190.09 1127.46,-2211.68 1157.97,-2221.55 1240.16,-2190.09 1360.16,-2144.16 1461.34,-2021.37 1503.01,-1965.05"/>
+<polygon fill="white" stroke="white" stroke-width="2" points="1505.7,-1967.3 1508.76,-1957.16 1500.04,-1963.18 1505.7,-1967.3"/>
+</g>
+<!-- BigBang.sellCollateral&#45;&gt;yieldBox.toShare -->
+<g id="edge50" class="edge" data-name="BigBang.sellCollateral-&gt;yieldBox.toShare">
+
+<path fill="none" stroke="white" stroke-width="2" d="M599.02,-1109.13C616.01,-1076.47 649.9,-1007.02 665.93,-944.09 685.29,-868.11 651.04,-652.74 701.93,-593.09 792.75,-486.66 916,-619.1 1006.14,-512.09 1063.78,-443.66 984.79,-179.76 1042.14,-111.09 1053.23,-97.81 1070.2,-90.74 1086.91,-87.08"/>
+<polygon fill="white" stroke="white" stroke-width="2" points="1087.31,-90.56 1096.56,-85.4 1086.11,-83.66 1087.31,-90.56"/>
+</g>
+<!-- BigBang.sellCollateral&#45;&gt;ISwapper.buildSwapData -->
+<g id="edge47" class="edge" data-name="BigBang.sellCollateral-&gt;ISwapper.buildSwapData">
+
+<path fill="none" stroke="white" stroke-width="2" d="M599.28,-1108.9C616.5,-1076.18 650.51,-1006.99 665.93,-944.09 688.6,-851.6 652.03,-598.19 701.93,-517.09 723.21,-482.51 762.64,-458.88 795.88,-444.1"/>
+<polygon fill="white" stroke="white" stroke-width="2" points="797.18,-447.35 805.02,-440.23 794.44,-440.91 797.18,-447.35"/>
+</g>
+<!-- BigBang.sellCollateral&#45;&gt;ISwapper.swap -->
+<g id="edge48" class="edge" data-name="BigBang.sellCollateral-&gt;ISwapper.swap">
+
+<path fill="none" stroke="white" stroke-width="2" d="M599.41,-1108.93C616.81,-1076.25 651.09,-1007.13 665.93,-944.09 679.89,-884.8 661.32,-442.48 701.93,-397.09 728.48,-367.42 775.51,-363.18 810.07,-364.8"/>
+<polygon fill="white" stroke="white" stroke-width="2" points="809.4,-368.26 819.62,-365.46 809.88,-361.28 809.4,-368.26"/>
+</g>
+<!-- totalBorrow.toElastic -->
+<g id="node62" class="node" pointer-events="visible" data-name="totalBorrow.toElastic">
+
+<ellipse fill="#edad56" stroke="#edad56" stroke-width="3" cx="1141.15" cy="-2081.09" rx="44.65" ry="18"/>
+<text text-anchor="middle" x="1141.15" y="-2076.89" font-family="Times,serif" font-size="14.00">toElastic</text>
+</g>
+<!-- BigBang.sellCollateral&#45;&gt;totalBorrow.toElastic -->
+<g id="edge49" class="edge" data-name="BigBang.sellCollateral-&gt;totalBorrow.toElastic">
+
+<path fill="none" stroke="white" stroke-width="2" d="M598.39,-1147.28C615.21,-1182.13 649.89,-1258.55 665.93,-1327.09 706.32,-1499.59 625.58,-1564.22 701.93,-1724.09 724.63,-1771.61 996.43,-2027.95 1042.14,-2054.09 1055.55,-2061.76 1071.24,-2067.34 1086.09,-2071.36"/>
+<polygon fill="white" stroke="white" stroke-width="2" points="1084.81,-2074.65 1095.36,-2073.66 1086.49,-2067.86 1084.81,-2074.65"/>
+</g>
+<!-- totalBorrow.toBase -->
+<g id="node63" class="node" pointer-events="visible" data-name="totalBorrow.toBase">
+
+<ellipse fill="#edad56" stroke="#edad56" stroke-width="3" cx="1141.15" cy="-2135.09" rx="37.14" ry="18"/>
+<text text-anchor="middle" x="1141.15" y="-2130.89" font-family="Times,serif" font-size="14.00">toBase</text>
+</g>
+<!-- BigBang.sellCollateral&#45;&gt;totalBorrow.toBase -->
+<g id="edge52" class="edge" data-name="BigBang.sellCollateral-&gt;totalBorrow.toBase">
+
+<path fill="none" stroke="white" stroke-width="2" d="M598.57,-1147.24C615.67,-1182.03 650.79,-1258.34 665.93,-1327.09 692.8,-1449.09 638.73,-1780.33 701.93,-1888.09 788.33,-2035.4 998.44,-2101.78 1092.84,-2124.92"/>
+<polygon fill="white" stroke="white" stroke-width="2" points="1091.89,-2128.29 1102.43,-2127.2 1093.51,-2121.48 1091.89,-2128.29"/>
+</g>
+<!-- BigBang.transfer --><g id="edge55" class="edge" data-name="BigBang.refreshPenroseFees-&gt;BigBang.address" data-comment="BigBang.transfer">
+
+<path fill="none" stroke="#1bc6a6" stroke-width="2" d="M889.88,-837.29C924.31,-830.78 976.07,-833.67 1006.14,-864.09 1074.56,-933.31 1014.11,-986.89 1042.14,-1080.09 1065.2,-1156.77 1108.6,-1241.83 1129.01,-1287.37"/>
+<polygon fill="#1bc6a6" stroke="#1bc6a6" stroke-width="2" points="1125.72,-1288.57 1132.92,-1296.34 1132.14,-1285.78 1125.72,-1288.57"/>
+</g>
+<g id="node15" class="node" pointer-events="visible" data-name="BigBang.transfer">
+
+<ellipse fill="#ff9797" stroke="#ff9797" stroke-width="3" cx="98.93" cy="-1325.09" rx="40.55" ry="18"/>
+<text text-anchor="middle" x="98.93" y="-1320.89" font-family="Times,serif" font-size="14.00">transfer</text>
+</g>
+<!-- BigBang.transferFrom -->
+<g id="node16" class="node" pointer-events="visible" data-name="BigBang.transferFrom">
+
+<ellipse fill="#ff9797" stroke="#ff9797" stroke-width="3" cx="98.93" cy="-958.09" rx="61.41" ry="18"/>
+<text text-anchor="middle" x="98.93" y="-953.89" font-family="Times,serif" font-size="14.00">transferFrom</text>
+</g>
+<!-- BigBang.refreshPenroseFees -->
+<g id="node17" class="node" pointer-events="visible" data-name="BigBang.refreshPenroseFees">
+
+<ellipse fill="#ffbdb9" stroke="#ffbdb9" stroke-width="3" cx="854.04" cy="-855.09" rx="86.24" ry="18"/>
+<text text-anchor="middle" x="854.04" y="-850.89" font-family="Times,serif" font-size="14.00">refreshPenroseFees</text>
+</g>
+<!-- BigBang.refreshPenroseFees&#45;&gt;BigBang.address -->
+
+<!-- BigBang.refreshPenroseFees&#45;&gt;BigBang.address -->
+<g id="edge58" class="edge" data-name="BigBang.refreshPenroseFees-&gt;BigBang.address">
+
+<path fill="none" stroke="#1bc6a6" stroke-width="2" d="M940.8,-852.73C964.81,-856.35 989,-864.75 1006.14,-882.09 1074.56,-951.31 1014.11,-1004.89 1042.14,-1098.09 1063.41,-1168.82 1101.99,-1246.69 1123.87,-1288.17" style=""/>
+<polygon fill="#1bc6a6" stroke="#1bc6a6" stroke-width="2" points="1120.74,-1289.74 1128.53,-1296.91 1126.92,-1286.44 1120.74,-1289.74"/>
+</g>
+<!-- BigBang.refreshPenroseFees&#45;&gt;BigBang.address -->
+<g id="edge60" class="edge" data-name="BigBang.refreshPenroseFees-&gt;BigBang.address">
+
+<path fill="none" stroke="#1bc6a6" stroke-width="2" d="M922.45,-867.17C951.92,-870.63 984.6,-878.29 1006.14,-900.09 1074.56,-969.31 1014.11,-1022.89 1042.14,-1116.09 1061.46,-1180.32 1095.05,-1250.43 1117.44,-1289.41" style=""/>
+<polygon fill="#1bc6a6" stroke="#1bc6a6" stroke-width="2" points="1114.34,-1291.05 1122.46,-1297.86 1120.36,-1287.48 1114.34,-1291.05"/>
+</g>
+<!-- asset.balanceOf -->
+<g id="node52" class="node" pointer-events="visible" data-name="asset.balanceOf">
+
+<ellipse fill="#edad56" stroke="#edad56" stroke-width="3" cx="1141.15" cy="-439.09" rx="50.92" ry="18"/>
+<text text-anchor="middle" x="1141.15" y="-434.89" font-family="Times,serif" font-size="14.00">balanceOf</text>
+</g>
+<!-- BigBang.refreshPenroseFees&#45;&gt;asset.balanceOf -->
+<g id="edge54" class="edge" data-name="BigBang.refreshPenroseFees-&gt;asset.balanceOf">
+
+<path fill="none" stroke="white" stroke-width="2" d="M940.34,-858.32C964.77,-854.82 989.31,-846.28 1006.14,-828.09 1061.04,-768.75 990.03,-527.89 1042.14,-466.09 1051.07,-455.5 1063.74,-448.87 1077.01,-444.76"/>
+<polygon fill="white" stroke="white" stroke-width="2" points="1077.5,-448.24 1086.34,-442.4 1075.79,-441.46 1077.5,-448.24"/>
+</g>
+<!-- asset.approve -->
+<g id="node53" class="node" pointer-events="visible" data-name="asset.approve">
+
+<ellipse fill="#edad56" stroke="#edad56" stroke-width="3" cx="1141.15" cy="-493.09" rx="42.28" ry="18"/>
+<text text-anchor="middle" x="1141.15" y="-488.89" font-family="Times,serif" font-size="14.00">approve</text>
+</g>
+<!-- BigBang.refreshPenroseFees&#45;&gt;asset.approve -->
+<g id="edge57" class="edge" data-name="BigBang.refreshPenroseFees-&gt;asset.approve">
+
+<path fill="none" stroke="white" stroke-width="2" d="M940.54,-858.08C964.83,-854.54 989.25,-846.04 1006.14,-828.09 1100.61,-727.73 952.39,-624.68 1042.14,-520.09 1052.93,-507.51 1069,-500.53 1085.01,-496.73"/>
+<polygon fill="white" stroke="white" stroke-width="2" points="1085.59,-500.18 1094.76,-494.88 1084.29,-493.3 1085.59,-500.18"/>
+</g>
+<!-- BigBang.refreshPenroseFees&#45;&gt;yieldBox.toShare -->
+<g id="edge56" class="edge" data-name="BigBang.refreshPenroseFees-&gt;yieldBox.toShare">
+
+<path fill="none" stroke="white" stroke-width="2" d="M939.7,-858.98C964.55,-855.61 989.5,-846.99 1006.14,-828.09 1058.86,-768.23 992.23,-173.31 1042.14,-111.09 1052.97,-97.6 1069.87,-90.48 1086.61,-86.83"/>
+<polygon fill="white" stroke="white" stroke-width="2" points="1087.02,-90.31 1096.29,-85.18 1085.85,-83.41 1087.02,-90.31"/>
+</g>
+<!-- yieldBox.depositAsset -->
+<g id="node56" class="node" pointer-events="visible" data-name="yieldBox.depositAsset">
+
+<ellipse fill="#edad56" stroke="#edad56" stroke-width="3" cx="1141.15" cy="-246.09" rx="60.28" ry="18"/>
+<text text-anchor="middle" x="1141.15" y="-241.89" font-family="Times,serif" font-size="14.00">depositAsset</text>
+</g>
+<!-- BigBang.refreshPenroseFees&#45;&gt;yieldBox.depositAsset -->
+<g id="edge59" class="edge" data-name="BigBang.refreshPenroseFees-&gt;yieldBox.depositAsset">
+
+<path fill="none" stroke="white" stroke-width="2" d="M939.93,-858.78C964.64,-855.37 989.45,-846.77 1006.14,-828.09 1088.5,-735.94 964.1,-368.93 1042.14,-273.09 1049.11,-264.53 1058.52,-258.54 1068.77,-254.38"/>
+<polygon fill="white" stroke="white" stroke-width="2" points="1069.82,-257.72 1078.21,-251.24 1067.62,-251.08 1069.82,-257.72"/>
+</g>
+<!-- BigBang.setBigBangConfig -->
+<g id="node18" class="node" pointer-events="visible" data-name="BigBang.setBigBangConfig">
+
+<ellipse fill="#ffbdb9" stroke="#ffbdb9" stroke-width="3" cx="98.93" cy="-747.09" rx="82.85" ry="18"/>
+<text text-anchor="middle" x="98.93" y="-742.89" font-family="Times,serif" font-size="14.00">setBigBangConfig</text>
+</g>
+<!-- BigBang.LiquidationMultiplierUpdated -->
+<g id="node36" class="node" pointer-events="visible" data-name="BigBang.LiquidationMultiplierUpdated">
+
+<ellipse fill="#edad56" stroke="#edad56" stroke-width="3" cx="345.82" cy="-747.09" rx="127.94" ry="18"/>
+<text text-anchor="middle" x="345.82" y="-742.89" font-family="Times,serif" font-size="14.00">LiquidationMultiplierUpdated</text>
+</g>
+<!-- BigBang.setBigBangConfig&#45;&gt;BigBang.LiquidationMultiplierUpdated -->
+<g id="edge62" class="edge" data-name="BigBang.setBigBangConfig-&gt;BigBang.LiquidationMultiplierUpdated">
+
+<path fill="none" stroke="#1bc6a6" stroke-width="2" d="M183.18,-747.09C189.85,-747.09 196.7,-747.09 203.63,-747.09"/>
+<polygon fill="#1bc6a6" stroke="#1bc6a6" stroke-width="2" points="203.58,-750.59 213.58,-747.09 203.58,-743.59 203.58,-750.59"/>
+</g>
+<!-- BigBang.setBigBangConfig&#45;&gt;penrose.wethAssetId -->
+<g id="edge61" class="edge" data-name="BigBang.setBigBangConfig-&gt;penrose.wethAssetId">
+
+<path fill="none" stroke="white" stroke-width="2" d="M102.6,-727.87C120.07,-610.95 228.48,-0.09 586.86,-0.09 586.86,-0.09 586.86,-0.09 1142.15,-0.09 1266.86,-0.09 1336.17,1.35 1402.77,-104.09 1448.31,-176.2 1370.42,-1571.76 1422.77,-1639.09 1430.31,-1648.79 1440.93,-1655.24 1452.47,-1659.49"/>
+<polygon fill="white" stroke="white" stroke-width="2" points="1451.25,-1662.78 1461.83,-1662.29 1453.25,-1656.07 1451.25,-1662.78"/>
+</g>
+<!-- BigBang._accrue&#45;&gt;BigBang.getDebtRate -->
+<g id="edge63" class="edge" data-name="BigBang._accrue-&gt;BigBang.getDebtRate">
+
+<path fill="none" stroke="#1bc6a6" stroke-width="2" d="M1177.56,-1652.75C1196.2,-1657.86 1219.43,-1664.27 1240.16,-1670.09 1252.46,-1673.54 1265.64,-1677.29 1278.14,-1680.86"/>
+<polygon fill="#1bc6a6" stroke="#1bc6a6" stroke-width="2" points="1276.87,-1684.14 1287.44,-1683.53 1278.79,-1677.41 1276.87,-1684.14"/>
+</g>
+<!-- BigBang._addTokens -->
+<g id="node24" class="node" pointer-events="visible" data-name="BigBang._addTokens">
+
+<ellipse fill="#edad56" stroke="#edad56" stroke-width="3" cx="854.04" cy="-747.09" rx="58.47" ry="18"/>
+<text text-anchor="middle" x="854.04" y="-742.89" font-family="Times,serif" font-size="14.00">_addTokens</text>
+</g>
+<!-- BigBang._addCollateral&#45;&gt;BigBang._addTokens -->
+<g id="edge65" class="edge" data-name="BigBang._addCollateral-&gt;BigBang._addTokens">
+
+<path fill="none" stroke="#1bc6a6" stroke-width="2" d="M652.81,-767.55C692.5,-763.5 743.48,-758.29 784.07,-754.14"/>
+<polygon fill="#1bc6a6" stroke="#1bc6a6" stroke-width="2" points="784.25,-757.64 793.84,-753.14 783.54,-750.68 784.25,-757.64"/>
+</g>
+<!-- BigBang._addCollateral&#45;&gt;BigBang.address -->
+<g id="edge66" class="edge" data-name="BigBang._addCollateral-&gt;BigBang.address">
+
+<path fill="none" stroke="#1bc6a6" stroke-width="2" d="M644.68,-785.12C652.83,-788.96 660.34,-794.13 665.93,-801.09 749.25,-904.71 604.62,-1007.48 701.93,-1098.09 726.7,-1121.15 976.78,-1096.26 1006.14,-1113.09 1073.58,-1151.75 1113.04,-1239.74 1130.09,-1286.88"/>
+<polygon fill="#1bc6a6" stroke="#1bc6a6" stroke-width="2" points="1126.73,-1287.87 1133.32,-1296.17 1133.34,-1285.57 1126.73,-1287.87"/>
+</g>
+<!-- BigBang._addCollateral&#45;&gt;yieldBox.toShare -->
+<g id="edge64" class="edge" data-name="BigBang._addCollateral-&gt;yieldBox.toShare">
+
+<path fill="none" stroke="white" stroke-width="2" d="M604.06,-755.36C621.36,-733.16 649.38,-694.45 665.93,-657.09 691.96,-598.35 653.7,-559.53 701.93,-517.09 804.22,-427.07 911.09,-576.72 1006.14,-479.09 1063.46,-420.22 989.22,-173.95 1042.14,-111.09 1053.28,-97.86 1070.26,-90.8 1086.97,-87.13"/>
+<polygon fill="white" stroke="white" stroke-width="2" points="1087.36,-90.61 1096.62,-85.45 1086.16,-83.71 1087.36,-90.61"/>
+</g>
+<!-- BigBang._liquidateUser -->
+<g id="node21" class="node" pointer-events="visible" data-name="BigBang._liquidateUser">
+
+<ellipse fill="#edad56" stroke="#edad56" stroke-width="3" cx="587.86" cy="-1354.09" rx="67.78" ry="18"/>
+<text text-anchor="middle" x="587.86" y="-1349.89" font-family="Times,serif" font-size="14.00">_liquidateUser</text>
+</g>
+<!-- BigBang._extractLiquidationFees -->
+<g id="node22" class="node" pointer-events="visible" data-name="BigBang._extractLiquidationFees">
+
+<ellipse fill="#edad56" stroke="#edad56" stroke-width="3" cx="854.04" cy="-1165.09" rx="104.79" ry="18"/>
+<text text-anchor="middle" x="854.04" y="-1160.89" font-family="Times,serif" font-size="14.00">_extractLiquidationFees</text>
+</g>
+<!-- BigBang._liquidateUser&#45;&gt;BigBang._extractLiquidationFees --><g id="edge71" class="edge" data-name="BigBang._liquidateUser-&gt;BigBang.address" data-comment="BigBang._liquidateUser-&gt;BigBang._extractLiquidationFees">
+
+<path fill="none" stroke="#1bc6a6" stroke-width="2" d="M593.33,-1334.69C608.02,-1312.98 656.53,-1343.8 701.93,-1354.09 767.86,-1369.03 941.47,-1373.79 1006.14,-1354.09 1051.44,-1340.29 1095.32,-1305.5 1119.92,-1298.97"/>
+<polygon fill="#1bc6a6" stroke="#1bc6a6" stroke-width="2" points="1119.79,-1302.46 1129.83,-1299.08 1119.87,-1295.47 1119.79,-1302.46"/>
+</g>
+<g id="edge85" class="edge" data-name="BigBang._liquidateUser-&gt;BigBang._extractLiquidationFees">
+
+<path fill="none" stroke="#1bc6a6" stroke-width="2" d="M596.36,-1334.89C610.97,-1300.2 646.75,-1227.39 701.93,-1192.09 713.91,-1184.43 727.47,-1178.78 741.41,-1174.65"/>
+<polygon fill="#1bc6a6" stroke="#1bc6a6" stroke-width="2" points="742.04,-1178.11 750.82,-1172.17 740.25,-1171.34 742.04,-1178.11"/>
+</g>
+<!-- BigBang._updateBorrowAndCollateralShare -->
+<g id="node28" class="node" pointer-events="visible" data-name="BigBang._updateBorrowAndCollateralShare">
+
+<ellipse fill="#edad56" stroke="#edad56" stroke-width="3" cx="854.04" cy="-1071.09" rx="147.61" ry="18"/>
+<text text-anchor="middle" x="854.04" y="-1066.89" font-family="Times,serif" font-size="14.00">_updateBorrowAndCollateralShare</text>
+</g>
+<!-- BigBang._liquidateUser&#45;&gt;BigBang._updateBorrowAndCollateralShare -->
+<g id="edge70" class="edge" data-name="BigBang._liquidateUser-&gt;BigBang._updateBorrowAndCollateralShare">
+
+<path fill="none" stroke="#1bc6a6" stroke-width="2" d="M594.23,-1334.68C606.59,-1293.27 640.78,-1195.4 701.93,-1138.09 723.18,-1118.18 751.32,-1103.53 777.55,-1093.09"/>
+<polygon fill="#1bc6a6" stroke="#1bc6a6" stroke-width="2" points="778.49,-1096.48 786.61,-1089.66 776.02,-1089.93 778.49,-1096.48"/>
+</g>
+<!-- BigBang._liquidateUser&#45;&gt;BigBang.address -->
+
+<!-- BigBang._liquidateUser&#45;&gt;BigBang.address -->
+<g id="edge72" class="edge" data-name="BigBang._liquidateUser-&gt;BigBang.address">
+
+<path fill="none" stroke="#1bc6a6" stroke-width="2" d="M656.15,-1357C670.81,-1362.76 686.55,-1368.61 701.93,-1372.09 767.86,-1387.03 941.47,-1391.79 1006.14,-1372.09 1036.58,-1362.82 1066.37,-1344.07 1090.11,-1329.22" style=""/>
+<polygon fill="#1bc6a6" stroke="#1bc6a6" stroke-width="2" points="1091.69,-1332.35 1098.34,-1324.1 1088,-1326.41 1091.69,-1332.35"/>
+</g>
+<!-- BigBang._liquidateUser&#45;&gt;BigBang.address -->
+<g id="edge76" class="edge" data-name="BigBang._liquidateUser-&gt;BigBang.address">
+
+<path fill="none" stroke="#1bc6a6" stroke-width="2" d="M639.17,-1367.15C658.17,-1375.71 680.4,-1385.21 701.93,-1390.09 767.86,-1405.03 941.47,-1409.79 1006.14,-1390.09 1041.06,-1379.45 1075.13,-1356.35 1100.18,-1338.58" style=""/>
+<polygon fill="#1bc6a6" stroke="#1bc6a6" stroke-width="2" points="1102.1,-1341.51 1108.21,-1332.86 1098.04,-1335.81 1102.1,-1341.51"/>
+</g>
+<!-- BigBang._liquidateUser&#45;&gt;BigBang.address -->
+<g id="edge77" class="edge" data-name="BigBang._liquidateUser-&gt;BigBang.address">
+
+<path fill="none" stroke="#1bc6a6" stroke-width="2" d="M616.39,-1371.55C638.54,-1384.5 670.96,-1401.07 701.93,-1408.09 767.86,-1423.03 941.47,-1427.79 1006.14,-1408.09 1047.38,-1395.53 1087.44,-1365.57 1112.85,-1343.66" style=""/>
+<polygon fill="#1bc6a6" stroke="#1bc6a6" stroke-width="2" points="1115.05,-1346.38 1120.22,-1337.13 1110.41,-1341.14 1115.05,-1346.38"/>
+</g>
+<!-- BigBang._liquidateUser&#45;&gt;BigBang.address -->
+<g id="edge79" class="edge" data-name="BigBang._liquidateUser-&gt;BigBang.address">
+
+<path fill="none" stroke="#1bc6a6" stroke-width="2" d="M600.75,-1373.09C620.66,-1392.7 662.47,-1417.15 701.93,-1426.09 767.86,-1441.03 941.47,-1445.79 1006.14,-1426.09 1053.45,-1411.68 1099.21,-1374.37 1123.08,-1346.69" style=""/>
+<polygon fill="#1bc6a6" stroke="#1bc6a6" stroke-width="2" points="1125.73,-1348.98 1129.23,-1338.98 1120.25,-1344.62 1125.73,-1348.98"/>
+</g>
+<!-- BigBang._liquidateUser&#45;&gt;BigBang.address -->
+<g id="edge82" class="edge" data-name="BigBang._liquidateUser-&gt;BigBang.address">
+
+<path fill="none" stroke="#1bc6a6" stroke-width="2" d="M593.97,-1373.41C609.38,-1403.84 657.17,-1433.95 701.93,-1444.09 767.86,-1459.03 941.47,-1463.79 1006.14,-1444.09 1058.27,-1428.21 1108.53,-1384.53 1129.68,-1348.66" style=""/>
+<polygon fill="#1bc6a6" stroke="#1bc6a6" stroke-width="2" points="1132.66,-1350.53 1134.11,-1340.03 1126.43,-1347.33 1132.66,-1350.53"/>
+</g>
+<!-- BigBang._liquidateUser&#45;&gt;BigBang.address -->
+<g id="edge84" class="edge" data-name="BigBang._liquidateUser-&gt;BigBang.address">
+
+<path fill="none" stroke="#1bc6a6" stroke-width="2" d="M591.42,-1373.43C603.26,-1417.91 654.3,-1451.3 701.93,-1462.09 767.86,-1477.03 941.47,-1481.79 1006.14,-1462.09 1062,-1445.07 1115.71,-1396.14 1133.76,-1349.4" style=""/>
+<polygon fill="#1bc6a6" stroke="#1bc6a6" stroke-width="2" points="1137.01,-1350.74 1136.72,-1340.15 1130.34,-1348.6 1137.01,-1350.74"/>
+</g>
+<!-- BigBang._isSolvent -->
+<g id="node37" class="node" pointer-events="visible" data-name="BigBang._isSolvent">
+
+<ellipse fill="#edad56" stroke="#edad56" stroke-width="3" cx="854.04" cy="-1475.09" rx="51.63" ry="18"/>
+<text text-anchor="middle" x="854.04" y="-1470.89" font-family="Times,serif" font-size="14.00">_isSolvent</text>
+</g>
+<!-- BigBang._liquidateUser&#45;&gt;BigBang._isSolvent -->
+<g id="edge67" class="edge" data-name="BigBang._liquidateUser-&gt;BigBang._isSolvent">
+
+<path fill="none" stroke="#1bc6a6" stroke-width="2" d="M614.47,-1371.93C636.82,-1386.96 670.51,-1408.31 701.93,-1423.09 733.35,-1437.87 770.15,-1450.62 799.57,-1459.8"/>
+<polygon fill="#1bc6a6" stroke="#1bc6a6" stroke-width="2" points="798.21,-1463.04 808.79,-1462.62 800.26,-1456.35 798.21,-1463.04"/>
+</g>
+<!-- BigBang._computeMaxAndMinLTVInAsset -->
+<g id="node38" class="node" pointer-events="visible" data-name="BigBang._computeMaxAndMinLTVInAsset">
+
+<ellipse fill="#edad56" stroke="#edad56" stroke-width="3" cx="854.04" cy="-1327.09" rx="147.65" ry="18"/>
+<text text-anchor="middle" x="854.04" y="-1322.89" font-family="Times,serif" font-size="14.00">_computeMaxAndMinLTVInAsset</text>
+</g>
+<!-- BigBang._liquidateUser&#45;&gt;BigBang._computeMaxAndMinLTVInAsset -->
+<g id="edge68" class="edge" data-name="BigBang._liquidateUser-&gt;BigBang._computeMaxAndMinLTVInAsset">
+
+<path fill="none" stroke="#1bc6a6" stroke-width="2" d="M652.81,-1347.55C674.2,-1345.37 698.88,-1342.85 723.44,-1340.34"/>
+<polygon fill="#1bc6a6" stroke="#1bc6a6" stroke-width="2" points="723.65,-1343.83 733.24,-1339.33 722.94,-1336.87 723.65,-1343.83"/>
+</g>
+<!-- BigBang._getCallerReward -->
+<g id="node39" class="node" pointer-events="visible" data-name="BigBang._getCallerReward">
+
+<ellipse fill="#edad56" stroke="#edad56" stroke-width="3" cx="854.04" cy="-1381.09" rx="81.08" ry="18"/>
+<text text-anchor="middle" x="854.04" y="-1376.89" font-family="Times,serif" font-size="14.00">_getCallerReward</text>
+</g>
+<!-- BigBang._liquidateUser&#45;&gt;BigBang._getCallerReward -->
+<g id="edge69" class="edge" data-name="BigBang._liquidateUser-&gt;BigBang._getCallerReward">
+
+<path fill="none" stroke="#1bc6a6" stroke-width="2" d="M652.81,-1360.63C686.69,-1364.09 728.8,-1368.39 765.65,-1372.16"/>
+<polygon fill="#1bc6a6" stroke="#1bc6a6" stroke-width="2" points="765.12,-1375.62 775.43,-1373.16 765.84,-1368.66 765.12,-1375.62"/>
+</g>
+<!-- BigBang.Liquidated -->
+<g id="node40" class="node" pointer-events="visible" data-name="BigBang.Liquidated">
+
+<ellipse fill="#edad56" stroke="#edad56" stroke-width="3" cx="854.04" cy="-1273.09" rx="52.74" ry="18"/>
+<text text-anchor="middle" x="854.04" y="-1268.89" font-family="Times,serif" font-size="14.00">Liquidated</text>
+</g>
+<!-- BigBang._liquidateUser&#45;&gt;BigBang.Liquidated -->
+<g id="edge86" class="edge" data-name="BigBang._liquidateUser-&gt;BigBang.Liquidated">
+
+<path fill="none" stroke="#1bc6a6" stroke-width="2" d="M619.14,-1336.87C641.4,-1324.91 672.73,-1309.48 701.93,-1300.09 730.08,-1291.04 762.2,-1284.76 789.57,-1280.55"/>
+<polygon fill="#1bc6a6" stroke="#1bc6a6" stroke-width="2" points="789.8,-1284.06 799.19,-1279.15 788.79,-1277.13 789.8,-1284.06"/>
+</g>
+<!-- BigBang._liquidateUser&#45;&gt;penrose.swappers -->
+<g id="edge74" class="edge" data-name="BigBang._liquidateUser-&gt;penrose.swappers">
+
+<path fill="none" stroke="white" stroke-width="2" d="M599.35,-1373.08C616.84,-1405.81 651.45,-1475.48 665.93,-1539.09 682.7,-1612.76 647.12,-2166.1 701.93,-2218.09 814.94,-2325.26 1272.78,-2303.87 1402.77,-2218.09 1488.74,-2161.36 1513.67,-2029.36 1520.72,-1968.22"/>
+<polygon fill="white" stroke="white" stroke-width="2" points="1524.19,-1968.62 1521.75,-1958.31 1517.23,-1967.89 1524.19,-1968.62"/>
+</g>
+<!-- BigBang._liquidateUser&#45;&gt;yieldBox.toShare --><g id="edge78" class="edge" data-name="BigBang._liquidateUser-&gt;yieldBox.balanceOf" data-comment="BigBang._liquidateUser-&gt;yieldBox.toShare">
+
+<path fill="none" stroke="white" stroke-width="2" d="M596.21,-1334.81C612.12,-1298.36 649.68,-1218 665.93,-1146.09 677.68,-1094.14 666.34,-707.71 701.93,-668.09 793.81,-565.83 914.08,-714.19 1006.14,-612.09 1074.21,-536.6 977.41,-234.46 1042.14,-156.09 1051.49,-144.78 1065.1,-137.96 1079.22,-134.23"/>
+<polygon fill="white" stroke="white" stroke-width="2" points="1079.6,-137.72 1088.71,-132.31 1078.21,-130.86 1079.6,-137.72"/>
+</g>
+<g id="edge73" class="edge" data-name="BigBang._liquidateUser-&gt;yieldBox.toShare">
+
+<path fill="none" stroke="white" stroke-width="2" d="M598.55,-1334.93C615.62,-1300.14 650.68,-1223.81 665.93,-1155.09 678.82,-1097.03 662.29,-665.42 701.93,-621.09 793.52,-518.67 913.96,-667.97 1006.14,-566.09 1074.19,-490.88 977.54,-189.29 1042.14,-111.09 1053.16,-97.75 1070.11,-90.67 1086.83,-87.01"/>
+<polygon fill="white" stroke="white" stroke-width="2" points="1087.23,-90.49 1096.49,-85.34 1086.04,-83.59 1087.23,-90.49"/>
+</g>
+<!-- BigBang._liquidateUser&#45;&gt;yieldBox.transfer -->
+<g id="edge75" class="edge" data-name="BigBang._liquidateUser-&gt;yieldBox.transfer">
+
+<path fill="none" stroke="white" stroke-width="2" d="M598.44,-1334.91C615.35,-1300.08 650.16,-1223.69 665.93,-1155.09 687.67,-1060.56 635.36,-790.63 701.93,-720.09 795.65,-620.78 912.63,-776.59 1006.14,-677.09 1076.06,-602.7 977.14,-297.81 1042.14,-219.09 1053.16,-205.75 1070.1,-198.67 1086.83,-195.01"/>
+<polygon fill="white" stroke="white" stroke-width="2" points="1087.23,-198.49 1096.49,-193.34 1086.04,-191.59 1087.23,-198.49"/>
+</g>
+<!-- yieldBox.balanceOf -->
+<g id="node57" class="node" pointer-events="visible" data-name="yieldBox.balanceOf">
+
+<ellipse fill="#edad56" stroke="#edad56" stroke-width="3" cx="1141.15" cy="-138.09" rx="50.92" ry="18"/>
+<text text-anchor="middle" x="1141.15" y="-133.89" font-family="Times,serif" font-size="14.00">balanceOf</text>
+</g>
+<!-- BigBang._liquidateUser&#45;&gt;yieldBox.balanceOf -->
+
+<!-- BigBang._liquidateUser&#45;&gt;yieldBox.balanceOf --><g id="edge88" class="edge" data-name="BigBang._extractLiquidationFees-&gt;BigBang.address" data-comment="BigBang._liquidateUser-&gt;yieldBox.balanceOf">
+
+<path fill="none" stroke="#1bc6a6" stroke-width="2" d="M959.61,-1166.73C975.7,-1170.52 991.74,-1175.85 1006.14,-1183.09 1055.66,-1207.98 1099.62,-1257.02 1122.81,-1288.84"/>
+<polygon fill="#1bc6a6" stroke="#1bc6a6" stroke-width="2" points="1119.79,-1290.63 1128.39,-1296.83 1125.53,-1286.63 1119.79,-1290.63"/>
+</g>
+<g id="edge83" class="edge" data-name="BigBang._liquidateUser-&gt;yieldBox.balanceOf">
+
+<path fill="none" stroke="white" stroke-width="2" d="M601.17,-1335.24C618.92,-1301.49 651.19,-1229.32 665.93,-1164.09 677.68,-1112.14 666.34,-725.71 701.93,-686.09 793.81,-583.83 914.08,-732.19 1006.14,-630.09 1074.21,-554.6 977.41,-252.46 1042.14,-174.09 1052.34,-161.74 1067.62,-154.76 1083.11,-150.48" style=""/>
+<polygon fill="white" stroke="white" stroke-width="2" points="1083.59,-153.96 1092.52,-148.27 1081.99,-147.15 1083.59,-153.96"/>
+</g>
+<!-- BigBang._liquidateUser&#45;&gt;ISwapper.buildSwapData -->
+<g id="edge80" class="edge" data-name="BigBang._liquidateUser-&gt;ISwapper.buildSwapData">
+
+<path fill="none" stroke="white" stroke-width="2" d="M598.57,-1334.94C615.68,-1300.16 650.8,-1223.84 665.93,-1155.09 692.84,-1032.87 653.57,-708.51 701.93,-593.09 727.1,-533.03 782.85,-480.02 819.14,-450.02"/>
+<polygon fill="white" stroke="white" stroke-width="2" points="820.89,-453.11 826.46,-444.09 816.49,-447.67 820.89,-453.11"/>
+</g>
+<!-- BigBang._liquidateUser&#45;&gt;ISwapper.swap -->
+<g id="edge81" class="edge" data-name="BigBang._liquidateUser-&gt;ISwapper.swap">
+
+<path fill="none" stroke="white" stroke-width="2" d="M598.69,-1334.96C615.97,-1300.22 651.36,-1223.96 665.93,-1155.09 683.38,-1072.6 646.29,-460.44 701.93,-397.09 728.29,-367.09 775.57,-362.96 810.24,-364.69"/>
+<polygon fill="white" stroke="white" stroke-width="2" points="809.6,-368.15 819.82,-365.38 810.1,-361.17 809.6,-368.15"/>
+</g>
+<!-- BigBang._extractLiquidationFees&#45;&gt;BigBang.address -->
+
+<!-- BigBang._extractLiquidationFees&#45;&gt;BigBang.address --><g id="edge87" class="edge" data-name="BigBang._extractLiquidationFees-&gt;yieldBox.transfer" data-comment="BigBang._extractLiquidationFees-&gt;BigBang.address">
+
+<path fill="none" stroke="white" stroke-width="2" d="M908.68,-1148.46C942.62,-1138.38 984.12,-1121.48 1006.14,-1089.09 1061.11,-1008.26 981.33,-286.62 1042.14,-210.09 1053.63,-195.64 1072.09,-188.49 1089.91,-185.7"/>
+<polygon fill="white" stroke="white" stroke-width="2" points="1090.06,-189.2 1099.66,-184.7 1089.35,-182.24 1090.06,-189.2"/>
+</g>
+<g id="edge91" class="edge" data-name="BigBang._extractLiquidationFees-&gt;BigBang.address">
+
+<path fill="none" stroke="#1bc6a6" stroke-width="2" d="M930.77,-1178.48C955.76,-1182.79 983.05,-1189.48 1006.14,-1201.09 1050.11,-1223.19 1089.69,-1264.33 1114.25,-1291.62" style=""/>
+<polygon fill="#1bc6a6" stroke="#1bc6a6" stroke-width="2" points="1111.31,-1293.59 1120.58,-1298.73 1116.54,-1288.93 1111.31,-1293.59"/>
+</g>
+<!-- penrose.feeTo -->
+<g id="node50" class="node" pointer-events="visible" data-name="penrose.feeTo">
+
+<ellipse fill="#edad56" stroke="#edad56" stroke-width="3" cx="1524.41" cy="-1828.09" rx="33.6" ry="18"/>
+<text text-anchor="middle" x="1524.41" y="-1823.89" font-family="Times,serif" font-size="14.00">feeTo</text>
+</g>
+<!-- BigBang._extractLiquidationFees&#45;&gt;penrose.feeTo -->
+<g id="edge89" class="edge" data-name="BigBang._extractLiquidationFees-&gt;penrose.feeTo">
+
+<path fill="none" stroke="white" stroke-width="2" d="M960,-1165.33C977.59,-1170.14 994.04,-1178.43 1006.14,-1192.09 1053.73,-1245.82 989.99,-1787.77 1042.14,-1837.09 1073.24,-1866.5 1362.83,-1843.07 1477.23,-1832.54"/>
+<polygon fill="white" stroke="white" stroke-width="2" points="1477.32,-1836.05 1486.96,-1831.64 1476.67,-1829.08 1477.32,-1836.05"/>
+</g>
+<!-- BigBang._extractLiquidationFees&#45;&gt;yieldBox.transfer -->
+
+<!-- BigBang._extractLiquidationFees&#45;&gt;yieldBox.transfer --><g id="edge95" class="edge" data-name="BigBang._addTokens-&gt;BigBang.address" data-comment="BigBang._extractLiquidationFees-&gt;yieldBox.transfer">
+
+<path fill="none" stroke="#1bc6a6" stroke-width="2" d="M900.03,-734.7C934.15,-731.9 979.56,-736.68 1006.14,-765.09 1055.64,-817.98 1023.18,-1019.17 1042.14,-1089.09 1062.31,-1163.44 1104.22,-1244.73 1126.12,-1287.81"/>
+<polygon fill="#1bc6a6" stroke="#1bc6a6" stroke-width="2" points="1122.86,-1289.11 1130.49,-1296.45 1129.11,-1285.95 1122.86,-1289.11"/>
+</g>
+<g id="edge90" class="edge" data-name="BigBang._extractLiquidationFees-&gt;yieldBox.transfer">
+
+<path fill="none" stroke="white" stroke-width="2" d="M941.37,-1154.06C966.31,-1144.51 990.89,-1129.51 1006.14,-1107.09 1061.11,-1026.26 981.33,-304.62 1042.14,-228.09 1053.77,-213.45 1072.56,-206.31 1090.59,-202.32" style=""/>
+<polygon fill="white" stroke="white" stroke-width="2" points="1091,-205.8 1100.18,-200.52 1089.71,-198.92 1091,-205.8"/>
+</g>
+<!-- BigBang._closedLiquidation&#45;&gt;BigBang._liquidateUser -->
+<g id="edge93" class="edge" data-name="BigBang._closedLiquidation-&gt;BigBang._liquidateUser">
+
+<path fill="none" stroke="#1bc6a6" stroke-width="2" d="M381.98,-1457.37C424.39,-1435.99 495.74,-1400.03 542.05,-1376.68"/>
+<polygon fill="#1bc6a6" stroke="#1bc6a6" stroke-width="2" points="543.49,-1379.88 550.84,-1372.25 540.34,-1373.62 543.49,-1379.88"/>
+</g>
+<!-- BigBang._closedLiquidation&#45;&gt;BigBang._isSolvent -->
+<g id="edge92" class="edge" data-name="BigBang._closedLiquidation-&gt;BigBang._isSolvent">
+
+<path fill="none" stroke="#1bc6a6" stroke-width="2" d="M432.98,-1475.09C533.59,-1475.09 697.72,-1475.09 788.15,-1475.09"/>
+<polygon fill="#1bc6a6" stroke="#1bc6a6" stroke-width="2" points="787.92,-1478.59 797.92,-1475.09 787.92,-1471.59 787.92,-1478.59"/>
+</g>
+<!-- BigBang._addTokens&#45;&gt;BigBang.address -->
+
+<!-- BigBang._addTokens&#45;&gt;BigBang.address -->
+<g id="edge97" class="edge" data-name="BigBang._addTokens-&gt;BigBang.address">
+
+<path fill="none" stroke="#1bc6a6" stroke-width="2" d="M913.11,-749.79C945.06,-751.44 982.83,-758.19 1006.14,-783.09 1055.64,-835.98 1023.18,-1037.17 1042.14,-1107.09 1060.63,-1175.26 1097.4,-1249.26 1120.27,-1289.12" style=""/>
+<polygon fill="#1bc6a6" stroke="#1bc6a6" stroke-width="2" points="1117.12,-1290.67 1125.21,-1297.51 1123.15,-1287.12 1117.12,-1290.67"/>
+</g>
+<!-- BigBang._addTokens&#45;&gt;yieldBox.transfer -->
+<g id="edge96" class="edge" data-name="BigBang._addTokens-&gt;yieldBox.transfer">
+
+<path fill="none" stroke="white" stroke-width="2" d="M912.92,-750.52C945.21,-749.08 983.4,-741.16 1006.14,-715.09 1078.79,-631.81 972.03,-304.52 1042.14,-219.09 1053.12,-205.72 1070.05,-198.63 1086.78,-194.97"/>
+<polygon fill="white" stroke="white" stroke-width="2" points="1087.18,-198.45 1096.45,-193.31 1086,-191.55 1087.18,-198.45"/>
+</g>
+<!-- BigBang._addTokens&#45;&gt;yieldBox.balanceOf --><g id="edge102" class="edge" data-name="BigBang._repay-&gt;BigBang.address" data-comment="BigBang._addTokens-&gt;yieldBox.balanceOf">
+
+<path fill="none" stroke="#1bc6a6" stroke-width="2" d="M885.86,-1208.12C916.92,-1207.03 965.87,-1214.08 1006.14,-1228.09 1048.45,-1242.82 1093.53,-1269.64 1119.13,-1291.3"/>
+<polygon fill="#1bc6a6" stroke="#1bc6a6" stroke-width="2" points="1116.57,-1293.7 1126.31,-1297.87 1121.3,-1288.54 1116.57,-1293.7"/>
+</g>
+<g id="edge94" class="edge" data-name="BigBang._addTokens-&gt;yieldBox.balanceOf">
+
+<path fill="none" stroke="white" stroke-width="2" d="M905.85,-737.52C940.13,-728.23 983.17,-710.41 1006.14,-677.09 1070.88,-583.18 969.88,-253.34 1042.14,-165.09 1050.96,-154.32 1063.64,-147.62 1076.98,-143.51"/>
+<polygon fill="white" stroke="white" stroke-width="2" points="1077.53,-146.98 1086.38,-141.16 1075.83,-140.19 1077.53,-146.98"/>
+</g>
+<!-- BigBang._removeCollateral&#45;&gt;BigBang.address -->
+<g id="edge99" class="edge" data-name="BigBang._removeCollateral-&gt;BigBang.address">
+
+<path fill="none" stroke="#1bc6a6" stroke-width="2" d="M936.82,-797.78C962.25,-801.01 988.27,-809.41 1006.14,-828.09 1047.99,-871.83 1025.66,-1039.85 1042.14,-1098.09 1062.26,-1169.16 1101.28,-1246.9 1123.54,-1288.26"/>
+<polygon fill="#1bc6a6" stroke="#1bc6a6" stroke-width="2" points="1120.43,-1289.88 1128.29,-1296.99 1126.58,-1286.53 1120.43,-1289.88"/>
+</g>
+<!-- BigBang._removeCollateral&#45;&gt;yieldBox.transfer -->
+<g id="edge98" class="edge" data-name="BigBang._removeCollateral-&gt;yieldBox.transfer">
+
+<path fill="none" stroke="white" stroke-width="2" d="M936.38,-805.23C962.25,-802.17 988.65,-793.66 1006.14,-774.09 1088.5,-681.94 964.1,-314.93 1042.14,-219.09 1053.06,-205.68 1069.99,-198.58 1086.72,-194.92"/>
+<polygon fill="white" stroke="white" stroke-width="2" points="1087.13,-198.4 1096.39,-193.26 1085.95,-191.5 1087.13,-198.4"/>
+</g>
+<!-- BigBang._repay&#45;&gt;BigBang.address -->
+
+<!-- BigBang._repay&#45;&gt;BigBang.address -->
+<g id="edge104" class="edge" data-name="BigBang._repay-&gt;BigBang.address">
+
+<path fill="none" stroke="#1bc6a6" stroke-width="2" d="M891.89,-1222.39C923,-1225.94 968.39,-1232.95 1006.14,-1246.09 1041.99,-1258.57 1079.83,-1279.73 1106.12,-1295.89" style=""/>
+<polygon fill="#1bc6a6" stroke="#1bc6a6" stroke-width="2" points="1104.09,-1298.75 1114.43,-1301.09 1107.81,-1292.82 1104.09,-1298.75"/>
+</g>
+<!-- BigBang._repay&#45;&gt;BigBang.address -->
+<g id="edge105" class="edge" data-name="BigBang._repay-&gt;BigBang.address">
+
+<path fill="none" stroke="#1bc6a6" stroke-width="2" d="M879.45,-1233.65C909.83,-1242.06 962.98,-1249.07 1006.14,-1264.09 1036.29,-1274.58 1067.84,-1291.22 1092.75,-1303.96" style=""/>
+<polygon fill="#1bc6a6" stroke="#1bc6a6" stroke-width="2" points="1090.85,-1306.92 1101.35,-1308.31 1094.01,-1300.67 1090.85,-1306.92"/>
+</g>
+<!-- BigBang.IUSDOBase -->
+<g id="node41" class="node" pointer-events="visible" data-name="BigBang.IUSDOBase">
+
+<ellipse fill="#edad56" stroke="#edad56" stroke-width="3" cx="1141.15" cy="-990.09" rx="59.13" ry="18"/>
+<text text-anchor="middle" x="1141.15" y="-985.89" font-family="Times,serif" font-size="14.00">IUSDOBase</text>
+</g>
+<!-- BigBang._repay&#45;&gt;BigBang.IUSDOBase -->
+<g id="edge103" class="edge" data-name="BigBang._repay-&gt;BigBang.IUSDOBase">
+
+<path fill="none" stroke="#1bc6a6" stroke-width="2" d="M891.68,-1222.96C925.73,-1224.41 975.66,-1220.75 1006.14,-1192.09 1055.47,-1145.72 1001.02,-1097.86 1042.14,-1044.09 1053.65,-1029.04 1070.61,-1017.63 1087.2,-1009.26"/>
+<polygon fill="#1bc6a6" stroke="#1bc6a6" stroke-width="2" points="1088.24,-1012.63 1095.81,-1005.22 1085.27,-1006.29 1088.24,-1012.63"/>
+</g>
+<!-- yieldBox.withdraw -->
+<g id="node58" class="node" pointer-events="visible" data-name="yieldBox.withdraw">
+
+<ellipse fill="#edad56" stroke="#edad56" stroke-width="3" cx="1141.15" cy="-354.09" rx="47.52" ry="18"/>
+<text text-anchor="middle" x="1141.15" y="-349.89" font-family="Times,serif" font-size="14.00">withdraw</text>
+</g>
+<!-- BigBang._repay&#45;&gt;yieldBox.withdraw --><g id="edge108" class="edge" data-name="BigBang._borrow-&gt;BigBang.address" data-comment="BigBang._repay-&gt;yieldBox.withdraw">
+
+<path fill="none" stroke="#1bc6a6" stroke-width="2" d="M871.87,-945.2C902.48,-931.15 967.64,-929.8 1006.14,-963.09 1044.42,-996.18 1023.83,-1023.93 1042.14,-1071.09 1072.16,-1148.37 1114.47,-1237.92 1132.03,-1286.91"/>
+<polygon fill="#1bc6a6" stroke="#1bc6a6" stroke-width="2" points="1128.64,-1287.81 1135.15,-1296.17 1135.27,-1285.58 1128.64,-1287.81"/>
+</g>
+<g id="edge101" class="edge" data-name="BigBang._repay-&gt;yieldBox.withdraw">
+
+<path fill="none" stroke="white" stroke-width="2" d="M891.32,-1224.1C926.36,-1226.66 978.12,-1224.05 1006.14,-1192.09 1063.57,-1126.61 996.42,-483.22 1042.14,-409.09 1052.98,-391.52 1071.61,-379.07 1089.73,-370.52"/>
+<polygon fill="white" stroke="white" stroke-width="2" points="1090.9,-373.83 1098.7,-366.65 1088.13,-367.4 1090.9,-373.83"/>
+</g>
+<!-- totalBorrow.sub -->
+<g id="node64" class="node" pointer-events="visible" data-name="totalBorrow.sub">
+
+<ellipse fill="#edad56" stroke="#edad56" stroke-width="3" cx="1141.15" cy="-2027.09" rx="27" ry="18"/>
+<text text-anchor="middle" x="1141.15" y="-2022.89" font-family="Times,serif" font-size="14.00">sub</text>
+</g>
+<!-- BigBang._repay&#45;&gt;totalBorrow.sub -->
+<g id="edge100" class="edge" data-name="BigBang._repay-&gt;totalBorrow.sub">
+
+<path fill="none" stroke="white" stroke-width="2" d="M891.3,-1214.1C926.34,-1211.54 978.09,-1214.16 1006.14,-1246.09 1061.5,-1309.1 989.74,-1934.6 1042.14,-2000.09 1055.89,-2017.27 1079.5,-2024.12 1100.1,-2026.63"/>
+<polygon fill="white" stroke="white" stroke-width="2" points="1099.79,-2030.12 1110.05,-2027.46 1100.38,-2023.14 1099.79,-2030.12"/>
+</g>
+<!-- BigBang._borrow&#45;&gt;BigBang.address -->
+
+<!-- BigBang._borrow&#45;&gt;BigBang.address -->
+<g id="edge109" class="edge" data-name="BigBang._borrow-&gt;BigBang.address">
+
+<path fill="none" stroke="#1bc6a6" stroke-width="2" d="M892.12,-952.79C925.78,-949.85 974.8,-953.99 1006.14,-981.09 1044.42,-1014.18 1023.83,-1041.93 1042.14,-1089.09 1070.04,-1160.93 1108.57,-1243.36 1127.96,-1287.25" style=""/>
+<polygon fill="#1bc6a6" stroke="#1bc6a6" stroke-width="2" points="1124.7,-1288.53 1131.91,-1296.3 1131.12,-1285.74 1124.7,-1288.53"/>
+</g>
+<!-- BigBang._borrow&#45;&gt;BigBang.address -->
+<g id="edge111" class="edge" data-name="BigBang._borrow-&gt;BigBang.address">
+
+<path fill="none" stroke="#1bc6a6" stroke-width="2" d="M898.12,-966.98C931.39,-968.4 976.61,-973.56 1006.14,-999.09 1044.42,-1032.18 1023.83,-1059.93 1042.14,-1107.09 1067.66,-1172.79 1102.06,-1247.35 1122.59,-1288.05" style=""/>
+<polygon fill="#1bc6a6" stroke="#1bc6a6" stroke-width="2" points="1119.43,-1289.56 1127.11,-1296.86 1125.66,-1286.36 1119.43,-1289.56"/>
+</g>
+<!-- BigBang._borrow&#45;&gt;BigBang.address -->
+<g id="edge113" class="edge" data-name="BigBang._borrow-&gt;BigBang.address">
+
+<path fill="none" stroke="#1bc6a6" stroke-width="2" d="M880.54,-978.76C913.54,-985.18 970.97,-986.68 1006.14,-1017.09 1044.42,-1050.18 1023.83,-1077.93 1042.14,-1125.09 1065.21,-1184.48 1095.54,-1251.11 1116.31,-1289.63" style=""/>
+<polygon fill="#1bc6a6" stroke="#1bc6a6" stroke-width="2" points="1113.18,-1291.19 1121.1,-1298.23 1119.29,-1287.79 1113.18,-1291.19"/>
+</g>
+<!-- BigBang._borrow&#45;&gt;BigBang.IUSDOBase -->
+<g id="edge107" class="edge" data-name="BigBang._borrow-&gt;BigBang.IUSDOBase">
+
+<path fill="none" stroke="#1bc6a6" stroke-width="2" d="M898.03,-967.16C943.59,-971.48 1016.24,-978.36 1070.09,-983.46"/>
+<polygon fill="#1bc6a6" stroke="#1bc6a6" stroke-width="2" points="1069.7,-986.93 1079.99,-984.39 1070.36,-979.97 1069.7,-986.93"/>
+</g>
+<!-- BigBang._borrow&#45;&gt;asset.approve -->
+<g id="edge110" class="edge" data-name="BigBang._borrow-&gt;asset.approve">
+
+<path fill="none" stroke="white" stroke-width="2" d="M897.44,-968.22C931.94,-969.8 979.18,-965.61 1006.14,-936.09 1068.72,-867.58 982.78,-591.41 1042.14,-520.09 1052.74,-507.35 1068.75,-500.33 1084.78,-496.54"/>
+<polygon fill="white" stroke="white" stroke-width="2" points="1085.37,-499.99 1094.56,-494.7 1084.08,-493.11 1085.37,-499.99"/>
+</g>
+<!-- BigBang._borrow&#45;&gt;yieldBox.toShare -->
+<g id="edge114" class="edge" data-name="BigBang._borrow-&gt;yieldBox.toShare">
+
+<path fill="none" stroke="white" stroke-width="2" d="M897.07,-968.47C931.83,-970.33 979.64,-966.37 1006.14,-936.09 1066.56,-867.04 984.96,-182.85 1042.14,-111.09 1052.92,-97.56 1069.82,-90.43 1086.56,-86.79"/>
+<polygon fill="white" stroke="white" stroke-width="2" points="1086.98,-90.27 1096.25,-85.14 1085.8,-83.37 1086.98,-90.27"/>
+</g>
+<!-- BigBang._borrow&#45;&gt;yieldBox.depositAsset -->
+<g id="edge112" class="edge" data-name="BigBang._borrow-&gt;yieldBox.depositAsset">
+
+<path fill="none" stroke="white" stroke-width="2" d="M896.99,-968.4C931.7,-970.21 979.48,-966.23 1006.14,-936.09 1103.89,-825.56 949.58,-388 1042.14,-273.09 1049.07,-264.5 1058.45,-258.49 1068.69,-254.32"/>
+<polygon fill="white" stroke="white" stroke-width="2" points="1069.75,-257.66 1078.13,-251.18 1067.53,-251.01 1069.75,-257.66"/>
+</g>
+<!-- totalBorrow.add -->
+<g id="node65" class="node" pointer-events="visible" data-name="totalBorrow.add">
+
+<ellipse fill="#edad56" stroke="#edad56" stroke-width="3" cx="1141.15" cy="-1973.09" rx="27" ry="18"/>
+<text text-anchor="middle" x="1141.15" y="-1968.89" font-family="Times,serif" font-size="14.00">add</text>
+</g>
+<!-- BigBang._borrow&#45;&gt;totalBorrow.add -->
+<g id="edge106" class="edge" data-name="BigBang._borrow-&gt;totalBorrow.add">
+
+<path fill="none" stroke="white" stroke-width="2" d="M897.08,-957.7C931.85,-955.84 979.66,-959.79 1006.14,-990.09 1068.13,-1061.02 1011.31,-1748.08 1042.14,-1837.09 1057.36,-1881.03 1091.77,-1923.1 1115.48,-1948.52"/>
+<polygon fill="white" stroke="white" stroke-width="2" points="1112.75,-1950.73 1122.19,-1955.54 1117.81,-1945.89 1112.75,-1950.73"/>
+</g>
+<!-- BigBang.computeClosingFactor -->
+<g id="node42" class="node" pointer-events="visible" data-name="BigBang.computeClosingFactor">
+
+<ellipse fill="#edad56" stroke="#edad56" stroke-width="3" cx="1141.15" cy="-1071.09" rx="99.02" ry="18"/>
+<text text-anchor="middle" x="1141.15" y="-1066.89" font-family="Times,serif" font-size="14.00">computeClosingFactor</text>
+</g>
+<!-- BigBang._updateBorrowAndCollateralShare&#45;&gt;BigBang.computeClosingFactor -->
+<g id="edge118" class="edge" data-name="BigBang._updateBorrowAndCollateralShare-&gt;BigBang.computeClosingFactor">
+
+<path fill="none" stroke="#1bc6a6" stroke-width="2" d="M1003.02,-1071.09C1011.39,-1071.09 1019.73,-1071.09 1027.93,-1071.09"/>
+<polygon fill="#1bc6a6" stroke="#1bc6a6" stroke-width="2" points="1027.65,-1074.59 1037.65,-1071.09 1027.65,-1067.59 1027.65,-1074.59"/>
+</g>
+<!-- BigBang._updateBorrowAndCollateralShare&#45;&gt;asset.safeDecimals -->
+<g id="edge116" class="edge" data-name="BigBang._updateBorrowAndCollateralShare-&gt;asset.safeDecimals">
+
+<path fill="none" stroke="white" stroke-width="2" d="M983.38,-1061.46C991.85,-1056.98 999.6,-1051.29 1006.14,-1044.09 1072.42,-971.16 988.93,-685.04 1042.14,-602.09 1052.1,-586.56 1068.08,-575 1084.26,-566.6"/>
+<polygon fill="white" stroke="white" stroke-width="2" points="1085.73,-569.77 1093.27,-562.32 1082.73,-563.45 1085.73,-569.77"/>
+</g>
+<!-- BigBang._updateBorrowAndCollateralShare&#45;&gt;yieldBox.toShare -->
+<g id="edge120" class="edge" data-name="BigBang._updateBorrowAndCollateralShare-&gt;yieldBox.toShare">
+
+<path fill="none" stroke="white" stroke-width="2" d="M984.06,-1061.57C992.33,-1057.06 999.84,-1051.33 1006.14,-1044.09 1074.26,-965.84 977.7,-192.39 1042.14,-111.09 1052.89,-97.53 1069.77,-90.4 1086.52,-86.76"/>
+<polygon fill="white" stroke="white" stroke-width="2" points="1086.94,-90.24 1096.21,-85.11 1085.77,-83.34 1086.94,-90.24"/>
+</g>
+<!-- yieldBox.toAmount -->
+<g id="node59" class="node" pointer-events="visible" data-name="yieldBox.toAmount">
+
+<ellipse fill="#edad56" stroke="#edad56" stroke-width="3" cx="1141.15" cy="-300.09" rx="50.4" ry="18"/>
+<text text-anchor="middle" x="1141.15" y="-295.89" font-family="Times,serif" font-size="14.00">toAmount</text>
+</g>
+<!-- BigBang._updateBorrowAndCollateralShare&#45;&gt;yieldBox.toAmount -->
+<g id="edge115" class="edge" data-name="BigBang._updateBorrowAndCollateralShare-&gt;yieldBox.toAmount">
+
+<path fill="none" stroke="white" stroke-width="2" d="M983.62,-1061.68C992.05,-1057.16 999.71,-1051.39 1006.14,-1044.09 1058.86,-984.23 992.23,-389.31 1042.14,-327.09 1050.94,-316.13 1063.74,-309.37 1077.21,-305.27"/>
+<polygon fill="white" stroke="white" stroke-width="2" points="1077.86,-308.71 1086.73,-302.92 1076.19,-301.92 1077.86,-308.71"/>
+</g>
+<!-- BigBang._updateBorrowAndCollateralShare&#45;&gt;totalBorrow.toElastic -->
+<g id="edge119" class="edge" data-name="BigBang._updateBorrowAndCollateralShare-&gt;totalBorrow.toElastic">
+
+<path fill="none" stroke="white" stroke-width="2" d="M933.07,-1087.5C960.76,-1097.41 989.22,-1113.16 1006.14,-1138.09 1063.35,-1222.36 978.84,-1974.29 1042.14,-2054.09 1052.1,-2066.64 1067.31,-2073.68 1082.8,-2077.55"/>
+<polygon fill="white" stroke="white" stroke-width="2" points="1081.73,-2080.9 1092.22,-2079.42 1083.09,-2074.04 1081.73,-2080.9"/>
+</g>
+<!-- collateral.safeDecimals -->
+<g id="node66" class="node" pointer-events="visible" data-name="collateral.safeDecimals">
+
+<ellipse fill="#edad56" stroke="#edad56" stroke-width="3" cx="1141.15" cy="-1782.09" rx="63.1" ry="18"/>
+<text text-anchor="middle" x="1141.15" y="-1777.89" font-family="Times,serif" font-size="14.00">safeDecimals</text>
+</g>
+<!-- BigBang._updateBorrowAndCollateralShare&#45;&gt;collateral.safeDecimals -->
+<g id="edge121" class="edge" data-name="key-&gt;key2" data-comment="BigBang._updateBorrowAndCollateralShare-&gt;collateral.safeDecimals">
+
+<path fill="none" stroke="rgb(27, 198, 166)" stroke-width="2" d="M156.93,-1988.09C230.67,-1988.09 252.24,-1988.09 320.08,-1988.09"/>
+<polygon fill="#1bc6a6" stroke="#1bc6a6" stroke-width="2" points="319.8,-1991.59 329.8,-1988.09 319.8,-1984.59 319.8,-1991.59"/>
+</g>
+<g id="edge117" class="edge" data-name="BigBang._updateBorrowAndCollateralShare-&gt;collateral.safeDecimals">
+
+<path fill="none" stroke="white" stroke-width="2" d="M932.43,-1087.53C960.2,-1097.45 988.9,-1113.21 1006.14,-1138.09 1083.99,-1250.43 957.68,-1644.63 1042.14,-1752.09 1048.9,-1760.69 1058.06,-1766.89 1068.08,-1771.34"/>
+<polygon fill="white" stroke="white" stroke-width="2" points="1066.72,-1774.57 1077.31,-1774.76 1069.15,-1768 1066.72,-1774.57"/>
+</g>
+<!-- key -->
+<g id="node67" class="node" pointer-events="visible" data-name="key">
+
+<polygon fill="#edad56" stroke="none" stroke-width="3" points="163.93,-2002.09 33.93,-2002.09 33.93,-1914.09 163.93,-1914.09 163.93,-2002.09"/>
+<text text-anchor="start" x="83.56" y="-1983.49" font-family="Times,serif" font-size="14.00">Internal Call</text>
+<text text-anchor="start" x="79.67" y="-1963.49" font-family="Times,serif" font-size="14.00">External Call</text>
+<text text-anchor="start" x="57.13" y="-1943.49" font-family="Times,serif" font-size="14.00">Defined Contract</text>
+<text text-anchor="start" x="43.53" y="-1923.49" font-family="Times,serif" font-size="14.00">Undefined Contract</text>
+</g>
+<!-- key2 -->
+<g id="node68" class="node" pointer-events="visible" data-name="key2">
+
+<polygon fill="#edad56" stroke="none" stroke-width="3" points="372.82,-2002.09 318.82,-2002.09 318.82,-1914.09 372.82,-1914.09 372.82,-2002.09"/>
+<text text-anchor="start" x="335.82" y="-1983.49" font-family="Times,serif" font-size="14.00">   </text>
+<text text-anchor="start" x="335.82" y="-1963.49" font-family="Times,serif" font-size="14.00">   </text>
+<polygon fill="#445773" stroke="none" points="333.82,-1938.09 333.82,-1958.09 358.82,-1958.09 358.82,-1938.09 333.82,-1938.09"/>
+<text text-anchor="start" x="335.82" y="-1943.49" font-family="Times,serif" font-size="14.00">   </text>
+<polygon fill="none" stroke="#e8726d" points="335.82,-1920.09 335.82,-1936.09 356.82,-1936.09 356.82,-1920.09 335.82,-1920.09"/>
+</g>
+<!-- key&#45;&gt;key2 -->
+<!-- key&#45;&gt;key2 -->
+<g id="edge122" class="edge" data-name="key-&gt;key2">
+
+<path fill="none" stroke="white" stroke-width="2" d="M156.93,-1968.09C230.67,-1968.09 252.24,-1968.09 320.08,-1968.09" style=""/>
+<polygon fill="white" stroke="white" stroke-width="2" points="319.8,-1971.59 329.8,-1968.09 319.8,-1964.59 319.8,-1971.59"/>
+</g>
+</g>
+</svg>

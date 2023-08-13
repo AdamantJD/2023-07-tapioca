@@ -1,0 +1,185 @@
+  test
+    - should test project setup
+
+  AaveStrategy fork test
+    √ should test initial strategy values (14236ms)
+    √ should allow setting the deposit threshold
+    √ should queue and deposit when threshold is met (5249ms)
+    √ should allow deposits and withdrawals (984ms)
+    √ should withdraw from queue (172ms)
+    √ should compound rewards (376ms)
+    √ should emergency withdraw (291ms)
+
+  BalancerStrategy fork test
+    √ should test initial strategy values (156ms)
+    √ should allow setting the deposit threshold
+    √ should queue and deposit when threshold is met (2815ms)
+    √ should allow deposits and withdrawals (595ms)
+    √ should withdraw from queue (218ms)
+    √ should emergency withdraw (477ms)
+
+  CompoundStrategy fork test
+    - should test initial strategy values
+    - should allow setting the deposit threshold
+    - should queue and deposit when threshold is met
+    - should allow deposits and withdrawals
+    - should withdraw from queue
+    - should emergency withdraw
+
+  ConvexStrategy fork test
+    √ should test initial strategy values (397ms)
+    √ should allow setting the deposit threshold
+    √ should allow setting swapper
+    √ should queue and deposit when threshold is met (19368ms)
+    √ should allow setting lp getter (557ms)
+    - should allow deposits and withdrawals
+    √ should withdraw from queue (162ms)
+    - should compound rewards
+    √ should emergency withdraw (1264ms)
+
+  GlpStrategy fork test
+    - Should set up the strategy
+
+  LidoStrategy fork test
+    √ should test initial strategy values (859ms)
+    √ should allow setting the deposit threshold
+    √ should queue and deposit when threshold is met (296ms)
+    √ should allow deposits and withdrawals (2004ms)
+    √ should withdraw from queue (131ms)
+    √ should emergency withdraw (201ms)
+
+  StargateStrategy fork test
+    √ should test initial strategy values (184ms)
+    √ should allow setting the deposit threshold
+    √ should queue and deposit when threshold is met (4299ms)
+    √ should allow deposits and withdrawals (2241ms)
+    √ should withdraw from queue (171ms)
+    √ should emergency withdraw (298ms)
+
+  Strategies time dependent fork tests
+    √ should increase amount in time for AAVE strategy - single user (352ms)
+    √ should increase amount in time for AAVE strategy - multiple users (818ms)
+    √ should increase amount in time for YEARN strategy - single user (2725ms)
+    √ should increase amount in time for Yearn strategy - multiple users (820ms)
+    √ should increase amount in time for COMPOUND strategy - single user (3360ms)
+    1) should increase amount in time for COMPOUND strategy - multiple users
+    √ should increase amount in time for LIDO strategy - single user (656ms)
+    √ should increase amount in time for LIDO strategy - multiple users (1035ms)
+    - should increase amount in time for TRICRYPTO strategy - single user
+    - should increase amount in time for TRICRYPTO strategy - multiple users
+    - should increase amount in time for CONVEX-TRICRYPTO strategy - single user
+    √ should increase amount in time for BALANCER strategy - single user (495ms)
+    √ should increase amount in time for BALANCER strategy - multiple users (848ms)
+    - should increase amount in time for STARGATE strategy - single user
+    √ should increase amount in time for STARGATE strategy - multiple users (570ms)
+
+  TricryptoLPStrategy fork test
+    √ should test initial strategy values (396ms)
+    √ should allow setting the deposit threshold
+    √ should allow setting lp getter (198ms)
+    √ should queue and deposit when threshold is met (1814ms)
+    √ should emergency withdraw (3967ms)
+
+  TricryptoNativeStrategy fork test
+    √ should test initial strategy values (278ms)
+    √ should allow setting the deposit threshold
+    √ should allow setting lp getter (198ms)
+    √ should queue and deposit when threshold is met (1097ms)
+    √ should emergency withdraw (1118ms)
+
+  YearnStrategy fork test
+    √ should test initial strategy values (40ms)
+    √ should allow setting the deposit threshold
+    √ should queue and deposit when threshold is met (165ms)
+    √ should allow deposits and withdrawals (161ms)
+    √ should withdraw from queue (166ms)
+    √ should emergency withdraw (174ms)
+
+  AaveStrategy test
+    √ should test initial strategy values (9553ms)
+    √ should allow setting the deposit threshold
+    √ should queue and deposit when threshold is met (109ms)
+    √ should allow deposits and withdrawals (732ms)
+    √ should withdraw from queue (96ms)
+    √ should compound rewards (714ms)
+
+  BalancerStrategy test
+    √ should test initial strategy values
+    √ should allow setting the deposit threshold
+    √ should queue and deposit when threshold is met (167ms)
+    √ should withdraw from queue (139ms)
+
+  CompoundStrategy test
+    √ should test initial strategy values
+    √ should allow setting the deposit threshold
+    √ should queue and deposit when threshold is met (92ms)
+    √ should allow deposits and withdrawals (82ms)
+    √ should withdraw from queue (92ms)
+
+  ConvexStrategy test
+    √ should test initial strategy values (42ms)
+    √ should allow setting the deposit threshold
+    √ should allow setting swapper
+    √ should queue and deposit when threshold is met (172ms)
+    √ should allow setting lp getter (484ms)
+    √ should allow deposits and withdrawals (1936ms)
+    √ should withdraw from queue (155ms)
+    √ should compound rewards (1264ms)
+
+  LidoStrategy test
+    √ should test initial strategy values
+    √ should allow setting the deposit threshold
+    √ should queue and deposit when threshold is met (136ms)
+    √ should allow deposits and withdrawals (157ms)
+    √ should withdraw from queue (140ms)
+
+  StargateStrategy test
+    √ should test initial strategy values
+    √ should allow setting the deposit threshold
+    √ should queue and deposit when threshold is met (198ms)
+    √ should allow deposits and withdrawals (204ms)
+    √ should withdraw from queue (232ms)
+
+  TricryptoLPStrategy test
+    √ should test initial strategy values
+    √ should allow setting the deposit threshold
+    √ should allow setting lp getter (74ms)
+    √ should queue and deposit when threshold is met (267ms)
+    √ should emergency withdraw (217ms)
+
+  TricryptoNativeStrategy test
+    √ should test initial strategy values
+    √ should allow setting the deposit threshold
+    √ should allow setting lp getter (89ms)
+    √ should queue and deposit when threshold is met (172ms)
+    √ should allow deposits and withdrawals (850ms)
+    √ should withdraw from queue (133ms)
+
+  YearnStrategy test
+    √ should test initial strategy values
+    √ should allow setting the deposit threshold
+    √ should queue and deposit when threshold is met (88ms)
+    √ should allow deposits and withdrawals (91ms)
+    √ should withdraw from queue (95ms)
+
+
+  107 passing (2m)
+  14 pending
+  1 failing
+
+  1) Strategies time dependent fork tests
+       should increase amount in time for COMPOUND strategy - multiple users:
+     Error: VM Exception while processing transaction: reverted with reason string 'CompoundStrategy: not enough'
+    at CompoundStrategy.withdraw (tapioca-sdk/dist/contracts/YieldBox/contracts/strategies/BaseStrategy.sol:43)
+    at YieldBox._withdrawFungible (tapioca-sdk/dist/contracts/YieldBox/contracts/YieldBox.sol:295)
+    at YieldBox.name (tapioca-sdk/dist/contracts/YieldBox/contracts/YieldBox.sol:419)
+    at YieldBox.withdraw (tapioca-sdk/dist/contracts/YieldBox/contracts/YieldBox.sol:243)
+    at YieldBox.allowed (tapioca-sdk/dist/contracts/YieldBox/contracts/NativeTokenFactory.sol:40)
+    at YieldBox.<unknown> (tapioca-sdk/dist/contracts/YieldBox/contracts/YieldBox.sol:50)
+    at processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at runNextTicks (node:internal/process/task_queues:64:3)
+    at listOnTimeout (node:internal/timers:538:9)
+    at processTimers (node:internal/timers:512:7)
+    at async HardhatNode._mineBlockWithPendingTxs (node_modules\hardhat\src\internal\hardhat-network\provider\node.ts:1840:23)
+    at async HardhatNode.mineBlock (node_modules\hardhat\src\internal\hardhat-network\provider\node.ts:517:16)
+    at async EthModule._sendTransactionAndReturnHash (node_modules\hardhat\src\internal\hardhat-network\provider\modules\eth.ts:1532:18)

@@ -1,0 +1,169 @@
+  AssetRegister
+    √ Deploy ERC1155TokenReceiver
+    √ can register an asset
+    √ cannot register a Native asset
+    √ cannot add an ERC20 token with a tokenId
+    √ cannot register an asset with a mismatching strategy
+    √ cannot use an EOA as contractAddress
+
+  ERC1155
+    √ Deploy ERC1155
+    Minting
+      √ cannot mint to the zero address
+    Burning
+      √ cannot burn from the zero address
+    URI
+      √ can be called
+    ERC-165 supportsInterface
+      √ should gave correct basic ERC-165 responses
+      √ should support the interface for EIP-1155
+    event TransferSingle
+      √ TransferSingle emitted on _transferSingle
+      √ TransferSingle emitted on _mint
+      √ TransferSingle emitted on _burn
+    event TransferBatch
+      √ TransferBatch emitted on _transferBatch
+    event ApprovalForAll
+      √ ApprovalForAll emitted on setApprovalForAll (set to true)
+      √ ApprovalForAll emitted on setApprovalForAll (set to false)
+    function safeTransferFrom
+      √ Can transfer
+      √ Can transfer if approved
+      √ Cannot transfer if not onwed or approved
+      √ Cannot transfer to the zero address
+      √ Cannot transfer more than balance
+      √ Can transfer to contract and calls onERC1155Received with correct info
+    function safeBatchTransferFrom
+      √ Can transfer
+      √ Can transfer if approved
+      √ Cannot transfer if not approved
+      √ Cannot transfer if to is zero
+      √ Cannot transfer if length of ids and values don't match
+      √ Cannot transfer more than the balance
+      √ Can transfer to contract and calls onERC1155BatchReceived with correct info
+    function balanceOf
+      √ shows the correct balance
+    function balanceOfBatch
+      √ shows the correct balances
+      √ shows the correct balances for single or zero items
+      √ only works if length of users and ids match
+    function setApprovalForAll and isApprovedForAll
+      √ sets the approval correctly
+      √ emits the ApprovalForAll event
+    Safe Transfer Rules Scenario #4
+      √ Cannot transfer to a receiver that returns the wrong magic code
+      √ Cannot transfer to a batch receiver that returns the wrong magic code
+    Safe Transfer Rules Scenario #5
+      √ Cannot transfer to a receiver that reverts
+      √ Cannot transfer to a batch receiver that reverts
+    Safe Transfer Rules Scenario #6 and #7
+      √ transfers balances before calling onERC1155Received
+      √ transfers balances before calling onERC1155BatchReceived
+
+  ERC1155TokenReceiver
+    √ Deploy ERC1155TokenReceiver
+    √ responds correctly to onERC1155Received
+    √ responds correctly to onERC1155BatchReceived
+
+  NativeTokenFactory
+    √ Deploy NativeTokenFactory
+    √ can create a token
+    Mint
+      √ Prevents non-owners from minting
+      √ Can mint
+    Burn
+      √ Prevents burning without tokens
+      √ Can burn
+    Renounce Ownership
+      √ Prevents non-owners from renouncement
+      √ Assigns owner to address zero
+    Transfer Ownership
+      √ Prevents non-owners from transferring
+      √ Changes pending owner after transfer
+    Transfer Ownership Direct
+      √ Reverts given a zero address as newOwner argument
+      √ Mutates owner
+      √ Emit OwnershipTransferred event with expected arguments
+    Claim Ownership
+      √ Mutates owner
+      √ Assigns previous owner to address zero
+      √ Prevents anybody but pending owner from claiming ownership
+      √ Emit OwnershipTransferred event with expected arguments
+
+  Sample: Hello World
+    - Deploy HelloWorld
+    - deposit
+    - withdraw
+    - multiple deposits and withdraw
+
+  YieldBox
+    √ Deploy YieldBox
+    toShare and toAmount
+      √ works
+    deposit
+      √ handles deposit of ERC20 token
+      √ handles deposit of ERC1155 token (External)
+      √ reverts on trying to deposit of Native asset
+      √ reverts on trying to deposit assets that aren't yours
+    deposit with strategy
+      √ handles deposit of ERC20 token
+      √ handles deposit of ERC721 token
+      √ handles deposit of ERC1155 token (Native)
+    depositETH
+      √ handles deposit of ETH
+      √ reverts on deposit of not ETH
+    depositETH with strategy
+      √ handles deposit of ETH
+    transfer
+      √ can transfer
+    safeTransfer
+      √ can safeTransfer
+    batchTransfer
+      √ can transfer
+    safeBatchTransfer
+      √ can transfer
+    transferMultiple
+      √ can transfer
+      √ can's transfer to zero
+    withdraw
+      √ can withdraw ERC20
+      √ can withdraw ERC721
+      √ can withdraw ERC1155
+      √ can withdraw ETH
+      √ can withdraw ERC20 with strategy
+      √ can withdraw ERC20 with strategy
+      √ can withdraw ERC1155 with strategy
+      √ can withdraw ETH with strategy
+      √ cannot withdraw Native
+    full cycle
+      √ runs full cycle as msg.sender
+      √ runs full cycle as approvedForAll
+      √ runs full cycle as setApprovalForAsset
+      √ runs full cycle as masterContract
+    uri
+      √ returns the uri from the uriBuilder
+    setApprovalForAll
+      √ reverts when operator is 0
+    setApprovalForAsset
+      √ reverts when asset does not exist
+    YieldBoxPermit
+      √ Allow batched permit and transfer for a single asset
+      √ Allow batched permit and transfer for all assets
+
+  YieldBoxRebase
+    √ Deploy YieldBoxRebaseMock
+    √ performs basic deposit and withdraw
+    √ handles gain
+    √ handles rounding
+    √ withstand cheap minipulation attacks
+
+  YieldBoxURIBuilder
+    √ Deploy YieldBoxURIBuilder
+    √ Creates URI for Native tokens
+    √ Creates URI for Native token with fixed supply
+    √ Creates URI for ERC20 token
+    √ Creates URI for ERC1155 token
+
+
+  109 passing (21s)
+  4 pending

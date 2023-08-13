@@ -1,0 +1,61 @@
+  Balancer
+    connectedOFTs
+      √ should fail for unauthorized user (2214ms)
+      √ should be able to add connected chains
+    rebalance
+      √ should fail for unauthorized user
+      √ should route funds to another OFT (153ms)
+      √ should test checker
+      √ should perform the call for authorized user (218ms)
+      √ should be able to register but then it should revert if not an authorized oft (171ms)
+
+  mTapiocaOFT
+    √ Should be able to use permit (85ms)
+    extractUnderlying()
+      √ should fail for unknown balance (112ms)
+    wrap()
+      √ Should fail if not approved (88ms)
+      √ Should fail if not on the same chain
+      √ Should wrap and give a 1:1 ratio amount of tokens (43ms)
+      √ Should be able to extract tokens (95ms)
+    unwrap()
+      √ Should fail if not on the same chain
+      √ Should unwrap and give a 1:1 ratio amount of tokens (63ms)
+
+  TapiocaOFT
+    √ simulate deploy (99ms)
+    √ decimals()
+    wrap()
+      √ Should fail if not on the same chain
+      √ Should wrap and give a 1:1 ratio amount of tokens (62ms)
+    unwrap()
+      √ Should fail if not on the same chain
+      √ Should unwrap and give a 1:1 ratio amount of tokens (45ms)
+    sendFrom()
+      √ Should fail if untrusted remote (82ms)
+    sendOrRetrieveStrategy
+      √ should be able to deposit & withdraw from a strategy available on another layer (1566ms)
+
+  TapiocaWrapper
+    constructor()
+      √ Should be owned by the deployer
+    createTOFT()
+      √ Should be only owner (48ms)
+      √ Should fail if the ERC20 address is not the same as the registered TapiocaWrapper one (70ms)
+      √ Should create an OFT, add it to `tapiocaOFTs`, `harvestableTapiocaOFTs` array and `tapiocaOFTsByErc20` map (134ms)
+      √ Should create an mOFT, add it to `tapiocaOFTs`, `harvestableTapiocaOFTs` array and `tapiocaOFTsByErc20` map (116ms)
+      √ Should create both an OFT and a mOFT, add it to `tapiocaOFTs`, `harvestableTapiocaOFTs` array and `tapiocaOFTsByErc20` map (215ms)
+    tapiocaOFTLength()
+      √ Should return the length of the `tapiocaOFTs` array (218ms)
+    harvestableTapiocaOFTsLength()
+      √ Should return the correct length of the `harvestableTapiocaOFTs` array (406ms)
+    lastTOFT()
+      √ Should fail if no TOFT has been created yet
+      √ Should return the length of the last TOFT deployed (396ms)
+    executeTOFT()
+      √ Should be only owner
+      √ Should revert on failure
+      √ Should execute the change in trusted remote for a TOFT successfully
+
+
+  36 passing (7s)

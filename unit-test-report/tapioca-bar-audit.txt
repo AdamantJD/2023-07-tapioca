@@ -1,0 +1,1677 @@
+
+C:\Users\root\Desktop\Work\2023-07-tapioca\tapioca-bar-audit>npx hardhat test
+ /!\ SDK: Currently in Hardhat local network /!\
+ Tx related to the SDK might get stuck if the local network does not automine
+
+
+  Bidders test
+    1) should test name
+    getInputAmount()
+      2) should not get input or output amount
+      3) should get inputAmout for CurveStableToUsdoBidder
+    setters
+      4) should set swappers
+    swap()
+      5) should not swap
+
+  BigBang test
+    6) should test initial values
+    addCollateral()
+      7) should add collateral
+    borrow() & repay()
+      8) should borrow and repay
+    liquidate()
+      9) should test liquidator rewards & closing factor
+      10) should liquidate
+    fees
+      11) should update borrowing fee and withdraw fees with partial repayment
+      12) should update borrowing fee and withdraw fees
+      13) should have multiple borrowers and check fees accrued over time
+      14) should have multiple borrowers, do partial repayments and check fees accrued over time
+      15) should perform multiple borrow operations, repay everything and withdraw fees
+      16) should not allow depositing fees with invalid swapper
+    setters and debt
+      17) should not be able to borrow when cap is reached
+      18) actions should not work when paused
+      19) should test the variable debt
+      20) should test debt rate accrual over year
+    batch
+      21) should batch calls
+    leverage
+      22) Should lever up by buying collateral
+      23) Should lever down by selling collateral
+
+  e2e tests
+    24) should use minterSingularity and market to add, borrow and get liquidated
+    25) should try to use minterSingularity and market to add, borrow and get liquidated, but in a wrong order
+    - should borrow and repay in multipe small operations
+
+  Singularity Leverage
+    lever down
+      26) Should lever down by selling collateral
+      27) Should send the excess if "levering down past 0"
+    lever up
+      28) Should lever up by buying collateral
+    down payment
+      29) Should enter into a new position with a down payment
+
+  LiquidationQueue test
+    reverts
+      30) should throw if premium too high or amount too low
+      31) should now allow bid on uninitialized contract
+      32) should not allow initializing LQ twice
+      33) should not allow setting bid swapper from not authorized account
+      34) sould not be able to redeem without a balance
+      35) should not allow bid execution from EOA
+    bids
+      36) Should make a bid
+      37) Should make a bid, wait 10min and activate it
+      38) Should remove an inactivated bid
+      39) Should execute bids
+      40) should bid twice
+      41) should bid with USDC through external swapper
+      42) should bid with USDO through external swapper
+      43) should bid with stable, remove inactive bid, bid again, activate bid
+      44) should execute bids for stable bidders
+      45) should execute bids for stable bidders using the entire bid amount
+      46) should try to active when no bids are placed
+      47) bid, activate, try to remove inactive bid
+      48) place a few bids, active all of them
+      49) should bid, activates id and try to remove inactive bid
+    views
+      50) should get the market
+      51) should return order book entries
+      52) should check different flows using the 18 decimals test tokens
+    flow
+      53) borrow, place bid; collateral drops, call without any bid being active => should rely on close liquidation
+      54) borrow, place small bid, activate, collateral drops, liquidate => should rely on close liquidation
+      55) borrow, place bid, activate, collateral drops, liquidate => should rely on LQ liquidation
+
+  Penrose test
+    views
+      56) Should display Tapioca markets
+      57) should return length of master contracts
+      58) should list all singularity registered markets
+    allowances
+      59) should not allow registering singularity without a proper master contract
+      60) should not allow registering the same master contract twice
+      61) should not allow executing without a proper master contract
+      62) should not withdraw for zero address swapper
+      63) should not allow to call withdraw when paused
+      64) should not allow to call execute when paused
+    setters
+      65) should register a master contract
+
+  Singularity test
+    test
+      - should compute the right closing factor
+    setters
+      66) should be able to set mutable properties
+    reverts
+      67) should not be allowed to initialize twice
+      68) removing everything should not be allowed
+      69) actions should not work when the contract is paused
+      70) should not execute when module does not exist
+      71) should not allow initialization with bad arguments
+      72) Should deposit Usdc collateral and borrow Weth in a single tx without lenders but revert with the right error code
+      73) Should deposit Usdc collateral and borrow Weth in a single tx without lenders and decode the error codes
+    lending
+      74) Should lend Weth, deposit Usdc collateral and borrow Weth and be liquidated for price drop
+      75) Should lend WBTC, deposit Usdc collateral and borrow WBTC and be liquidated for price drop
+      76) should add addset, remove asset and update exchange rate in a single tx
+      77) Should lend Weth, deposit Usdc collateral and borrow Weth in a single tx
+      78) Should deposit to yieldBox, add asset to singularity, remove asset and withdraw
+    views
+      79) should compute permit share
+      80) should test yieldBoxShares
+      81) should get correct amount from borrow part
+      82) should compute fee withdrawals and execute
+      83) should compute amount to solvency for nothing borrowed
+      84) should return ERC20 properties
+    caps & limits
+      85) should accrue when utilization is over & under target
+      86) should not update exchange rate
+      87) should not be able to borrow when cap is reached
+    fees & liquidations
+      88) should test liquidator rewards & closing factor
+      89) Should accumulate fees for lender
+      90) Should accumulate fees and harvest them as collateral
+      91) deposit fees to yieldbox should not work for inexistent swapper
+    borrowing
+      92) should allow multiple borrowers
+    Permit
+      93) should test permit lend & borrow
+    usdo SGL
+      - should test interest rate
+      94) should create and test wethUsd0 singularity
+    multiHopBuyCollateral()
+      95) should bounce between 2 chains
+
+  USDO
+    views
+      96) should test initial values
+    mint & burn
+      97) should set minters and burners
+      98) should mint and burn
+    flashMint
+      99) should flashMint successfully
+      100) should not flashMint for a malicious operator
+
+
+  0 passing (49s)
+  3 pending
+  100 failing
+
+  1) Bidders test
+       should test name:
+     ProviderError: Must be authenticated!
+      at HttpProvider.request (C:\Users\root\Desktop\Work\2023-07-tapioca\tapioca-bar-audit\node_modules\hardhat\src\internal\core\providers\http.ts:88:21)
+      at processTicksAndRejections (node:internal/process/task_queues:95:5)
+      at async getNetworkId (C:\Users\root\Desktop\Work\2023-07-tapioca\tapioca-bar-audit\node_modules\hardhat\src\internal\hardhat-network\provider\utils\makeForkClient.ts:116:28)
+      at async makeForkClient (C:\Users\root\Desktop\Work\2023-07-tapioca\tapioca-bar-audit\node_modules\hardhat\src\internal\hardhat-network\provider\utils\makeForkClient.ts:42:21)
+      at async Function.create (C:\Users\root\Desktop\Work\2023-07-tapioca\tapioca-bar-audit\node_modules\hardhat\src\internal\hardhat-network\provider\node.ts:178:11)
+      at async HardhatNetworkProvider._init (C:\Users\root\Desktop\Work\2023-07-tapioca\tapioca-bar-audit\node_modules\hardhat\src\internal\hardhat-network\provider\provider.ts:258:28)
+      at async HardhatNetworkProvider._send (C:\Users\root\Desktop\Work\2023-07-tapioca\tapioca-bar-audit\node_modules\hardhat\src\internal\hardhat-network\provider\provider.ts:197:5)
+      at async HardhatNetworkProvider.request (C:\Users\root\Desktop\Work\2023-07-tapioca\tapioca-bar-audit\node_modules\hardhat\src\internal\hardhat-network\provider\provider.ts:123:18)
+      at async TracerWrapper.request (C:\Users\root\Desktop\Work\2023-07-tapioca\tapioca-bar-audit\node_modules\hardhat-tracer\src\wrapper.ts:30:16)
+      at async EthersProviderWrapper.send (C:\Users\root\Desktop\Work\2023-07-tapioca\tapioca-bar-audit\node_modules\@nomiclabs\hardhat-ethers\src\internal\ethers-provider-wrapper.ts:13:20)
+
+  2) Bidders test
+       getInputAmount()
+         should not get input or output amount:
+     ProviderError: Must be authenticated!
+      at HttpProvider.request (C:\Users\root\Desktop\Work\2023-07-tapioca\tapioca-bar-audit\node_modules\hardhat\src\internal\core\providers\http.ts:88:21)
+      at processTicksAndRejections (node:internal/process/task_queues:95:5)
+      at async getNetworkId (C:\Users\root\Desktop\Work\2023-07-tapioca\tapioca-bar-audit\node_modules\hardhat\src\internal\hardhat-network\provider\utils\makeForkClient.ts:116:28)
+      at async makeForkClient (C:\Users\root\Desktop\Work\2023-07-tapioca\tapioca-bar-audit\node_modules\hardhat\src\internal\hardhat-network\provider\utils\makeForkClient.ts:42:21)
+      at async Function.create (C:\Users\root\Desktop\Work\2023-07-tapioca\tapioca-bar-audit\node_modules\hardhat\src\internal\hardhat-network\provider\node.ts:178:11)
+      at async HardhatNetworkProvider._init (C:\Users\root\Desktop\Work\2023-07-tapioca\tapioca-bar-audit\node_modules\hardhat\src\internal\hardhat-network\provider\provider.ts:258:28)
+      at async HardhatNetworkProvider._send (C:\Users\root\Desktop\Work\2023-07-tapioca\tapioca-bar-audit\node_modules\hardhat\src\internal\hardhat-network\provider\provider.ts:197:5)
+      at async HardhatNetworkProvider.request (C:\Users\root\Desktop\Work\2023-07-tapioca\tapioca-bar-audit\node_modules\hardhat\src\internal\hardhat-network\provider\provider.ts:123:18)
+      at async TracerWrapper.request (C:\Users\root\Desktop\Work\2023-07-tapioca\tapioca-bar-audit\node_modules\hardhat-tracer\src\wrapper.ts:30:16)
+      at async EthersProviderWrapper.send (C:\Users\root\Desktop\Work\2023-07-tapioca\tapioca-bar-audit\node_modules\@nomiclabs\hardhat-ethers\src\internal\ethers-provider-wrapper.ts:13:20)
+
+  3) Bidders test
+       getInputAmount()
+         should get inputAmout for CurveStableToUsdoBidder:
+     ProviderError: Must be authenticated!
+      at HttpProvider.request (C:\Users\root\Desktop\Work\2023-07-tapioca\tapioca-bar-audit\node_modules\hardhat\src\internal\core\providers\http.ts:88:21)
+      at processTicksAndRejections (node:internal/process/task_queues:95:5)
+      at async getNetworkId (C:\Users\root\Desktop\Work\2023-07-tapioca\tapioca-bar-audit\node_modules\hardhat\src\internal\hardhat-network\provider\utils\makeForkClient.ts:116:28)
+      at async makeForkClient (C:\Users\root\Desktop\Work\2023-07-tapioca\tapioca-bar-audit\node_modules\hardhat\src\internal\hardhat-network\provider\utils\makeForkClient.ts:42:21)
+      at async Function.create (C:\Users\root\Desktop\Work\2023-07-tapioca\tapioca-bar-audit\node_modules\hardhat\src\internal\hardhat-network\provider\node.ts:178:11)
+      at async HardhatNetworkProvider._init (C:\Users\root\Desktop\Work\2023-07-tapioca\tapioca-bar-audit\node_modules\hardhat\src\internal\hardhat-network\provider\provider.ts:258:28)
+      at async HardhatNetworkProvider._send (C:\Users\root\Desktop\Work\2023-07-tapioca\tapioca-bar-audit\node_modules\hardhat\src\internal\hardhat-network\provider\provider.ts:197:5)
+      at async HardhatNetworkProvider.request (C:\Users\root\Desktop\Work\2023-07-tapioca\tapioca-bar-audit\node_modules\hardhat\src\internal\hardhat-network\provider\provider.ts:123:18)
+      at async TracerWrapper.request (C:\Users\root\Desktop\Work\2023-07-tapioca\tapioca-bar-audit\node_modules\hardhat-tracer\src\wrapper.ts:30:16)
+      at async EthersProviderWrapper.send (C:\Users\root\Desktop\Work\2023-07-tapioca\tapioca-bar-audit\node_modules\@nomiclabs\hardhat-ethers\src\internal\ethers-provider-wrapper.ts:13:20)
+
+  4) Bidders test
+       setters
+         should set swappers:
+     ProviderError: Must be authenticated!
+      at HttpProvider.request (C:\Users\root\Desktop\Work\2023-07-tapioca\tapioca-bar-audit\node_modules\hardhat\src\internal\core\providers\http.ts:88:21)
+      at processTicksAndRejections (node:internal/process/task_queues:95:5)
+      at async getNetworkId (C:\Users\root\Desktop\Work\2023-07-tapioca\tapioca-bar-audit\node_modules\hardhat\src\internal\hardhat-network\provider\utils\makeForkClient.ts:116:28)
+      at async makeForkClient (C:\Users\root\Desktop\Work\2023-07-tapioca\tapioca-bar-audit\node_modules\hardhat\src\internal\hardhat-network\provider\utils\makeForkClient.ts:42:21)
+      at async Function.create (C:\Users\root\Desktop\Work\2023-07-tapioca\tapioca-bar-audit\node_modules\hardhat\src\internal\hardhat-network\provider\node.ts:178:11)
+      at async HardhatNetworkProvider._init (C:\Users\root\Desktop\Work\2023-07-tapioca\tapioca-bar-audit\node_modules\hardhat\src\internal\hardhat-network\provider\provider.ts:258:28)
+      at async HardhatNetworkProvider._send (C:\Users\root\Desktop\Work\2023-07-tapioca\tapioca-bar-audit\node_modules\hardhat\src\internal\hardhat-network\provider\provider.ts:197:5)
+      at async HardhatNetworkProvider.request (C:\Users\root\Desktop\Work\2023-07-tapioca\tapioca-bar-audit\node_modules\hardhat\src\internal\hardhat-network\provider\provider.ts:123:18)
+      at async TracerWrapper.request (C:\Users\root\Desktop\Work\2023-07-tapioca\tapioca-bar-audit\node_modules\hardhat-tracer\src\wrapper.ts:30:16)
+      at async EthersProviderWrapper.send (C:\Users\root\Desktop\Work\2023-07-tapioca\tapioca-bar-audit\node_modules\@nomiclabs\hardhat-ethers\src\internal\ethers-provider-wrapper.ts:13:20)
+
+  5) Bidders test
+       swap()
+         should not swap:
+     ProviderError: Must be authenticated!
+      at HttpProvider.request (C:\Users\root\Desktop\Work\2023-07-tapioca\tapioca-bar-audit\node_modules\hardhat\src\internal\core\providers\http.ts:88:21)
+      at processTicksAndRejections (node:internal/process/task_queues:95:5)
+      at async getNetworkId (C:\Users\root\Desktop\Work\2023-07-tapioca\tapioca-bar-audit\node_modules\hardhat\src\internal\hardhat-network\provider\utils\makeForkClient.ts:116:28)
+      at async makeForkClient (C:\Users\root\Desktop\Work\2023-07-tapioca\tapioca-bar-audit\node_modules\hardhat\src\internal\hardhat-network\provider\utils\makeForkClient.ts:42:21)
+      at async Function.create (C:\Users\root\Desktop\Work\2023-07-tapioca\tapioca-bar-audit\node_modules\hardhat\src\internal\hardhat-network\provider\node.ts:178:11)
+      at async HardhatNetworkProvider._init (C:\Users\root\Desktop\Work\2023-07-tapioca\tapioca-bar-audit\node_modules\hardhat\src\internal\hardhat-network\provider\provider.ts:258:28)
+      at async HardhatNetworkProvider._send (C:\Users\root\Desktop\Work\2023-07-tapioca\tapioca-bar-audit\node_modules\hardhat\src\internal\hardhat-network\provider\provider.ts:197:5)
+      at async HardhatNetworkProvider.request (C:\Users\root\Desktop\Work\2023-07-tapioca\tapioca-bar-audit\node_modules\hardhat\src\internal\hardhat-network\provider\provider.ts:123:18)
+      at async TracerWrapper.request (C:\Users\root\Desktop\Work\2023-07-tapioca\tapioca-bar-audit\node_modules\hardhat-tracer\src\wrapper.ts:30:16)
+      at async EthersProviderWrapper.send (C:\Users\root\Desktop\Work\2023-07-tapioca\tapioca-bar-audit\node_modules\@nomiclabs\hardhat-ethers\src\internal\ethers-provider-wrapper.ts:13:20)
+
+  6) BigBang test
+       should test initial values:
+     ProviderError: Must be authenticated!
+      at HttpProvider.request (C:\Users\root\Desktop\Work\2023-07-tapioca\tapioca-bar-audit\node_modules\hardhat\src\internal\core\providers\http.ts:88:21)
+      at processTicksAndRejections (node:internal/process/task_queues:95:5)
+      at async getNetworkId (C:\Users\root\Desktop\Work\2023-07-tapioca\tapioca-bar-audit\node_modules\hardhat\src\internal\hardhat-network\provider\utils\makeForkClient.ts:116:28)
+      at async makeForkClient (C:\Users\root\Desktop\Work\2023-07-tapioca\tapioca-bar-audit\node_modules\hardhat\src\internal\hardhat-network\provider\utils\makeForkClient.ts:42:21)
+      at async Function.create (C:\Users\root\Desktop\Work\2023-07-tapioca\tapioca-bar-audit\node_modules\hardhat\src\internal\hardhat-network\provider\node.ts:178:11)
+      at async HardhatNetworkProvider._init (C:\Users\root\Desktop\Work\2023-07-tapioca\tapioca-bar-audit\node_modules\hardhat\src\internal\hardhat-network\provider\provider.ts:258:28)
+      at async HardhatNetworkProvider._send (C:\Users\root\Desktop\Work\2023-07-tapioca\tapioca-bar-audit\node_modules\hardhat\src\internal\hardhat-network\provider\provider.ts:197:5)
+      at async HardhatNetworkProvider.request (C:\Users\root\Desktop\Work\2023-07-tapioca\tapioca-bar-audit\node_modules\hardhat\src\internal\hardhat-network\provider\provider.ts:123:18)
+      at async TracerWrapper.request (C:\Users\root\Desktop\Work\2023-07-tapioca\tapioca-bar-audit\node_modules\hardhat-tracer\src\wrapper.ts:30:16)
+      at async EthersProviderWrapper.send (C:\Users\root\Desktop\Work\2023-07-tapioca\tapioca-bar-audit\node_modules\@nomiclabs\hardhat-ethers\src\internal\ethers-provider-wrapper.ts:13:20)
+
+  7) BigBang test
+       addCollateral()
+         should add collateral:
+     ProviderError: Must be authenticated!
+      at HttpProvider.request (C:\Users\root\Desktop\Work\2023-07-tapioca\tapioca-bar-audit\node_modules\hardhat\src\internal\core\providers\http.ts:88:21)
+      at processTicksAndRejections (node:internal/process/task_queues:95:5)
+      at async getNetworkId (C:\Users\root\Desktop\Work\2023-07-tapioca\tapioca-bar-audit\node_modules\hardhat\src\internal\hardhat-network\provider\utils\makeForkClient.ts:116:28)
+      at async makeForkClient (C:\Users\root\Desktop\Work\2023-07-tapioca\tapioca-bar-audit\node_modules\hardhat\src\internal\hardhat-network\provider\utils\makeForkClient.ts:42:21)
+      at async Function.create (C:\Users\root\Desktop\Work\2023-07-tapioca\tapioca-bar-audit\node_modules\hardhat\src\internal\hardhat-network\provider\node.ts:178:11)
+      at async HardhatNetworkProvider._init (C:\Users\root\Desktop\Work\2023-07-tapioca\tapioca-bar-audit\node_modules\hardhat\src\internal\hardhat-network\provider\provider.ts:258:28)
+      at async HardhatNetworkProvider._send (C:\Users\root\Desktop\Work\2023-07-tapioca\tapioca-bar-audit\node_modules\hardhat\src\internal\hardhat-network\provider\provider.ts:197:5)
+      at async HardhatNetworkProvider.request (C:\Users\root\Desktop\Work\2023-07-tapioca\tapioca-bar-audit\node_modules\hardhat\src\internal\hardhat-network\provider\provider.ts:123:18)
+      at async TracerWrapper.request (C:\Users\root\Desktop\Work\2023-07-tapioca\tapioca-bar-audit\node_modules\hardhat-tracer\src\wrapper.ts:30:16)
+      at async EthersProviderWrapper.send (C:\Users\root\Desktop\Work\2023-07-tapioca\tapioca-bar-audit\node_modules\@nomiclabs\hardhat-ethers\src\internal\ethers-provider-wrapper.ts:13:20)
+
+  8) BigBang test
+       borrow() & repay()
+         should borrow and repay:
+     ProviderError: Must be authenticated!
+      at HttpProvider.request (C:\Users\root\Desktop\Work\2023-07-tapioca\tapioca-bar-audit\node_modules\hardhat\src\internal\core\providers\http.ts:88:21)
+      at processTicksAndRejections (node:internal/process/task_queues:95:5)
+      at async getNetworkId (C:\Users\root\Desktop\Work\2023-07-tapioca\tapioca-bar-audit\node_modules\hardhat\src\internal\hardhat-network\provider\utils\makeForkClient.ts:116:28)
+      at async makeForkClient (C:\Users\root\Desktop\Work\2023-07-tapioca\tapioca-bar-audit\node_modules\hardhat\src\internal\hardhat-network\provider\utils\makeForkClient.ts:42:21)
+      at async Function.create (C:\Users\root\Desktop\Work\2023-07-tapioca\tapioca-bar-audit\node_modules\hardhat\src\internal\hardhat-network\provider\node.ts:178:11)
+      at async HardhatNetworkProvider._init (C:\Users\root\Desktop\Work\2023-07-tapioca\tapioca-bar-audit\node_modules\hardhat\src\internal\hardhat-network\provider\provider.ts:258:28)
+      at async HardhatNetworkProvider._send (C:\Users\root\Desktop\Work\2023-07-tapioca\tapioca-bar-audit\node_modules\hardhat\src\internal\hardhat-network\provider\provider.ts:197:5)
+      at async HardhatNetworkProvider.request (C:\Users\root\Desktop\Work\2023-07-tapioca\tapioca-bar-audit\node_modules\hardhat\src\internal\hardhat-network\provider\provider.ts:123:18)
+      at async TracerWrapper.request (C:\Users\root\Desktop\Work\2023-07-tapioca\tapioca-bar-audit\node_modules\hardhat-tracer\src\wrapper.ts:30:16)
+      at async EthersProviderWrapper.send (C:\Users\root\Desktop\Work\2023-07-tapioca\tapioca-bar-audit\node_modules\@nomiclabs\hardhat-ethers\src\internal\ethers-provider-wrapper.ts:13:20)
+
+  9) BigBang test
+       liquidate()
+         should test liquidator rewards & closing factor:
+     ProviderError: Must be authenticated!
+      at HttpProvider.request (C:\Users\root\Desktop\Work\2023-07-tapioca\tapioca-bar-audit\node_modules\hardhat\src\internal\core\providers\http.ts:88:21)
+      at processTicksAndRejections (node:internal/process/task_queues:95:5)
+      at async getNetworkId (C:\Users\root\Desktop\Work\2023-07-tapioca\tapioca-bar-audit\node_modules\hardhat\src\internal\hardhat-network\provider\utils\makeForkClient.ts:116:28)
+      at async makeForkClient (C:\Users\root\Desktop\Work\2023-07-tapioca\tapioca-bar-audit\node_modules\hardhat\src\internal\hardhat-network\provider\utils\makeForkClient.ts:42:21)
+      at async Function.create (C:\Users\root\Desktop\Work\2023-07-tapioca\tapioca-bar-audit\node_modules\hardhat\src\internal\hardhat-network\provider\node.ts:178:11)
+      at async HardhatNetworkProvider._init (C:\Users\root\Desktop\Work\2023-07-tapioca\tapioca-bar-audit\node_modules\hardhat\src\internal\hardhat-network\provider\provider.ts:258:28)
+      at async HardhatNetworkProvider._send (C:\Users\root\Desktop\Work\2023-07-tapioca\tapioca-bar-audit\node_modules\hardhat\src\internal\hardhat-network\provider\provider.ts:197:5)
+      at async HardhatNetworkProvider.request (C:\Users\root\Desktop\Work\2023-07-tapioca\tapioca-bar-audit\node_modules\hardhat\src\internal\hardhat-network\provider\provider.ts:123:18)
+      at async TracerWrapper.request (C:\Users\root\Desktop\Work\2023-07-tapioca\tapioca-bar-audit\node_modules\hardhat-tracer\src\wrapper.ts:30:16)
+      at async EthersProviderWrapper.send (C:\Users\root\Desktop\Work\2023-07-tapioca\tapioca-bar-audit\node_modules\@nomiclabs\hardhat-ethers\src\internal\ethers-provider-wrapper.ts:13:20)
+
+  10) BigBang test
+       liquidate()
+         should liquidate:
+     ProviderError: Must be authenticated!
+      at HttpProvider.request (C:\Users\root\Desktop\Work\2023-07-tapioca\tapioca-bar-audit\node_modules\hardhat\src\internal\core\providers\http.ts:88:21)
+      at processTicksAndRejections (node:internal/process/task_queues:95:5)
+      at async getNetworkId (C:\Users\root\Desktop\Work\2023-07-tapioca\tapioca-bar-audit\node_modules\hardhat\src\internal\hardhat-network\provider\utils\makeForkClient.ts:116:28)
+      at async makeForkClient (C:\Users\root\Desktop\Work\2023-07-tapioca\tapioca-bar-audit\node_modules\hardhat\src\internal\hardhat-network\provider\utils\makeForkClient.ts:42:21)
+      at async Function.create (C:\Users\root\Desktop\Work\2023-07-tapioca\tapioca-bar-audit\node_modules\hardhat\src\internal\hardhat-network\provider\node.ts:178:11)
+      at async HardhatNetworkProvider._init (C:\Users\root\Desktop\Work\2023-07-tapioca\tapioca-bar-audit\node_modules\hardhat\src\internal\hardhat-network\provider\provider.ts:258:28)
+      at async HardhatNetworkProvider._send (C:\Users\root\Desktop\Work\2023-07-tapioca\tapioca-bar-audit\node_modules\hardhat\src\internal\hardhat-network\provider\provider.ts:197:5)
+      at async HardhatNetworkProvider.request (C:\Users\root\Desktop\Work\2023-07-tapioca\tapioca-bar-audit\node_modules\hardhat\src\internal\hardhat-network\provider\provider.ts:123:18)
+      at async TracerWrapper.request (C:\Users\root\Desktop\Work\2023-07-tapioca\tapioca-bar-audit\node_modules\hardhat-tracer\src\wrapper.ts:30:16)
+      at async EthersProviderWrapper.send (C:\Users\root\Desktop\Work\2023-07-tapioca\tapioca-bar-audit\node_modules\@nomiclabs\hardhat-ethers\src\internal\ethers-provider-wrapper.ts:13:20)
+
+  11) BigBang test
+       fees
+         should update borrowing fee and withdraw fees with partial repayment:
+     ProviderError: Must be authenticated!
+      at HttpProvider.request (C:\Users\root\Desktop\Work\2023-07-tapioca\tapioca-bar-audit\node_modules\hardhat\src\internal\core\providers\http.ts:88:21)
+      at processTicksAndRejections (node:internal/process/task_queues:95:5)
+      at async getNetworkId (C:\Users\root\Desktop\Work\2023-07-tapioca\tapioca-bar-audit\node_modules\hardhat\src\internal\hardhat-network\provider\utils\makeForkClient.ts:116:28)
+      at async makeForkClient (C:\Users\root\Desktop\Work\2023-07-tapioca\tapioca-bar-audit\node_modules\hardhat\src\internal\hardhat-network\provider\utils\makeForkClient.ts:42:21)
+      at async Function.create (C:\Users\root\Desktop\Work\2023-07-tapioca\tapioca-bar-audit\node_modules\hardhat\src\internal\hardhat-network\provider\node.ts:178:11)
+      at async HardhatNetworkProvider._init (C:\Users\root\Desktop\Work\2023-07-tapioca\tapioca-bar-audit\node_modules\hardhat\src\internal\hardhat-network\provider\provider.ts:258:28)
+      at async HardhatNetworkProvider._send (C:\Users\root\Desktop\Work\2023-07-tapioca\tapioca-bar-audit\node_modules\hardhat\src\internal\hardhat-network\provider\provider.ts:197:5)
+      at async HardhatNetworkProvider.request (C:\Users\root\Desktop\Work\2023-07-tapioca\tapioca-bar-audit\node_modules\hardhat\src\internal\hardhat-network\provider\provider.ts:123:18)
+      at async TracerWrapper.request (C:\Users\root\Desktop\Work\2023-07-tapioca\tapioca-bar-audit\node_modules\hardhat-tracer\src\wrapper.ts:30:16)
+      at async EthersProviderWrapper.send (C:\Users\root\Desktop\Work\2023-07-tapioca\tapioca-bar-audit\node_modules\@nomiclabs\hardhat-ethers\src\internal\ethers-provider-wrapper.ts:13:20)
+
+  12) BigBang test
+       fees
+         should update borrowing fee and withdraw fees:
+     ProviderError: Must be authenticated!
+      at HttpProvider.request (C:\Users\root\Desktop\Work\2023-07-tapioca\tapioca-bar-audit\node_modules\hardhat\src\internal\core\providers\http.ts:88:21)
+      at processTicksAndRejections (node:internal/process/task_queues:95:5)
+      at async getNetworkId (C:\Users\root\Desktop\Work\2023-07-tapioca\tapioca-bar-audit\node_modules\hardhat\src\internal\hardhat-network\provider\utils\makeForkClient.ts:116:28)
+      at async makeForkClient (C:\Users\root\Desktop\Work\2023-07-tapioca\tapioca-bar-audit\node_modules\hardhat\src\internal\hardhat-network\provider\utils\makeForkClient.ts:42:21)
+      at async Function.create (C:\Users\root\Desktop\Work\2023-07-tapioca\tapioca-bar-audit\node_modules\hardhat\src\internal\hardhat-network\provider\node.ts:178:11)
+      at async HardhatNetworkProvider._init (C:\Users\root\Desktop\Work\2023-07-tapioca\tapioca-bar-audit\node_modules\hardhat\src\internal\hardhat-network\provider\provider.ts:258:28)
+      at async HardhatNetworkProvider._send (C:\Users\root\Desktop\Work\2023-07-tapioca\tapioca-bar-audit\node_modules\hardhat\src\internal\hardhat-network\provider\provider.ts:197:5)
+      at async HardhatNetworkProvider.request (C:\Users\root\Desktop\Work\2023-07-tapioca\tapioca-bar-audit\node_modules\hardhat\src\internal\hardhat-network\provider\provider.ts:123:18)
+      at async TracerWrapper.request (C:\Users\root\Desktop\Work\2023-07-tapioca\tapioca-bar-audit\node_modules\hardhat-tracer\src\wrapper.ts:30:16)
+      at async EthersProviderWrapper.send (C:\Users\root\Desktop\Work\2023-07-tapioca\tapioca-bar-audit\node_modules\@nomiclabs\hardhat-ethers\src\internal\ethers-provider-wrapper.ts:13:20)
+
+  13) BigBang test
+       fees
+         should have multiple borrowers and check fees accrued over time:
+     ProviderError: Must be authenticated!
+      at HttpProvider.request (C:\Users\root\Desktop\Work\2023-07-tapioca\tapioca-bar-audit\node_modules\hardhat\src\internal\core\providers\http.ts:88:21)
+      at processTicksAndRejections (node:internal/process/task_queues:95:5)
+      at async getNetworkId (C:\Users\root\Desktop\Work\2023-07-tapioca\tapioca-bar-audit\node_modules\hardhat\src\internal\hardhat-network\provider\utils\makeForkClient.ts:116:28)
+      at async makeForkClient (C:\Users\root\Desktop\Work\2023-07-tapioca\tapioca-bar-audit\node_modules\hardhat\src\internal\hardhat-network\provider\utils\makeForkClient.ts:42:21)
+      at async Function.create (C:\Users\root\Desktop\Work\2023-07-tapioca\tapioca-bar-audit\node_modules\hardhat\src\internal\hardhat-network\provider\node.ts:178:11)
+      at async HardhatNetworkProvider._init (C:\Users\root\Desktop\Work\2023-07-tapioca\tapioca-bar-audit\node_modules\hardhat\src\internal\hardhat-network\provider\provider.ts:258:28)
+      at async HardhatNetworkProvider._send (C:\Users\root\Desktop\Work\2023-07-tapioca\tapioca-bar-audit\node_modules\hardhat\src\internal\hardhat-network\provider\provider.ts:197:5)
+      at async HardhatNetworkProvider.request (C:\Users\root\Desktop\Work\2023-07-tapioca\tapioca-bar-audit\node_modules\hardhat\src\internal\hardhat-network\provider\provider.ts:123:18)
+      at async TracerWrapper.request (C:\Users\root\Desktop\Work\2023-07-tapioca\tapioca-bar-audit\node_modules\hardhat-tracer\src\wrapper.ts:30:16)
+      at async EthersProviderWrapper.send (C:\Users\root\Desktop\Work\2023-07-tapioca\tapioca-bar-audit\node_modules\@nomiclabs\hardhat-ethers\src\internal\ethers-provider-wrapper.ts:13:20)
+
+  14) BigBang test
+       fees
+         should have multiple borrowers, do partial repayments and check fees accrued over time:
+     ProviderError: Must be authenticated!
+      at HttpProvider.request (C:\Users\root\Desktop\Work\2023-07-tapioca\tapioca-bar-audit\node_modules\hardhat\src\internal\core\providers\http.ts:88:21)
+      at processTicksAndRejections (node:internal/process/task_queues:95:5)
+      at async getNetworkId (C:\Users\root\Desktop\Work\2023-07-tapioca\tapioca-bar-audit\node_modules\hardhat\src\internal\hardhat-network\provider\utils\makeForkClient.ts:116:28)
+      at async makeForkClient (C:\Users\root\Desktop\Work\2023-07-tapioca\tapioca-bar-audit\node_modules\hardhat\src\internal\hardhat-network\provider\utils\makeForkClient.ts:42:21)
+      at async Function.create (C:\Users\root\Desktop\Work\2023-07-tapioca\tapioca-bar-audit\node_modules\hardhat\src\internal\hardhat-network\provider\node.ts:178:11)
+      at async HardhatNetworkProvider._init (C:\Users\root\Desktop\Work\2023-07-tapioca\tapioca-bar-audit\node_modules\hardhat\src\internal\hardhat-network\provider\provider.ts:258:28)
+      at async HardhatNetworkProvider._send (C:\Users\root\Desktop\Work\2023-07-tapioca\tapioca-bar-audit\node_modules\hardhat\src\internal\hardhat-network\provider\provider.ts:197:5)
+      at async HardhatNetworkProvider.request (C:\Users\root\Desktop\Work\2023-07-tapioca\tapioca-bar-audit\node_modules\hardhat\src\internal\hardhat-network\provider\provider.ts:123:18)
+      at async TracerWrapper.request (C:\Users\root\Desktop\Work\2023-07-tapioca\tapioca-bar-audit\node_modules\hardhat-tracer\src\wrapper.ts:30:16)
+      at async EthersProviderWrapper.send (C:\Users\root\Desktop\Work\2023-07-tapioca\tapioca-bar-audit\node_modules\@nomiclabs\hardhat-ethers\src\internal\ethers-provider-wrapper.ts:13:20)
+
+  15) BigBang test
+       fees
+         should perform multiple borrow operations, repay everything and withdraw fees:
+     ProviderError: Must be authenticated!
+      at HttpProvider.request (C:\Users\root\Desktop\Work\2023-07-tapioca\tapioca-bar-audit\node_modules\hardhat\src\internal\core\providers\http.ts:88:21)
+      at processTicksAndRejections (node:internal/process/task_queues:95:5)
+      at async getNetworkId (C:\Users\root\Desktop\Work\2023-07-tapioca\tapioca-bar-audit\node_modules\hardhat\src\internal\hardhat-network\provider\utils\makeForkClient.ts:116:28)
+      at async makeForkClient (C:\Users\root\Desktop\Work\2023-07-tapioca\tapioca-bar-audit\node_modules\hardhat\src\internal\hardhat-network\provider\utils\makeForkClient.ts:42:21)
+      at async Function.create (C:\Users\root\Desktop\Work\2023-07-tapioca\tapioca-bar-audit\node_modules\hardhat\src\internal\hardhat-network\provider\node.ts:178:11)
+      at async HardhatNetworkProvider._init (C:\Users\root\Desktop\Work\2023-07-tapioca\tapioca-bar-audit\node_modules\hardhat\src\internal\hardhat-network\provider\provider.ts:258:28)
+      at async HardhatNetworkProvider._send (C:\Users\root\Desktop\Work\2023-07-tapioca\tapioca-bar-audit\node_modules\hardhat\src\internal\hardhat-network\provider\provider.ts:197:5)
+      at async HardhatNetworkProvider.request (C:\Users\root\Desktop\Work\2023-07-tapioca\tapioca-bar-audit\node_modules\hardhat\src\internal\hardhat-network\provider\provider.ts:123:18)
+      at async TracerWrapper.request (C:\Users\root\Desktop\Work\2023-07-tapioca\tapioca-bar-audit\node_modules\hardhat-tracer\src\wrapper.ts:30:16)
+      at async EthersProviderWrapper.send (C:\Users\root\Desktop\Work\2023-07-tapioca\tapioca-bar-audit\node_modules\@nomiclabs\hardhat-ethers\src\internal\ethers-provider-wrapper.ts:13:20)
+
+  16) BigBang test
+       fees
+         should not allow depositing fees with invalid swapper:
+     ProviderError: Must be authenticated!
+      at HttpProvider.request (C:\Users\root\Desktop\Work\2023-07-tapioca\tapioca-bar-audit\node_modules\hardhat\src\internal\core\providers\http.ts:88:21)
+      at processTicksAndRejections (node:internal/process/task_queues:95:5)
+      at async getNetworkId (C:\Users\root\Desktop\Work\2023-07-tapioca\tapioca-bar-audit\node_modules\hardhat\src\internal\hardhat-network\provider\utils\makeForkClient.ts:116:28)
+      at async makeForkClient (C:\Users\root\Desktop\Work\2023-07-tapioca\tapioca-bar-audit\node_modules\hardhat\src\internal\hardhat-network\provider\utils\makeForkClient.ts:42:21)
+      at async Function.create (C:\Users\root\Desktop\Work\2023-07-tapioca\tapioca-bar-audit\node_modules\hardhat\src\internal\hardhat-network\provider\node.ts:178:11)
+      at async HardhatNetworkProvider._init (C:\Users\root\Desktop\Work\2023-07-tapioca\tapioca-bar-audit\node_modules\hardhat\src\internal\hardhat-network\provider\provider.ts:258:28)
+      at async HardhatNetworkProvider._send (C:\Users\root\Desktop\Work\2023-07-tapioca\tapioca-bar-audit\node_modules\hardhat\src\internal\hardhat-network\provider\provider.ts:197:5)
+      at async HardhatNetworkProvider.request (C:\Users\root\Desktop\Work\2023-07-tapioca\tapioca-bar-audit\node_modules\hardhat\src\internal\hardhat-network\provider\provider.ts:123:18)
+      at async TracerWrapper.request (C:\Users\root\Desktop\Work\2023-07-tapioca\tapioca-bar-audit\node_modules\hardhat-tracer\src\wrapper.ts:30:16)
+      at async EthersProviderWrapper.send (C:\Users\root\Desktop\Work\2023-07-tapioca\tapioca-bar-audit\node_modules\@nomiclabs\hardhat-ethers\src\internal\ethers-provider-wrapper.ts:13:20)
+
+  17) BigBang test
+       setters and debt
+         should not be able to borrow when cap is reached:
+     ProviderError: Must be authenticated!
+      at HttpProvider.request (C:\Users\root\Desktop\Work\2023-07-tapioca\tapioca-bar-audit\node_modules\hardhat\src\internal\core\providers\http.ts:88:21)
+      at processTicksAndRejections (node:internal/process/task_queues:95:5)
+      at async getNetworkId (C:\Users\root\Desktop\Work\2023-07-tapioca\tapioca-bar-audit\node_modules\hardhat\src\internal\hardhat-network\provider\utils\makeForkClient.ts:116:28)
+      at async makeForkClient (C:\Users\root\Desktop\Work\2023-07-tapioca\tapioca-bar-audit\node_modules\hardhat\src\internal\hardhat-network\provider\utils\makeForkClient.ts:42:21)
+      at async Function.create (C:\Users\root\Desktop\Work\2023-07-tapioca\tapioca-bar-audit\node_modules\hardhat\src\internal\hardhat-network\provider\node.ts:178:11)
+      at async HardhatNetworkProvider._init (C:\Users\root\Desktop\Work\2023-07-tapioca\tapioca-bar-audit\node_modules\hardhat\src\internal\hardhat-network\provider\provider.ts:258:28)
+      at async HardhatNetworkProvider._send (C:\Users\root\Desktop\Work\2023-07-tapioca\tapioca-bar-audit\node_modules\hardhat\src\internal\hardhat-network\provider\provider.ts:197:5)
+      at async HardhatNetworkProvider.request (C:\Users\root\Desktop\Work\2023-07-tapioca\tapioca-bar-audit\node_modules\hardhat\src\internal\hardhat-network\provider\provider.ts:123:18)
+      at async TracerWrapper.request (C:\Users\root\Desktop\Work\2023-07-tapioca\tapioca-bar-audit\node_modules\hardhat-tracer\src\wrapper.ts:30:16)
+      at async EthersProviderWrapper.send (C:\Users\root\Desktop\Work\2023-07-tapioca\tapioca-bar-audit\node_modules\@nomiclabs\hardhat-ethers\src\internal\ethers-provider-wrapper.ts:13:20)
+
+  18) BigBang test
+       setters and debt
+         actions should not work when paused:
+     ProviderError: Must be authenticated!
+      at HttpProvider.request (C:\Users\root\Desktop\Work\2023-07-tapioca\tapioca-bar-audit\node_modules\hardhat\src\internal\core\providers\http.ts:88:21)
+      at processTicksAndRejections (node:internal/process/task_queues:95:5)
+      at async getNetworkId (C:\Users\root\Desktop\Work\2023-07-tapioca\tapioca-bar-audit\node_modules\hardhat\src\internal\hardhat-network\provider\utils\makeForkClient.ts:116:28)
+      at async makeForkClient (C:\Users\root\Desktop\Work\2023-07-tapioca\tapioca-bar-audit\node_modules\hardhat\src\internal\hardhat-network\provider\utils\makeForkClient.ts:42:21)
+      at async Function.create (C:\Users\root\Desktop\Work\2023-07-tapioca\tapioca-bar-audit\node_modules\hardhat\src\internal\hardhat-network\provider\node.ts:178:11)
+      at async HardhatNetworkProvider._init (C:\Users\root\Desktop\Work\2023-07-tapioca\tapioca-bar-audit\node_modules\hardhat\src\internal\hardhat-network\provider\provider.ts:258:28)
+      at async HardhatNetworkProvider._send (C:\Users\root\Desktop\Work\2023-07-tapioca\tapioca-bar-audit\node_modules\hardhat\src\internal\hardhat-network\provider\provider.ts:197:5)
+      at async HardhatNetworkProvider.request (C:\Users\root\Desktop\Work\2023-07-tapioca\tapioca-bar-audit\node_modules\hardhat\src\internal\hardhat-network\provider\provider.ts:123:18)
+      at async TracerWrapper.request (C:\Users\root\Desktop\Work\2023-07-tapioca\tapioca-bar-audit\node_modules\hardhat-tracer\src\wrapper.ts:30:16)
+      at async EthersProviderWrapper.send (C:\Users\root\Desktop\Work\2023-07-tapioca\tapioca-bar-audit\node_modules\@nomiclabs\hardhat-ethers\src\internal\ethers-provider-wrapper.ts:13:20)
+
+  19) BigBang test
+       setters and debt
+         should test the variable debt:
+     ProviderError: Must be authenticated!
+      at HttpProvider.request (C:\Users\root\Desktop\Work\2023-07-tapioca\tapioca-bar-audit\node_modules\hardhat\src\internal\core\providers\http.ts:88:21)
+      at processTicksAndRejections (node:internal/process/task_queues:95:5)
+      at async getNetworkId (C:\Users\root\Desktop\Work\2023-07-tapioca\tapioca-bar-audit\node_modules\hardhat\src\internal\hardhat-network\provider\utils\makeForkClient.ts:116:28)
+      at async makeForkClient (C:\Users\root\Desktop\Work\2023-07-tapioca\tapioca-bar-audit\node_modules\hardhat\src\internal\hardhat-network\provider\utils\makeForkClient.ts:42:21)
+      at async Function.create (C:\Users\root\Desktop\Work\2023-07-tapioca\tapioca-bar-audit\node_modules\hardhat\src\internal\hardhat-network\provider\node.ts:178:11)
+      at async HardhatNetworkProvider._init (C:\Users\root\Desktop\Work\2023-07-tapioca\tapioca-bar-audit\node_modules\hardhat\src\internal\hardhat-network\provider\provider.ts:258:28)
+      at async HardhatNetworkProvider._send (C:\Users\root\Desktop\Work\2023-07-tapioca\tapioca-bar-audit\node_modules\hardhat\src\internal\hardhat-network\provider\provider.ts:197:5)
+      at async HardhatNetworkProvider.request (C:\Users\root\Desktop\Work\2023-07-tapioca\tapioca-bar-audit\node_modules\hardhat\src\internal\hardhat-network\provider\provider.ts:123:18)
+      at async TracerWrapper.request (C:\Users\root\Desktop\Work\2023-07-tapioca\tapioca-bar-audit\node_modules\hardhat-tracer\src\wrapper.ts:30:16)
+      at async EthersProviderWrapper.send (C:\Users\root\Desktop\Work\2023-07-tapioca\tapioca-bar-audit\node_modules\@nomiclabs\hardhat-ethers\src\internal\ethers-provider-wrapper.ts:13:20)
+
+  20) BigBang test
+       setters and debt
+         should test debt rate accrual over year:
+     ProviderError: Must be authenticated!
+      at HttpProvider.request (C:\Users\root\Desktop\Work\2023-07-tapioca\tapioca-bar-audit\node_modules\hardhat\src\internal\core\providers\http.ts:88:21)
+      at processTicksAndRejections (node:internal/process/task_queues:95:5)
+      at async getNetworkId (C:\Users\root\Desktop\Work\2023-07-tapioca\tapioca-bar-audit\node_modules\hardhat\src\internal\hardhat-network\provider\utils\makeForkClient.ts:116:28)
+      at async makeForkClient (C:\Users\root\Desktop\Work\2023-07-tapioca\tapioca-bar-audit\node_modules\hardhat\src\internal\hardhat-network\provider\utils\makeForkClient.ts:42:21)
+      at async Function.create (C:\Users\root\Desktop\Work\2023-07-tapioca\tapioca-bar-audit\node_modules\hardhat\src\internal\hardhat-network\provider\node.ts:178:11)
+      at async HardhatNetworkProvider._init (C:\Users\root\Desktop\Work\2023-07-tapioca\tapioca-bar-audit\node_modules\hardhat\src\internal\hardhat-network\provider\provider.ts:258:28)
+      at async HardhatNetworkProvider._send (C:\Users\root\Desktop\Work\2023-07-tapioca\tapioca-bar-audit\node_modules\hardhat\src\internal\hardhat-network\provider\provider.ts:197:5)
+      at async HardhatNetworkProvider.request (C:\Users\root\Desktop\Work\2023-07-tapioca\tapioca-bar-audit\node_modules\hardhat\src\internal\hardhat-network\provider\provider.ts:123:18)
+      at async TracerWrapper.request (C:\Users\root\Desktop\Work\2023-07-tapioca\tapioca-bar-audit\node_modules\hardhat-tracer\src\wrapper.ts:30:16)
+      at async EthersProviderWrapper.send (C:\Users\root\Desktop\Work\2023-07-tapioca\tapioca-bar-audit\node_modules\@nomiclabs\hardhat-ethers\src\internal\ethers-provider-wrapper.ts:13:20)
+
+  21) BigBang test
+       batch
+         should batch calls:
+     ProviderError: Must be authenticated!
+      at HttpProvider.request (C:\Users\root\Desktop\Work\2023-07-tapioca\tapioca-bar-audit\node_modules\hardhat\src\internal\core\providers\http.ts:88:21)
+      at processTicksAndRejections (node:internal/process/task_queues:95:5)
+      at async getNetworkId (C:\Users\root\Desktop\Work\2023-07-tapioca\tapioca-bar-audit\node_modules\hardhat\src\internal\hardhat-network\provider\utils\makeForkClient.ts:116:28)
+      at async makeForkClient (C:\Users\root\Desktop\Work\2023-07-tapioca\tapioca-bar-audit\node_modules\hardhat\src\internal\hardhat-network\provider\utils\makeForkClient.ts:42:21)
+      at async Function.create (C:\Users\root\Desktop\Work\2023-07-tapioca\tapioca-bar-audit\node_modules\hardhat\src\internal\hardhat-network\provider\node.ts:178:11)
+      at async HardhatNetworkProvider._init (C:\Users\root\Desktop\Work\2023-07-tapioca\tapioca-bar-audit\node_modules\hardhat\src\internal\hardhat-network\provider\provider.ts:258:28)
+      at async HardhatNetworkProvider._send (C:\Users\root\Desktop\Work\2023-07-tapioca\tapioca-bar-audit\node_modules\hardhat\src\internal\hardhat-network\provider\provider.ts:197:5)
+      at async HardhatNetworkProvider.request (C:\Users\root\Desktop\Work\2023-07-tapioca\tapioca-bar-audit\node_modules\hardhat\src\internal\hardhat-network\provider\provider.ts:123:18)
+      at async TracerWrapper.request (C:\Users\root\Desktop\Work\2023-07-tapioca\tapioca-bar-audit\node_modules\hardhat-tracer\src\wrapper.ts:30:16)
+      at async EthersProviderWrapper.send (C:\Users\root\Desktop\Work\2023-07-tapioca\tapioca-bar-audit\node_modules\@nomiclabs\hardhat-ethers\src\internal\ethers-provider-wrapper.ts:13:20)
+
+  22) BigBang test
+       leverage
+         Should lever up by buying collateral:
+     ProviderError: Must be authenticated!
+      at HttpProvider.request (C:\Users\root\Desktop\Work\2023-07-tapioca\tapioca-bar-audit\node_modules\hardhat\src\internal\core\providers\http.ts:88:21)
+      at processTicksAndRejections (node:internal/process/task_queues:95:5)
+      at async getNetworkId (C:\Users\root\Desktop\Work\2023-07-tapioca\tapioca-bar-audit\node_modules\hardhat\src\internal\hardhat-network\provider\utils\makeForkClient.ts:116:28)
+      at async makeForkClient (C:\Users\root\Desktop\Work\2023-07-tapioca\tapioca-bar-audit\node_modules\hardhat\src\internal\hardhat-network\provider\utils\makeForkClient.ts:42:21)
+      at async Function.create (C:\Users\root\Desktop\Work\2023-07-tapioca\tapioca-bar-audit\node_modules\hardhat\src\internal\hardhat-network\provider\node.ts:178:11)
+      at async HardhatNetworkProvider._init (C:\Users\root\Desktop\Work\2023-07-tapioca\tapioca-bar-audit\node_modules\hardhat\src\internal\hardhat-network\provider\provider.ts:258:28)
+      at async HardhatNetworkProvider._send (C:\Users\root\Desktop\Work\2023-07-tapioca\tapioca-bar-audit\node_modules\hardhat\src\internal\hardhat-network\provider\provider.ts:197:5)
+      at async HardhatNetworkProvider.request (C:\Users\root\Desktop\Work\2023-07-tapioca\tapioca-bar-audit\node_modules\hardhat\src\internal\hardhat-network\provider\provider.ts:123:18)
+      at async TracerWrapper.request (C:\Users\root\Desktop\Work\2023-07-tapioca\tapioca-bar-audit\node_modules\hardhat-tracer\src\wrapper.ts:30:16)
+      at async EthersProviderWrapper.send (C:\Users\root\Desktop\Work\2023-07-tapioca\tapioca-bar-audit\node_modules\@nomiclabs\hardhat-ethers\src\internal\ethers-provider-wrapper.ts:13:20)
+
+  23) BigBang test
+       leverage
+         Should lever down by selling collateral:
+     ProviderError: Must be authenticated!
+      at HttpProvider.request (C:\Users\root\Desktop\Work\2023-07-tapioca\tapioca-bar-audit\node_modules\hardhat\src\internal\core\providers\http.ts:88:21)
+      at processTicksAndRejections (node:internal/process/task_queues:95:5)
+      at async getNetworkId (C:\Users\root\Desktop\Work\2023-07-tapioca\tapioca-bar-audit\node_modules\hardhat\src\internal\hardhat-network\provider\utils\makeForkClient.ts:116:28)
+      at async makeForkClient (C:\Users\root\Desktop\Work\2023-07-tapioca\tapioca-bar-audit\node_modules\hardhat\src\internal\hardhat-network\provider\utils\makeForkClient.ts:42:21)
+      at async Function.create (C:\Users\root\Desktop\Work\2023-07-tapioca\tapioca-bar-audit\node_modules\hardhat\src\internal\hardhat-network\provider\node.ts:178:11)
+      at async HardhatNetworkProvider._init (C:\Users\root\Desktop\Work\2023-07-tapioca\tapioca-bar-audit\node_modules\hardhat\src\internal\hardhat-network\provider\provider.ts:258:28)
+      at async HardhatNetworkProvider._send (C:\Users\root\Desktop\Work\2023-07-tapioca\tapioca-bar-audit\node_modules\hardhat\src\internal\hardhat-network\provider\provider.ts:197:5)
+      at async HardhatNetworkProvider.request (C:\Users\root\Desktop\Work\2023-07-tapioca\tapioca-bar-audit\node_modules\hardhat\src\internal\hardhat-network\provider\provider.ts:123:18)
+      at async TracerWrapper.request (C:\Users\root\Desktop\Work\2023-07-tapioca\tapioca-bar-audit\node_modules\hardhat-tracer\src\wrapper.ts:30:16)
+      at async EthersProviderWrapper.send (C:\Users\root\Desktop\Work\2023-07-tapioca\tapioca-bar-audit\node_modules\@nomiclabs\hardhat-ethers\src\internal\ethers-provider-wrapper.ts:13:20)
+
+  24) e2e tests
+       should use minterSingularity and market to add, borrow and get liquidated:
+     ProviderError: Must be authenticated!
+      at HttpProvider.request (C:\Users\root\Desktop\Work\2023-07-tapioca\tapioca-bar-audit\node_modules\hardhat\src\internal\core\providers\http.ts:88:21)
+      at processTicksAndRejections (node:internal/process/task_queues:95:5)
+      at async getNetworkId (C:\Users\root\Desktop\Work\2023-07-tapioca\tapioca-bar-audit\node_modules\hardhat\src\internal\hardhat-network\provider\utils\makeForkClient.ts:116:28)
+      at async makeForkClient (C:\Users\root\Desktop\Work\2023-07-tapioca\tapioca-bar-audit\node_modules\hardhat\src\internal\hardhat-network\provider\utils\makeForkClient.ts:42:21)
+      at async Function.create (C:\Users\root\Desktop\Work\2023-07-tapioca\tapioca-bar-audit\node_modules\hardhat\src\internal\hardhat-network\provider\node.ts:178:11)
+      at async HardhatNetworkProvider._init (C:\Users\root\Desktop\Work\2023-07-tapioca\tapioca-bar-audit\node_modules\hardhat\src\internal\hardhat-network\provider\provider.ts:258:28)
+      at async HardhatNetworkProvider._send (C:\Users\root\Desktop\Work\2023-07-tapioca\tapioca-bar-audit\node_modules\hardhat\src\internal\hardhat-network\provider\provider.ts:197:5)
+      at async HardhatNetworkProvider.request (C:\Users\root\Desktop\Work\2023-07-tapioca\tapioca-bar-audit\node_modules\hardhat\src\internal\hardhat-network\provider\provider.ts:123:18)
+      at async TracerWrapper.request (C:\Users\root\Desktop\Work\2023-07-tapioca\tapioca-bar-audit\node_modules\hardhat-tracer\src\wrapper.ts:30:16)
+      at async EthersProviderWrapper.send (C:\Users\root\Desktop\Work\2023-07-tapioca\tapioca-bar-audit\node_modules\@nomiclabs\hardhat-ethers\src\internal\ethers-provider-wrapper.ts:13:20)
+
+  25) e2e tests
+       should try to use minterSingularity and market to add, borrow and get liquidated, but in a wrong order:
+     ProviderError: Must be authenticated!
+      at HttpProvider.request (C:\Users\root\Desktop\Work\2023-07-tapioca\tapioca-bar-audit\node_modules\hardhat\src\internal\core\providers\http.ts:88:21)
+      at processTicksAndRejections (node:internal/process/task_queues:95:5)
+      at async getNetworkId (C:\Users\root\Desktop\Work\2023-07-tapioca\tapioca-bar-audit\node_modules\hardhat\src\internal\hardhat-network\provider\utils\makeForkClient.ts:116:28)
+      at async makeForkClient (C:\Users\root\Desktop\Work\2023-07-tapioca\tapioca-bar-audit\node_modules\hardhat\src\internal\hardhat-network\provider\utils\makeForkClient.ts:42:21)
+      at async Function.create (C:\Users\root\Desktop\Work\2023-07-tapioca\tapioca-bar-audit\node_modules\hardhat\src\internal\hardhat-network\provider\node.ts:178:11)
+      at async HardhatNetworkProvider._init (C:\Users\root\Desktop\Work\2023-07-tapioca\tapioca-bar-audit\node_modules\hardhat\src\internal\hardhat-network\provider\provider.ts:258:28)
+      at async HardhatNetworkProvider._send (C:\Users\root\Desktop\Work\2023-07-tapioca\tapioca-bar-audit\node_modules\hardhat\src\internal\hardhat-network\provider\provider.ts:197:5)
+      at async HardhatNetworkProvider.request (C:\Users\root\Desktop\Work\2023-07-tapioca\tapioca-bar-audit\node_modules\hardhat\src\internal\hardhat-network\provider\provider.ts:123:18)
+      at async TracerWrapper.request (C:\Users\root\Desktop\Work\2023-07-tapioca\tapioca-bar-audit\node_modules\hardhat-tracer\src\wrapper.ts:30:16)
+      at async EthersProviderWrapper.send (C:\Users\root\Desktop\Work\2023-07-tapioca\tapioca-bar-audit\node_modules\@nomiclabs\hardhat-ethers\src\internal\ethers-provider-wrapper.ts:13:20)
+
+  26) Singularity Leverage
+       lever down
+         Should lever down by selling collateral:
+     ProviderError: Must be authenticated!
+      at HttpProvider.request (C:\Users\root\Desktop\Work\2023-07-tapioca\tapioca-bar-audit\node_modules\hardhat\src\internal\core\providers\http.ts:88:21)
+      at processTicksAndRejections (node:internal/process/task_queues:95:5)
+      at async getNetworkId (C:\Users\root\Desktop\Work\2023-07-tapioca\tapioca-bar-audit\node_modules\hardhat\src\internal\hardhat-network\provider\utils\makeForkClient.ts:116:28)
+      at async makeForkClient (C:\Users\root\Desktop\Work\2023-07-tapioca\tapioca-bar-audit\node_modules\hardhat\src\internal\hardhat-network\provider\utils\makeForkClient.ts:42:21)
+      at async Function.create (C:\Users\root\Desktop\Work\2023-07-tapioca\tapioca-bar-audit\node_modules\hardhat\src\internal\hardhat-network\provider\node.ts:178:11)
+      at async HardhatNetworkProvider._init (C:\Users\root\Desktop\Work\2023-07-tapioca\tapioca-bar-audit\node_modules\hardhat\src\internal\hardhat-network\provider\provider.ts:258:28)
+      at async HardhatNetworkProvider._send (C:\Users\root\Desktop\Work\2023-07-tapioca\tapioca-bar-audit\node_modules\hardhat\src\internal\hardhat-network\provider\provider.ts:197:5)
+      at async HardhatNetworkProvider.request (C:\Users\root\Desktop\Work\2023-07-tapioca\tapioca-bar-audit\node_modules\hardhat\src\internal\hardhat-network\provider\provider.ts:123:18)
+      at async TracerWrapper.request (C:\Users\root\Desktop\Work\2023-07-tapioca\tapioca-bar-audit\node_modules\hardhat-tracer\src\wrapper.ts:30:16)
+      at async EthersProviderWrapper.send (C:\Users\root\Desktop\Work\2023-07-tapioca\tapioca-bar-audit\node_modules\@nomiclabs\hardhat-ethers\src\internal\ethers-provider-wrapper.ts:13:20)
+
+  27) Singularity Leverage
+       lever down
+         Should send the excess if "levering down past 0":
+     ProviderError: Must be authenticated!
+      at HttpProvider.request (C:\Users\root\Desktop\Work\2023-07-tapioca\tapioca-bar-audit\node_modules\hardhat\src\internal\core\providers\http.ts:88:21)
+      at processTicksAndRejections (node:internal/process/task_queues:95:5)
+      at async getNetworkId (C:\Users\root\Desktop\Work\2023-07-tapioca\tapioca-bar-audit\node_modules\hardhat\src\internal\hardhat-network\provider\utils\makeForkClient.ts:116:28)
+      at async makeForkClient (C:\Users\root\Desktop\Work\2023-07-tapioca\tapioca-bar-audit\node_modules\hardhat\src\internal\hardhat-network\provider\utils\makeForkClient.ts:42:21)
+      at async Function.create (C:\Users\root\Desktop\Work\2023-07-tapioca\tapioca-bar-audit\node_modules\hardhat\src\internal\hardhat-network\provider\node.ts:178:11)
+      at async HardhatNetworkProvider._init (C:\Users\root\Desktop\Work\2023-07-tapioca\tapioca-bar-audit\node_modules\hardhat\src\internal\hardhat-network\provider\provider.ts:258:28)
+      at async HardhatNetworkProvider._send (C:\Users\root\Desktop\Work\2023-07-tapioca\tapioca-bar-audit\node_modules\hardhat\src\internal\hardhat-network\provider\provider.ts:197:5)
+      at async HardhatNetworkProvider.request (C:\Users\root\Desktop\Work\2023-07-tapioca\tapioca-bar-audit\node_modules\hardhat\src\internal\hardhat-network\provider\provider.ts:123:18)
+      at async TracerWrapper.request (C:\Users\root\Desktop\Work\2023-07-tapioca\tapioca-bar-audit\node_modules\hardhat-tracer\src\wrapper.ts:30:16)
+      at async EthersProviderWrapper.send (C:\Users\root\Desktop\Work\2023-07-tapioca\tapioca-bar-audit\node_modules\@nomiclabs\hardhat-ethers\src\internal\ethers-provider-wrapper.ts:13:20)
+
+  28) Singularity Leverage
+       lever up
+         Should lever up by buying collateral:
+     ProviderError: Must be authenticated!
+      at HttpProvider.request (C:\Users\root\Desktop\Work\2023-07-tapioca\tapioca-bar-audit\node_modules\hardhat\src\internal\core\providers\http.ts:88:21)
+      at processTicksAndRejections (node:internal/process/task_queues:95:5)
+      at async getNetworkId (C:\Users\root\Desktop\Work\2023-07-tapioca\tapioca-bar-audit\node_modules\hardhat\src\internal\hardhat-network\provider\utils\makeForkClient.ts:116:28)
+      at async makeForkClient (C:\Users\root\Desktop\Work\2023-07-tapioca\tapioca-bar-audit\node_modules\hardhat\src\internal\hardhat-network\provider\utils\makeForkClient.ts:42:21)
+      at async Function.create (C:\Users\root\Desktop\Work\2023-07-tapioca\tapioca-bar-audit\node_modules\hardhat\src\internal\hardhat-network\provider\node.ts:178:11)
+      at async HardhatNetworkProvider._init (C:\Users\root\Desktop\Work\2023-07-tapioca\tapioca-bar-audit\node_modules\hardhat\src\internal\hardhat-network\provider\provider.ts:258:28)
+      at async HardhatNetworkProvider._send (C:\Users\root\Desktop\Work\2023-07-tapioca\tapioca-bar-audit\node_modules\hardhat\src\internal\hardhat-network\provider\provider.ts:197:5)
+      at async HardhatNetworkProvider.request (C:\Users\root\Desktop\Work\2023-07-tapioca\tapioca-bar-audit\node_modules\hardhat\src\internal\hardhat-network\provider\provider.ts:123:18)
+      at async TracerWrapper.request (C:\Users\root\Desktop\Work\2023-07-tapioca\tapioca-bar-audit\node_modules\hardhat-tracer\src\wrapper.ts:30:16)
+      at async EthersProviderWrapper.send (C:\Users\root\Desktop\Work\2023-07-tapioca\tapioca-bar-audit\node_modules\@nomiclabs\hardhat-ethers\src\internal\ethers-provider-wrapper.ts:13:20)
+
+  29) Singularity Leverage
+       down payment
+         Should enter into a new position with a down payment:
+     ProviderError: Must be authenticated!
+      at HttpProvider.request (C:\Users\root\Desktop\Work\2023-07-tapioca\tapioca-bar-audit\node_modules\hardhat\src\internal\core\providers\http.ts:88:21)
+      at processTicksAndRejections (node:internal/process/task_queues:95:5)
+      at async getNetworkId (C:\Users\root\Desktop\Work\2023-07-tapioca\tapioca-bar-audit\node_modules\hardhat\src\internal\hardhat-network\provider\utils\makeForkClient.ts:116:28)
+      at async makeForkClient (C:\Users\root\Desktop\Work\2023-07-tapioca\tapioca-bar-audit\node_modules\hardhat\src\internal\hardhat-network\provider\utils\makeForkClient.ts:42:21)
+      at async Function.create (C:\Users\root\Desktop\Work\2023-07-tapioca\tapioca-bar-audit\node_modules\hardhat\src\internal\hardhat-network\provider\node.ts:178:11)
+      at async HardhatNetworkProvider._init (C:\Users\root\Desktop\Work\2023-07-tapioca\tapioca-bar-audit\node_modules\hardhat\src\internal\hardhat-network\provider\provider.ts:258:28)
+      at async HardhatNetworkProvider._send (C:\Users\root\Desktop\Work\2023-07-tapioca\tapioca-bar-audit\node_modules\hardhat\src\internal\hardhat-network\provider\provider.ts:197:5)
+      at async HardhatNetworkProvider.request (C:\Users\root\Desktop\Work\2023-07-tapioca\tapioca-bar-audit\node_modules\hardhat\src\internal\hardhat-network\provider\provider.ts:123:18)
+      at async TracerWrapper.request (C:\Users\root\Desktop\Work\2023-07-tapioca\tapioca-bar-audit\node_modules\hardhat-tracer\src\wrapper.ts:30:16)
+      at async EthersProviderWrapper.send (C:\Users\root\Desktop\Work\2023-07-tapioca\tapioca-bar-audit\node_modules\@nomiclabs\hardhat-ethers\src\internal\ethers-provider-wrapper.ts:13:20)
+
+  30) LiquidationQueue test
+       reverts
+         should throw if premium too high or amount too low:
+     ProviderError: Must be authenticated!
+      at HttpProvider.request (C:\Users\root\Desktop\Work\2023-07-tapioca\tapioca-bar-audit\node_modules\hardhat\src\internal\core\providers\http.ts:88:21)
+      at processTicksAndRejections (node:internal/process/task_queues:95:5)
+      at async getNetworkId (C:\Users\root\Desktop\Work\2023-07-tapioca\tapioca-bar-audit\node_modules\hardhat\src\internal\hardhat-network\provider\utils\makeForkClient.ts:116:28)
+      at async makeForkClient (C:\Users\root\Desktop\Work\2023-07-tapioca\tapioca-bar-audit\node_modules\hardhat\src\internal\hardhat-network\provider\utils\makeForkClient.ts:42:21)
+      at async Function.create (C:\Users\root\Desktop\Work\2023-07-tapioca\tapioca-bar-audit\node_modules\hardhat\src\internal\hardhat-network\provider\node.ts:178:11)
+      at async HardhatNetworkProvider._init (C:\Users\root\Desktop\Work\2023-07-tapioca\tapioca-bar-audit\node_modules\hardhat\src\internal\hardhat-network\provider\provider.ts:258:28)
+      at async HardhatNetworkProvider._send (C:\Users\root\Desktop\Work\2023-07-tapioca\tapioca-bar-audit\node_modules\hardhat\src\internal\hardhat-network\provider\provider.ts:197:5)
+      at async HardhatNetworkProvider.request (C:\Users\root\Desktop\Work\2023-07-tapioca\tapioca-bar-audit\node_modules\hardhat\src\internal\hardhat-network\provider\provider.ts:123:18)
+      at async TracerWrapper.request (C:\Users\root\Desktop\Work\2023-07-tapioca\tapioca-bar-audit\node_modules\hardhat-tracer\src\wrapper.ts:30:16)
+      at async EthersProviderWrapper.send (C:\Users\root\Desktop\Work\2023-07-tapioca\tapioca-bar-audit\node_modules\@nomiclabs\hardhat-ethers\src\internal\ethers-provider-wrapper.ts:13:20)
+
+  31) LiquidationQueue test
+       reverts
+         should now allow bid on uninitialized contract:
+     ProviderError: Must be authenticated!
+      at HttpProvider.request (C:\Users\root\Desktop\Work\2023-07-tapioca\tapioca-bar-audit\node_modules\hardhat\src\internal\core\providers\http.ts:88:21)
+      at processTicksAndRejections (node:internal/process/task_queues:95:5)
+      at async getNetworkId (C:\Users\root\Desktop\Work\2023-07-tapioca\tapioca-bar-audit\node_modules\hardhat\src\internal\hardhat-network\provider\utils\makeForkClient.ts:116:28)
+      at async makeForkClient (C:\Users\root\Desktop\Work\2023-07-tapioca\tapioca-bar-audit\node_modules\hardhat\src\internal\hardhat-network\provider\utils\makeForkClient.ts:42:21)
+      at async Function.create (C:\Users\root\Desktop\Work\2023-07-tapioca\tapioca-bar-audit\node_modules\hardhat\src\internal\hardhat-network\provider\node.ts:178:11)
+      at async HardhatNetworkProvider._init (C:\Users\root\Desktop\Work\2023-07-tapioca\tapioca-bar-audit\node_modules\hardhat\src\internal\hardhat-network\provider\provider.ts:258:28)
+      at async HardhatNetworkProvider._send (C:\Users\root\Desktop\Work\2023-07-tapioca\tapioca-bar-audit\node_modules\hardhat\src\internal\hardhat-network\provider\provider.ts:197:5)
+      at async HardhatNetworkProvider.request (C:\Users\root\Desktop\Work\2023-07-tapioca\tapioca-bar-audit\node_modules\hardhat\src\internal\hardhat-network\provider\provider.ts:123:18)
+      at async TracerWrapper.request (C:\Users\root\Desktop\Work\2023-07-tapioca\tapioca-bar-audit\node_modules\hardhat-tracer\src\wrapper.ts:30:16)
+      at async EthersProviderWrapper.send (C:\Users\root\Desktop\Work\2023-07-tapioca\tapioca-bar-audit\node_modules\@nomiclabs\hardhat-ethers\src\internal\ethers-provider-wrapper.ts:13:20)
+
+  32) LiquidationQueue test
+       reverts
+         should not allow initializing LQ twice:
+     ProviderError: Must be authenticated!
+      at HttpProvider.request (C:\Users\root\Desktop\Work\2023-07-tapioca\tapioca-bar-audit\node_modules\hardhat\src\internal\core\providers\http.ts:88:21)
+      at processTicksAndRejections (node:internal/process/task_queues:95:5)
+      at async getNetworkId (C:\Users\root\Desktop\Work\2023-07-tapioca\tapioca-bar-audit\node_modules\hardhat\src\internal\hardhat-network\provider\utils\makeForkClient.ts:116:28)
+      at async makeForkClient (C:\Users\root\Desktop\Work\2023-07-tapioca\tapioca-bar-audit\node_modules\hardhat\src\internal\hardhat-network\provider\utils\makeForkClient.ts:42:21)
+      at async Function.create (C:\Users\root\Desktop\Work\2023-07-tapioca\tapioca-bar-audit\node_modules\hardhat\src\internal\hardhat-network\provider\node.ts:178:11)
+      at async HardhatNetworkProvider._init (C:\Users\root\Desktop\Work\2023-07-tapioca\tapioca-bar-audit\node_modules\hardhat\src\internal\hardhat-network\provider\provider.ts:258:28)
+      at async HardhatNetworkProvider._send (C:\Users\root\Desktop\Work\2023-07-tapioca\tapioca-bar-audit\node_modules\hardhat\src\internal\hardhat-network\provider\provider.ts:197:5)
+      at async HardhatNetworkProvider.request (C:\Users\root\Desktop\Work\2023-07-tapioca\tapioca-bar-audit\node_modules\hardhat\src\internal\hardhat-network\provider\provider.ts:123:18)
+      at async TracerWrapper.request (C:\Users\root\Desktop\Work\2023-07-tapioca\tapioca-bar-audit\node_modules\hardhat-tracer\src\wrapper.ts:30:16)
+      at async EthersProviderWrapper.send (C:\Users\root\Desktop\Work\2023-07-tapioca\tapioca-bar-audit\node_modules\@nomiclabs\hardhat-ethers\src\internal\ethers-provider-wrapper.ts:13:20)
+
+  33) LiquidationQueue test
+       reverts
+         should not allow setting bid swapper from not authorized account :
+     ProviderError: Must be authenticated!
+      at HttpProvider.request (C:\Users\root\Desktop\Work\2023-07-tapioca\tapioca-bar-audit\node_modules\hardhat\src\internal\core\providers\http.ts:88:21)
+      at processTicksAndRejections (node:internal/process/task_queues:95:5)
+      at async getNetworkId (C:\Users\root\Desktop\Work\2023-07-tapioca\tapioca-bar-audit\node_modules\hardhat\src\internal\hardhat-network\provider\utils\makeForkClient.ts:116:28)
+      at async makeForkClient (C:\Users\root\Desktop\Work\2023-07-tapioca\tapioca-bar-audit\node_modules\hardhat\src\internal\hardhat-network\provider\utils\makeForkClient.ts:42:21)
+      at async Function.create (C:\Users\root\Desktop\Work\2023-07-tapioca\tapioca-bar-audit\node_modules\hardhat\src\internal\hardhat-network\provider\node.ts:178:11)
+      at async HardhatNetworkProvider._init (C:\Users\root\Desktop\Work\2023-07-tapioca\tapioca-bar-audit\node_modules\hardhat\src\internal\hardhat-network\provider\provider.ts:258:28)
+      at async HardhatNetworkProvider._send (C:\Users\root\Desktop\Work\2023-07-tapioca\tapioca-bar-audit\node_modules\hardhat\src\internal\hardhat-network\provider\provider.ts:197:5)
+      at async HardhatNetworkProvider.request (C:\Users\root\Desktop\Work\2023-07-tapioca\tapioca-bar-audit\node_modules\hardhat\src\internal\hardhat-network\provider\provider.ts:123:18)
+      at async TracerWrapper.request (C:\Users\root\Desktop\Work\2023-07-tapioca\tapioca-bar-audit\node_modules\hardhat-tracer\src\wrapper.ts:30:16)
+      at async EthersProviderWrapper.send (C:\Users\root\Desktop\Work\2023-07-tapioca\tapioca-bar-audit\node_modules\@nomiclabs\hardhat-ethers\src\internal\ethers-provider-wrapper.ts:13:20)
+
+  34) LiquidationQueue test
+       reverts
+         sould not be able to redeem without a balance:
+     ProviderError: Must be authenticated!
+      at HttpProvider.request (C:\Users\root\Desktop\Work\2023-07-tapioca\tapioca-bar-audit\node_modules\hardhat\src\internal\core\providers\http.ts:88:21)
+      at processTicksAndRejections (node:internal/process/task_queues:95:5)
+      at async getNetworkId (C:\Users\root\Desktop\Work\2023-07-tapioca\tapioca-bar-audit\node_modules\hardhat\src\internal\hardhat-network\provider\utils\makeForkClient.ts:116:28)
+      at async makeForkClient (C:\Users\root\Desktop\Work\2023-07-tapioca\tapioca-bar-audit\node_modules\hardhat\src\internal\hardhat-network\provider\utils\makeForkClient.ts:42:21)
+      at async Function.create (C:\Users\root\Desktop\Work\2023-07-tapioca\tapioca-bar-audit\node_modules\hardhat\src\internal\hardhat-network\provider\node.ts:178:11)
+      at async HardhatNetworkProvider._init (C:\Users\root\Desktop\Work\2023-07-tapioca\tapioca-bar-audit\node_modules\hardhat\src\internal\hardhat-network\provider\provider.ts:258:28)
+      at async HardhatNetworkProvider._send (C:\Users\root\Desktop\Work\2023-07-tapioca\tapioca-bar-audit\node_modules\hardhat\src\internal\hardhat-network\provider\provider.ts:197:5)
+      at async HardhatNetworkProvider.request (C:\Users\root\Desktop\Work\2023-07-tapioca\tapioca-bar-audit\node_modules\hardhat\src\internal\hardhat-network\provider\provider.ts:123:18)
+      at async TracerWrapper.request (C:\Users\root\Desktop\Work\2023-07-tapioca\tapioca-bar-audit\node_modules\hardhat-tracer\src\wrapper.ts:30:16)
+      at async EthersProviderWrapper.send (C:\Users\root\Desktop\Work\2023-07-tapioca\tapioca-bar-audit\node_modules\@nomiclabs\hardhat-ethers\src\internal\ethers-provider-wrapper.ts:13:20)
+
+  35) LiquidationQueue test
+       reverts
+         should not allow bid execution from EOA:
+     ProviderError: Must be authenticated!
+      at HttpProvider.request (C:\Users\root\Desktop\Work\2023-07-tapioca\tapioca-bar-audit\node_modules\hardhat\src\internal\core\providers\http.ts:88:21)
+      at processTicksAndRejections (node:internal/process/task_queues:95:5)
+      at async getNetworkId (C:\Users\root\Desktop\Work\2023-07-tapioca\tapioca-bar-audit\node_modules\hardhat\src\internal\hardhat-network\provider\utils\makeForkClient.ts:116:28)
+      at async makeForkClient (C:\Users\root\Desktop\Work\2023-07-tapioca\tapioca-bar-audit\node_modules\hardhat\src\internal\hardhat-network\provider\utils\makeForkClient.ts:42:21)
+      at async Function.create (C:\Users\root\Desktop\Work\2023-07-tapioca\tapioca-bar-audit\node_modules\hardhat\src\internal\hardhat-network\provider\node.ts:178:11)
+      at async HardhatNetworkProvider._init (C:\Users\root\Desktop\Work\2023-07-tapioca\tapioca-bar-audit\node_modules\hardhat\src\internal\hardhat-network\provider\provider.ts:258:28)
+      at async HardhatNetworkProvider._send (C:\Users\root\Desktop\Work\2023-07-tapioca\tapioca-bar-audit\node_modules\hardhat\src\internal\hardhat-network\provider\provider.ts:197:5)
+      at async HardhatNetworkProvider.request (C:\Users\root\Desktop\Work\2023-07-tapioca\tapioca-bar-audit\node_modules\hardhat\src\internal\hardhat-network\provider\provider.ts:123:18)
+      at async TracerWrapper.request (C:\Users\root\Desktop\Work\2023-07-tapioca\tapioca-bar-audit\node_modules\hardhat-tracer\src\wrapper.ts:30:16)
+      at async EthersProviderWrapper.send (C:\Users\root\Desktop\Work\2023-07-tapioca\tapioca-bar-audit\node_modules\@nomiclabs\hardhat-ethers\src\internal\ethers-provider-wrapper.ts:13:20)
+
+  36) LiquidationQueue test
+       bids
+         Should make a bid:
+     ProviderError: Must be authenticated!
+      at HttpProvider.request (C:\Users\root\Desktop\Work\2023-07-tapioca\tapioca-bar-audit\node_modules\hardhat\src\internal\core\providers\http.ts:88:21)
+      at processTicksAndRejections (node:internal/process/task_queues:95:5)
+      at async getNetworkId (C:\Users\root\Desktop\Work\2023-07-tapioca\tapioca-bar-audit\node_modules\hardhat\src\internal\hardhat-network\provider\utils\makeForkClient.ts:116:28)
+      at async makeForkClient (C:\Users\root\Desktop\Work\2023-07-tapioca\tapioca-bar-audit\node_modules\hardhat\src\internal\hardhat-network\provider\utils\makeForkClient.ts:42:21)
+      at async Function.create (C:\Users\root\Desktop\Work\2023-07-tapioca\tapioca-bar-audit\node_modules\hardhat\src\internal\hardhat-network\provider\node.ts:178:11)
+      at async HardhatNetworkProvider._init (C:\Users\root\Desktop\Work\2023-07-tapioca\tapioca-bar-audit\node_modules\hardhat\src\internal\hardhat-network\provider\provider.ts:258:28)
+      at async HardhatNetworkProvider._send (C:\Users\root\Desktop\Work\2023-07-tapioca\tapioca-bar-audit\node_modules\hardhat\src\internal\hardhat-network\provider\provider.ts:197:5)
+      at async HardhatNetworkProvider.request (C:\Users\root\Desktop\Work\2023-07-tapioca\tapioca-bar-audit\node_modules\hardhat\src\internal\hardhat-network\provider\provider.ts:123:18)
+      at async TracerWrapper.request (C:\Users\root\Desktop\Work\2023-07-tapioca\tapioca-bar-audit\node_modules\hardhat-tracer\src\wrapper.ts:30:16)
+      at async EthersProviderWrapper.send (C:\Users\root\Desktop\Work\2023-07-tapioca\tapioca-bar-audit\node_modules\@nomiclabs\hardhat-ethers\src\internal\ethers-provider-wrapper.ts:13:20)
+
+  37) LiquidationQueue test
+       bids
+         Should make a bid, wait 10min and activate it:
+     ProviderError: Must be authenticated!
+      at HttpProvider.request (C:\Users\root\Desktop\Work\2023-07-tapioca\tapioca-bar-audit\node_modules\hardhat\src\internal\core\providers\http.ts:88:21)
+      at processTicksAndRejections (node:internal/process/task_queues:95:5)
+      at async getNetworkId (C:\Users\root\Desktop\Work\2023-07-tapioca\tapioca-bar-audit\node_modules\hardhat\src\internal\hardhat-network\provider\utils\makeForkClient.ts:116:28)
+      at async makeForkClient (C:\Users\root\Desktop\Work\2023-07-tapioca\tapioca-bar-audit\node_modules\hardhat\src\internal\hardhat-network\provider\utils\makeForkClient.ts:42:21)
+      at async Function.create (C:\Users\root\Desktop\Work\2023-07-tapioca\tapioca-bar-audit\node_modules\hardhat\src\internal\hardhat-network\provider\node.ts:178:11)
+      at async HardhatNetworkProvider._init (C:\Users\root\Desktop\Work\2023-07-tapioca\tapioca-bar-audit\node_modules\hardhat\src\internal\hardhat-network\provider\provider.ts:258:28)
+      at async HardhatNetworkProvider._send (C:\Users\root\Desktop\Work\2023-07-tapioca\tapioca-bar-audit\node_modules\hardhat\src\internal\hardhat-network\provider\provider.ts:197:5)
+      at async HardhatNetworkProvider.request (C:\Users\root\Desktop\Work\2023-07-tapioca\tapioca-bar-audit\node_modules\hardhat\src\internal\hardhat-network\provider\provider.ts:123:18)
+      at async TracerWrapper.request (C:\Users\root\Desktop\Work\2023-07-tapioca\tapioca-bar-audit\node_modules\hardhat-tracer\src\wrapper.ts:30:16)
+      at async EthersProviderWrapper.send (C:\Users\root\Desktop\Work\2023-07-tapioca\tapioca-bar-audit\node_modules\@nomiclabs\hardhat-ethers\src\internal\ethers-provider-wrapper.ts:13:20)
+
+  38) LiquidationQueue test
+       bids
+         Should remove an inactivated bid:
+     ProviderError: Must be authenticated!
+      at HttpProvider.request (C:\Users\root\Desktop\Work\2023-07-tapioca\tapioca-bar-audit\node_modules\hardhat\src\internal\core\providers\http.ts:88:21)
+      at processTicksAndRejections (node:internal/process/task_queues:95:5)
+      at async getNetworkId (C:\Users\root\Desktop\Work\2023-07-tapioca\tapioca-bar-audit\node_modules\hardhat\src\internal\hardhat-network\provider\utils\makeForkClient.ts:116:28)
+      at async makeForkClient (C:\Users\root\Desktop\Work\2023-07-tapioca\tapioca-bar-audit\node_modules\hardhat\src\internal\hardhat-network\provider\utils\makeForkClient.ts:42:21)
+      at async Function.create (C:\Users\root\Desktop\Work\2023-07-tapioca\tapioca-bar-audit\node_modules\hardhat\src\internal\hardhat-network\provider\node.ts:178:11)
+      at async HardhatNetworkProvider._init (C:\Users\root\Desktop\Work\2023-07-tapioca\tapioca-bar-audit\node_modules\hardhat\src\internal\hardhat-network\provider\provider.ts:258:28)
+      at async HardhatNetworkProvider._send (C:\Users\root\Desktop\Work\2023-07-tapioca\tapioca-bar-audit\node_modules\hardhat\src\internal\hardhat-network\provider\provider.ts:197:5)
+      at async HardhatNetworkProvider.request (C:\Users\root\Desktop\Work\2023-07-tapioca\tapioca-bar-audit\node_modules\hardhat\src\internal\hardhat-network\provider\provider.ts:123:18)
+      at async TracerWrapper.request (C:\Users\root\Desktop\Work\2023-07-tapioca\tapioca-bar-audit\node_modules\hardhat-tracer\src\wrapper.ts:30:16)
+      at async EthersProviderWrapper.send (C:\Users\root\Desktop\Work\2023-07-tapioca\tapioca-bar-audit\node_modules\@nomiclabs\hardhat-ethers\src\internal\ethers-provider-wrapper.ts:13:20)
+
+  39) LiquidationQueue test
+       bids
+         Should execute bids:
+     ProviderError: Must be authenticated!
+      at HttpProvider.request (C:\Users\root\Desktop\Work\2023-07-tapioca\tapioca-bar-audit\node_modules\hardhat\src\internal\core\providers\http.ts:88:21)
+      at processTicksAndRejections (node:internal/process/task_queues:95:5)
+      at async getNetworkId (C:\Users\root\Desktop\Work\2023-07-tapioca\tapioca-bar-audit\node_modules\hardhat\src\internal\hardhat-network\provider\utils\makeForkClient.ts:116:28)
+      at async makeForkClient (C:\Users\root\Desktop\Work\2023-07-tapioca\tapioca-bar-audit\node_modules\hardhat\src\internal\hardhat-network\provider\utils\makeForkClient.ts:42:21)
+      at async Function.create (C:\Users\root\Desktop\Work\2023-07-tapioca\tapioca-bar-audit\node_modules\hardhat\src\internal\hardhat-network\provider\node.ts:178:11)
+      at async HardhatNetworkProvider._init (C:\Users\root\Desktop\Work\2023-07-tapioca\tapioca-bar-audit\node_modules\hardhat\src\internal\hardhat-network\provider\provider.ts:258:28)
+      at async HardhatNetworkProvider._send (C:\Users\root\Desktop\Work\2023-07-tapioca\tapioca-bar-audit\node_modules\hardhat\src\internal\hardhat-network\provider\provider.ts:197:5)
+      at async HardhatNetworkProvider.request (C:\Users\root\Desktop\Work\2023-07-tapioca\tapioca-bar-audit\node_modules\hardhat\src\internal\hardhat-network\provider\provider.ts:123:18)
+      at async TracerWrapper.request (C:\Users\root\Desktop\Work\2023-07-tapioca\tapioca-bar-audit\node_modules\hardhat-tracer\src\wrapper.ts:30:16)
+      at async EthersProviderWrapper.send (C:\Users\root\Desktop\Work\2023-07-tapioca\tapioca-bar-audit\node_modules\@nomiclabs\hardhat-ethers\src\internal\ethers-provider-wrapper.ts:13:20)
+
+  40) LiquidationQueue test
+       bids
+         should bid twice:
+     ProviderError: Must be authenticated!
+      at HttpProvider.request (C:\Users\root\Desktop\Work\2023-07-tapioca\tapioca-bar-audit\node_modules\hardhat\src\internal\core\providers\http.ts:88:21)
+      at processTicksAndRejections (node:internal/process/task_queues:95:5)
+      at async getNetworkId (C:\Users\root\Desktop\Work\2023-07-tapioca\tapioca-bar-audit\node_modules\hardhat\src\internal\hardhat-network\provider\utils\makeForkClient.ts:116:28)
+      at async makeForkClient (C:\Users\root\Desktop\Work\2023-07-tapioca\tapioca-bar-audit\node_modules\hardhat\src\internal\hardhat-network\provider\utils\makeForkClient.ts:42:21)
+      at async Function.create (C:\Users\root\Desktop\Work\2023-07-tapioca\tapioca-bar-audit\node_modules\hardhat\src\internal\hardhat-network\provider\node.ts:178:11)
+      at async HardhatNetworkProvider._init (C:\Users\root\Desktop\Work\2023-07-tapioca\tapioca-bar-audit\node_modules\hardhat\src\internal\hardhat-network\provider\provider.ts:258:28)
+      at async HardhatNetworkProvider._send (C:\Users\root\Desktop\Work\2023-07-tapioca\tapioca-bar-audit\node_modules\hardhat\src\internal\hardhat-network\provider\provider.ts:197:5)
+      at async HardhatNetworkProvider.request (C:\Users\root\Desktop\Work\2023-07-tapioca\tapioca-bar-audit\node_modules\hardhat\src\internal\hardhat-network\provider\provider.ts:123:18)
+      at async TracerWrapper.request (C:\Users\root\Desktop\Work\2023-07-tapioca\tapioca-bar-audit\node_modules\hardhat-tracer\src\wrapper.ts:30:16)
+      at async EthersProviderWrapper.send (C:\Users\root\Desktop\Work\2023-07-tapioca\tapioca-bar-audit\node_modules\@nomiclabs\hardhat-ethers\src\internal\ethers-provider-wrapper.ts:13:20)
+
+  41) LiquidationQueue test
+       bids
+         should bid with USDC through external swapper:
+     ProviderError: Must be authenticated!
+      at HttpProvider.request (C:\Users\root\Desktop\Work\2023-07-tapioca\tapioca-bar-audit\node_modules\hardhat\src\internal\core\providers\http.ts:88:21)
+      at processTicksAndRejections (node:internal/process/task_queues:95:5)
+      at async getNetworkId (C:\Users\root\Desktop\Work\2023-07-tapioca\tapioca-bar-audit\node_modules\hardhat\src\internal\hardhat-network\provider\utils\makeForkClient.ts:116:28)
+      at async makeForkClient (C:\Users\root\Desktop\Work\2023-07-tapioca\tapioca-bar-audit\node_modules\hardhat\src\internal\hardhat-network\provider\utils\makeForkClient.ts:42:21)
+      at async Function.create (C:\Users\root\Desktop\Work\2023-07-tapioca\tapioca-bar-audit\node_modules\hardhat\src\internal\hardhat-network\provider\node.ts:178:11)
+      at async HardhatNetworkProvider._init (C:\Users\root\Desktop\Work\2023-07-tapioca\tapioca-bar-audit\node_modules\hardhat\src\internal\hardhat-network\provider\provider.ts:258:28)
+      at async HardhatNetworkProvider._send (C:\Users\root\Desktop\Work\2023-07-tapioca\tapioca-bar-audit\node_modules\hardhat\src\internal\hardhat-network\provider\provider.ts:197:5)
+      at async HardhatNetworkProvider.request (C:\Users\root\Desktop\Work\2023-07-tapioca\tapioca-bar-audit\node_modules\hardhat\src\internal\hardhat-network\provider\provider.ts:123:18)
+      at async TracerWrapper.request (C:\Users\root\Desktop\Work\2023-07-tapioca\tapioca-bar-audit\node_modules\hardhat-tracer\src\wrapper.ts:30:16)
+      at async EthersProviderWrapper.send (C:\Users\root\Desktop\Work\2023-07-tapioca\tapioca-bar-audit\node_modules\@nomiclabs\hardhat-ethers\src\internal\ethers-provider-wrapper.ts:13:20)
+
+  42) LiquidationQueue test
+       bids
+         should bid with USDO through external swapper:
+     ProviderError: Must be authenticated!
+      at HttpProvider.request (C:\Users\root\Desktop\Work\2023-07-tapioca\tapioca-bar-audit\node_modules\hardhat\src\internal\core\providers\http.ts:88:21)
+      at processTicksAndRejections (node:internal/process/task_queues:95:5)
+      at async getNetworkId (C:\Users\root\Desktop\Work\2023-07-tapioca\tapioca-bar-audit\node_modules\hardhat\src\internal\hardhat-network\provider\utils\makeForkClient.ts:116:28)
+      at async makeForkClient (C:\Users\root\Desktop\Work\2023-07-tapioca\tapioca-bar-audit\node_modules\hardhat\src\internal\hardhat-network\provider\utils\makeForkClient.ts:42:21)
+      at async Function.create (C:\Users\root\Desktop\Work\2023-07-tapioca\tapioca-bar-audit\node_modules\hardhat\src\internal\hardhat-network\provider\node.ts:178:11)
+      at async HardhatNetworkProvider._init (C:\Users\root\Desktop\Work\2023-07-tapioca\tapioca-bar-audit\node_modules\hardhat\src\internal\hardhat-network\provider\provider.ts:258:28)
+      at async HardhatNetworkProvider._send (C:\Users\root\Desktop\Work\2023-07-tapioca\tapioca-bar-audit\node_modules\hardhat\src\internal\hardhat-network\provider\provider.ts:197:5)
+      at async HardhatNetworkProvider.request (C:\Users\root\Desktop\Work\2023-07-tapioca\tapioca-bar-audit\node_modules\hardhat\src\internal\hardhat-network\provider\provider.ts:123:18)
+      at async TracerWrapper.request (C:\Users\root\Desktop\Work\2023-07-tapioca\tapioca-bar-audit\node_modules\hardhat-tracer\src\wrapper.ts:30:16)
+      at async EthersProviderWrapper.send (C:\Users\root\Desktop\Work\2023-07-tapioca\tapioca-bar-audit\node_modules\@nomiclabs\hardhat-ethers\src\internal\ethers-provider-wrapper.ts:13:20)
+
+  43) LiquidationQueue test
+       bids
+         should bid with stable, remove inactive bid, bid again, activate bid:
+     ProviderError: Must be authenticated!
+      at HttpProvider.request (C:\Users\root\Desktop\Work\2023-07-tapioca\tapioca-bar-audit\node_modules\hardhat\src\internal\core\providers\http.ts:88:21)
+      at processTicksAndRejections (node:internal/process/task_queues:95:5)
+      at async getNetworkId (C:\Users\root\Desktop\Work\2023-07-tapioca\tapioca-bar-audit\node_modules\hardhat\src\internal\hardhat-network\provider\utils\makeForkClient.ts:116:28)
+      at async makeForkClient (C:\Users\root\Desktop\Work\2023-07-tapioca\tapioca-bar-audit\node_modules\hardhat\src\internal\hardhat-network\provider\utils\makeForkClient.ts:42:21)
+      at async Function.create (C:\Users\root\Desktop\Work\2023-07-tapioca\tapioca-bar-audit\node_modules\hardhat\src\internal\hardhat-network\provider\node.ts:178:11)
+      at async HardhatNetworkProvider._init (C:\Users\root\Desktop\Work\2023-07-tapioca\tapioca-bar-audit\node_modules\hardhat\src\internal\hardhat-network\provider\provider.ts:258:28)
+      at async HardhatNetworkProvider._send (C:\Users\root\Desktop\Work\2023-07-tapioca\tapioca-bar-audit\node_modules\hardhat\src\internal\hardhat-network\provider\provider.ts:197:5)
+      at async HardhatNetworkProvider.request (C:\Users\root\Desktop\Work\2023-07-tapioca\tapioca-bar-audit\node_modules\hardhat\src\internal\hardhat-network\provider\provider.ts:123:18)
+      at async TracerWrapper.request (C:\Users\root\Desktop\Work\2023-07-tapioca\tapioca-bar-audit\node_modules\hardhat-tracer\src\wrapper.ts:30:16)
+      at async EthersProviderWrapper.send (C:\Users\root\Desktop\Work\2023-07-tapioca\tapioca-bar-audit\node_modules\@nomiclabs\hardhat-ethers\src\internal\ethers-provider-wrapper.ts:13:20)
+
+  44) LiquidationQueue test
+       bids
+         should execute bids for stable bidders:
+     ProviderError: Must be authenticated!
+      at HttpProvider.request (C:\Users\root\Desktop\Work\2023-07-tapioca\tapioca-bar-audit\node_modules\hardhat\src\internal\core\providers\http.ts:88:21)
+      at processTicksAndRejections (node:internal/process/task_queues:95:5)
+      at async getNetworkId (C:\Users\root\Desktop\Work\2023-07-tapioca\tapioca-bar-audit\node_modules\hardhat\src\internal\hardhat-network\provider\utils\makeForkClient.ts:116:28)
+      at async makeForkClient (C:\Users\root\Desktop\Work\2023-07-tapioca\tapioca-bar-audit\node_modules\hardhat\src\internal\hardhat-network\provider\utils\makeForkClient.ts:42:21)
+      at async Function.create (C:\Users\root\Desktop\Work\2023-07-tapioca\tapioca-bar-audit\node_modules\hardhat\src\internal\hardhat-network\provider\node.ts:178:11)
+      at async HardhatNetworkProvider._init (C:\Users\root\Desktop\Work\2023-07-tapioca\tapioca-bar-audit\node_modules\hardhat\src\internal\hardhat-network\provider\provider.ts:258:28)
+      at async HardhatNetworkProvider._send (C:\Users\root\Desktop\Work\2023-07-tapioca\tapioca-bar-audit\node_modules\hardhat\src\internal\hardhat-network\provider\provider.ts:197:5)
+      at async HardhatNetworkProvider.request (C:\Users\root\Desktop\Work\2023-07-tapioca\tapioca-bar-audit\node_modules\hardhat\src\internal\hardhat-network\provider\provider.ts:123:18)
+      at async TracerWrapper.request (C:\Users\root\Desktop\Work\2023-07-tapioca\tapioca-bar-audit\node_modules\hardhat-tracer\src\wrapper.ts:30:16)
+      at async EthersProviderWrapper.send (C:\Users\root\Desktop\Work\2023-07-tapioca\tapioca-bar-audit\node_modules\@nomiclabs\hardhat-ethers\src\internal\ethers-provider-wrapper.ts:13:20)
+
+  45) LiquidationQueue test
+       bids
+         should execute bids for stable bidders using the entire bid amount:
+     ProviderError: Must be authenticated!
+      at HttpProvider.request (C:\Users\root\Desktop\Work\2023-07-tapioca\tapioca-bar-audit\node_modules\hardhat\src\internal\core\providers\http.ts:88:21)
+      at processTicksAndRejections (node:internal/process/task_queues:95:5)
+      at async getNetworkId (C:\Users\root\Desktop\Work\2023-07-tapioca\tapioca-bar-audit\node_modules\hardhat\src\internal\hardhat-network\provider\utils\makeForkClient.ts:116:28)
+      at async makeForkClient (C:\Users\root\Desktop\Work\2023-07-tapioca\tapioca-bar-audit\node_modules\hardhat\src\internal\hardhat-network\provider\utils\makeForkClient.ts:42:21)
+      at async Function.create (C:\Users\root\Desktop\Work\2023-07-tapioca\tapioca-bar-audit\node_modules\hardhat\src\internal\hardhat-network\provider\node.ts:178:11)
+      at async HardhatNetworkProvider._init (C:\Users\root\Desktop\Work\2023-07-tapioca\tapioca-bar-audit\node_modules\hardhat\src\internal\hardhat-network\provider\provider.ts:258:28)
+      at async HardhatNetworkProvider._send (C:\Users\root\Desktop\Work\2023-07-tapioca\tapioca-bar-audit\node_modules\hardhat\src\internal\hardhat-network\provider\provider.ts:197:5)
+      at async HardhatNetworkProvider.request (C:\Users\root\Desktop\Work\2023-07-tapioca\tapioca-bar-audit\node_modules\hardhat\src\internal\hardhat-network\provider\provider.ts:123:18)
+      at async TracerWrapper.request (C:\Users\root\Desktop\Work\2023-07-tapioca\tapioca-bar-audit\node_modules\hardhat-tracer\src\wrapper.ts:30:16)
+      at async EthersProviderWrapper.send (C:\Users\root\Desktop\Work\2023-07-tapioca\tapioca-bar-audit\node_modules\@nomiclabs\hardhat-ethers\src\internal\ethers-provider-wrapper.ts:13:20)
+
+  46) LiquidationQueue test
+       bids
+         should try to active when no bids are placed:
+     ProviderError: Must be authenticated!
+      at HttpProvider.request (C:\Users\root\Desktop\Work\2023-07-tapioca\tapioca-bar-audit\node_modules\hardhat\src\internal\core\providers\http.ts:88:21)
+      at processTicksAndRejections (node:internal/process/task_queues:95:5)
+      at async getNetworkId (C:\Users\root\Desktop\Work\2023-07-tapioca\tapioca-bar-audit\node_modules\hardhat\src\internal\hardhat-network\provider\utils\makeForkClient.ts:116:28)
+      at async makeForkClient (C:\Users\root\Desktop\Work\2023-07-tapioca\tapioca-bar-audit\node_modules\hardhat\src\internal\hardhat-network\provider\utils\makeForkClient.ts:42:21)
+      at async Function.create (C:\Users\root\Desktop\Work\2023-07-tapioca\tapioca-bar-audit\node_modules\hardhat\src\internal\hardhat-network\provider\node.ts:178:11)
+      at async HardhatNetworkProvider._init (C:\Users\root\Desktop\Work\2023-07-tapioca\tapioca-bar-audit\node_modules\hardhat\src\internal\hardhat-network\provider\provider.ts:258:28)
+      at async HardhatNetworkProvider._send (C:\Users\root\Desktop\Work\2023-07-tapioca\tapioca-bar-audit\node_modules\hardhat\src\internal\hardhat-network\provider\provider.ts:197:5)
+      at async HardhatNetworkProvider.request (C:\Users\root\Desktop\Work\2023-07-tapioca\tapioca-bar-audit\node_modules\hardhat\src\internal\hardhat-network\provider\provider.ts:123:18)
+      at async TracerWrapper.request (C:\Users\root\Desktop\Work\2023-07-tapioca\tapioca-bar-audit\node_modules\hardhat-tracer\src\wrapper.ts:30:16)
+      at async EthersProviderWrapper.send (C:\Users\root\Desktop\Work\2023-07-tapioca\tapioca-bar-audit\node_modules\@nomiclabs\hardhat-ethers\src\internal\ethers-provider-wrapper.ts:13:20)
+
+  47) LiquidationQueue test
+       bids
+         bid, activate, try to remove inactive bid:
+     ProviderError: Must be authenticated!
+      at HttpProvider.request (C:\Users\root\Desktop\Work\2023-07-tapioca\tapioca-bar-audit\node_modules\hardhat\src\internal\core\providers\http.ts:88:21)
+      at processTicksAndRejections (node:internal/process/task_queues:95:5)
+      at async getNetworkId (C:\Users\root\Desktop\Work\2023-07-tapioca\tapioca-bar-audit\node_modules\hardhat\src\internal\hardhat-network\provider\utils\makeForkClient.ts:116:28)
+      at async makeForkClient (C:\Users\root\Desktop\Work\2023-07-tapioca\tapioca-bar-audit\node_modules\hardhat\src\internal\hardhat-network\provider\utils\makeForkClient.ts:42:21)
+      at async Function.create (C:\Users\root\Desktop\Work\2023-07-tapioca\tapioca-bar-audit\node_modules\hardhat\src\internal\hardhat-network\provider\node.ts:178:11)
+      at async HardhatNetworkProvider._init (C:\Users\root\Desktop\Work\2023-07-tapioca\tapioca-bar-audit\node_modules\hardhat\src\internal\hardhat-network\provider\provider.ts:258:28)
+      at async HardhatNetworkProvider._send (C:\Users\root\Desktop\Work\2023-07-tapioca\tapioca-bar-audit\node_modules\hardhat\src\internal\hardhat-network\provider\provider.ts:197:5)
+      at async HardhatNetworkProvider.request (C:\Users\root\Desktop\Work\2023-07-tapioca\tapioca-bar-audit\node_modules\hardhat\src\internal\hardhat-network\provider\provider.ts:123:18)
+      at async TracerWrapper.request (C:\Users\root\Desktop\Work\2023-07-tapioca\tapioca-bar-audit\node_modules\hardhat-tracer\src\wrapper.ts:30:16)
+      at async EthersProviderWrapper.send (C:\Users\root\Desktop\Work\2023-07-tapioca\tapioca-bar-audit\node_modules\@nomiclabs\hardhat-ethers\src\internal\ethers-provider-wrapper.ts:13:20)
+
+  48) LiquidationQueue test
+       bids
+         place a few bids, active all of them:
+     ProviderError: Must be authenticated!
+      at HttpProvider.request (C:\Users\root\Desktop\Work\2023-07-tapioca\tapioca-bar-audit\node_modules\hardhat\src\internal\core\providers\http.ts:88:21)
+      at processTicksAndRejections (node:internal/process/task_queues:95:5)
+      at async getNetworkId (C:\Users\root\Desktop\Work\2023-07-tapioca\tapioca-bar-audit\node_modules\hardhat\src\internal\hardhat-network\provider\utils\makeForkClient.ts:116:28)
+      at async makeForkClient (C:\Users\root\Desktop\Work\2023-07-tapioca\tapioca-bar-audit\node_modules\hardhat\src\internal\hardhat-network\provider\utils\makeForkClient.ts:42:21)
+      at async Function.create (C:\Users\root\Desktop\Work\2023-07-tapioca\tapioca-bar-audit\node_modules\hardhat\src\internal\hardhat-network\provider\node.ts:178:11)
+      at async HardhatNetworkProvider._init (C:\Users\root\Desktop\Work\2023-07-tapioca\tapioca-bar-audit\node_modules\hardhat\src\internal\hardhat-network\provider\provider.ts:258:28)
+      at async HardhatNetworkProvider._send (C:\Users\root\Desktop\Work\2023-07-tapioca\tapioca-bar-audit\node_modules\hardhat\src\internal\hardhat-network\provider\provider.ts:197:5)
+      at async HardhatNetworkProvider.request (C:\Users\root\Desktop\Work\2023-07-tapioca\tapioca-bar-audit\node_modules\hardhat\src\internal\hardhat-network\provider\provider.ts:123:18)
+      at async TracerWrapper.request (C:\Users\root\Desktop\Work\2023-07-tapioca\tapioca-bar-audit\node_modules\hardhat-tracer\src\wrapper.ts:30:16)
+      at async EthersProviderWrapper.send (C:\Users\root\Desktop\Work\2023-07-tapioca\tapioca-bar-audit\node_modules\@nomiclabs\hardhat-ethers\src\internal\ethers-provider-wrapper.ts:13:20)
+
+  49) LiquidationQueue test
+       bids
+         should bid, activates id and try to remove inactive bid:
+     ProviderError: Must be authenticated!
+      at HttpProvider.request (C:\Users\root\Desktop\Work\2023-07-tapioca\tapioca-bar-audit\node_modules\hardhat\src\internal\core\providers\http.ts:88:21)
+      at processTicksAndRejections (node:internal/process/task_queues:95:5)
+      at async getNetworkId (C:\Users\root\Desktop\Work\2023-07-tapioca\tapioca-bar-audit\node_modules\hardhat\src\internal\hardhat-network\provider\utils\makeForkClient.ts:116:28)
+      at async makeForkClient (C:\Users\root\Desktop\Work\2023-07-tapioca\tapioca-bar-audit\node_modules\hardhat\src\internal\hardhat-network\provider\utils\makeForkClient.ts:42:21)
+      at async Function.create (C:\Users\root\Desktop\Work\2023-07-tapioca\tapioca-bar-audit\node_modules\hardhat\src\internal\hardhat-network\provider\node.ts:178:11)
+      at async HardhatNetworkProvider._init (C:\Users\root\Desktop\Work\2023-07-tapioca\tapioca-bar-audit\node_modules\hardhat\src\internal\hardhat-network\provider\provider.ts:258:28)
+      at async HardhatNetworkProvider._send (C:\Users\root\Desktop\Work\2023-07-tapioca\tapioca-bar-audit\node_modules\hardhat\src\internal\hardhat-network\provider\provider.ts:197:5)
+      at async HardhatNetworkProvider.request (C:\Users\root\Desktop\Work\2023-07-tapioca\tapioca-bar-audit\node_modules\hardhat\src\internal\hardhat-network\provider\provider.ts:123:18)
+      at async TracerWrapper.request (C:\Users\root\Desktop\Work\2023-07-tapioca\tapioca-bar-audit\node_modules\hardhat-tracer\src\wrapper.ts:30:16)
+      at async EthersProviderWrapper.send (C:\Users\root\Desktop\Work\2023-07-tapioca\tapioca-bar-audit\node_modules\@nomiclabs\hardhat-ethers\src\internal\ethers-provider-wrapper.ts:13:20)
+
+  50) LiquidationQueue test
+       views
+         should get the market:
+     ProviderError: Must be authenticated!
+      at HttpProvider.request (C:\Users\root\Desktop\Work\2023-07-tapioca\tapioca-bar-audit\node_modules\hardhat\src\internal\core\providers\http.ts:88:21)
+      at processTicksAndRejections (node:internal/process/task_queues:95:5)
+      at async getNetworkId (C:\Users\root\Desktop\Work\2023-07-tapioca\tapioca-bar-audit\node_modules\hardhat\src\internal\hardhat-network\provider\utils\makeForkClient.ts:116:28)
+      at async makeForkClient (C:\Users\root\Desktop\Work\2023-07-tapioca\tapioca-bar-audit\node_modules\hardhat\src\internal\hardhat-network\provider\utils\makeForkClient.ts:42:21)
+      at async Function.create (C:\Users\root\Desktop\Work\2023-07-tapioca\tapioca-bar-audit\node_modules\hardhat\src\internal\hardhat-network\provider\node.ts:178:11)
+      at async HardhatNetworkProvider._init (C:\Users\root\Desktop\Work\2023-07-tapioca\tapioca-bar-audit\node_modules\hardhat\src\internal\hardhat-network\provider\provider.ts:258:28)
+      at async HardhatNetworkProvider._send (C:\Users\root\Desktop\Work\2023-07-tapioca\tapioca-bar-audit\node_modules\hardhat\src\internal\hardhat-network\provider\provider.ts:197:5)
+      at async HardhatNetworkProvider.request (C:\Users\root\Desktop\Work\2023-07-tapioca\tapioca-bar-audit\node_modules\hardhat\src\internal\hardhat-network\provider\provider.ts:123:18)
+      at async TracerWrapper.request (C:\Users\root\Desktop\Work\2023-07-tapioca\tapioca-bar-audit\node_modules\hardhat-tracer\src\wrapper.ts:30:16)
+      at async EthersProviderWrapper.send (C:\Users\root\Desktop\Work\2023-07-tapioca\tapioca-bar-audit\node_modules\@nomiclabs\hardhat-ethers\src\internal\ethers-provider-wrapper.ts:13:20)
+
+  51) LiquidationQueue test
+       views
+         should return order book entries:
+     ProviderError: Must be authenticated!
+      at HttpProvider.request (C:\Users\root\Desktop\Work\2023-07-tapioca\tapioca-bar-audit\node_modules\hardhat\src\internal\core\providers\http.ts:88:21)
+      at processTicksAndRejections (node:internal/process/task_queues:95:5)
+      at async getNetworkId (C:\Users\root\Desktop\Work\2023-07-tapioca\tapioca-bar-audit\node_modules\hardhat\src\internal\hardhat-network\provider\utils\makeForkClient.ts:116:28)
+      at async makeForkClient (C:\Users\root\Desktop\Work\2023-07-tapioca\tapioca-bar-audit\node_modules\hardhat\src\internal\hardhat-network\provider\utils\makeForkClient.ts:42:21)
+      at async Function.create (C:\Users\root\Desktop\Work\2023-07-tapioca\tapioca-bar-audit\node_modules\hardhat\src\internal\hardhat-network\provider\node.ts:178:11)
+      at async HardhatNetworkProvider._init (C:\Users\root\Desktop\Work\2023-07-tapioca\tapioca-bar-audit\node_modules\hardhat\src\internal\hardhat-network\provider\provider.ts:258:28)
+      at async HardhatNetworkProvider._send (C:\Users\root\Desktop\Work\2023-07-tapioca\tapioca-bar-audit\node_modules\hardhat\src\internal\hardhat-network\provider\provider.ts:197:5)
+      at async HardhatNetworkProvider.request (C:\Users\root\Desktop\Work\2023-07-tapioca\tapioca-bar-audit\node_modules\hardhat\src\internal\hardhat-network\provider\provider.ts:123:18)
+      at async TracerWrapper.request (C:\Users\root\Desktop\Work\2023-07-tapioca\tapioca-bar-audit\node_modules\hardhat-tracer\src\wrapper.ts:30:16)
+      at async EthersProviderWrapper.send (C:\Users\root\Desktop\Work\2023-07-tapioca\tapioca-bar-audit\node_modules\@nomiclabs\hardhat-ethers\src\internal\ethers-provider-wrapper.ts:13:20)
+
+  52) LiquidationQueue test
+       views
+         should check different flows using the 18 decimals test tokens:
+     ProviderError: Must be authenticated!
+      at HttpProvider.request (C:\Users\root\Desktop\Work\2023-07-tapioca\tapioca-bar-audit\node_modules\hardhat\src\internal\core\providers\http.ts:88:21)
+      at processTicksAndRejections (node:internal/process/task_queues:95:5)
+      at async getNetworkId (C:\Users\root\Desktop\Work\2023-07-tapioca\tapioca-bar-audit\node_modules\hardhat\src\internal\hardhat-network\provider\utils\makeForkClient.ts:116:28)
+      at async makeForkClient (C:\Users\root\Desktop\Work\2023-07-tapioca\tapioca-bar-audit\node_modules\hardhat\src\internal\hardhat-network\provider\utils\makeForkClient.ts:42:21)
+      at async Function.create (C:\Users\root\Desktop\Work\2023-07-tapioca\tapioca-bar-audit\node_modules\hardhat\src\internal\hardhat-network\provider\node.ts:178:11)
+      at async HardhatNetworkProvider._init (C:\Users\root\Desktop\Work\2023-07-tapioca\tapioca-bar-audit\node_modules\hardhat\src\internal\hardhat-network\provider\provider.ts:258:28)
+      at async HardhatNetworkProvider._send (C:\Users\root\Desktop\Work\2023-07-tapioca\tapioca-bar-audit\node_modules\hardhat\src\internal\hardhat-network\provider\provider.ts:197:5)
+      at async HardhatNetworkProvider.request (C:\Users\root\Desktop\Work\2023-07-tapioca\tapioca-bar-audit\node_modules\hardhat\src\internal\hardhat-network\provider\provider.ts:123:18)
+      at async TracerWrapper.request (C:\Users\root\Desktop\Work\2023-07-tapioca\tapioca-bar-audit\node_modules\hardhat-tracer\src\wrapper.ts:30:16)
+      at async EthersProviderWrapper.send (C:\Users\root\Desktop\Work\2023-07-tapioca\tapioca-bar-audit\node_modules\@nomiclabs\hardhat-ethers\src\internal\ethers-provider-wrapper.ts:13:20)
+
+  53) LiquidationQueue test
+       flow
+         borrow, place bid; collateral drops, call without any bid being active => should rely on close liquidation:
+     ProviderError: Must be authenticated!
+      at HttpProvider.request (C:\Users\root\Desktop\Work\2023-07-tapioca\tapioca-bar-audit\node_modules\hardhat\src\internal\core\providers\http.ts:88:21)
+      at processTicksAndRejections (node:internal/process/task_queues:95:5)
+      at async getNetworkId (C:\Users\root\Desktop\Work\2023-07-tapioca\tapioca-bar-audit\node_modules\hardhat\src\internal\hardhat-network\provider\utils\makeForkClient.ts:116:28)
+      at async makeForkClient (C:\Users\root\Desktop\Work\2023-07-tapioca\tapioca-bar-audit\node_modules\hardhat\src\internal\hardhat-network\provider\utils\makeForkClient.ts:42:21)
+      at async Function.create (C:\Users\root\Desktop\Work\2023-07-tapioca\tapioca-bar-audit\node_modules\hardhat\src\internal\hardhat-network\provider\node.ts:178:11)
+      at async HardhatNetworkProvider._init (C:\Users\root\Desktop\Work\2023-07-tapioca\tapioca-bar-audit\node_modules\hardhat\src\internal\hardhat-network\provider\provider.ts:258:28)
+      at async HardhatNetworkProvider._send (C:\Users\root\Desktop\Work\2023-07-tapioca\tapioca-bar-audit\node_modules\hardhat\src\internal\hardhat-network\provider\provider.ts:197:5)
+      at async HardhatNetworkProvider.request (C:\Users\root\Desktop\Work\2023-07-tapioca\tapioca-bar-audit\node_modules\hardhat\src\internal\hardhat-network\provider\provider.ts:123:18)
+      at async TracerWrapper.request (C:\Users\root\Desktop\Work\2023-07-tapioca\tapioca-bar-audit\node_modules\hardhat-tracer\src\wrapper.ts:30:16)
+      at async EthersProviderWrapper.send (C:\Users\root\Desktop\Work\2023-07-tapioca\tapioca-bar-audit\node_modules\@nomiclabs\hardhat-ethers\src\internal\ethers-provider-wrapper.ts:13:20)
+
+  54) LiquidationQueue test
+       flow
+         borrow, place small bid, activate, collateral drops, liquidate => should rely on close liquidation:
+     ProviderError: Must be authenticated!
+      at HttpProvider.request (C:\Users\root\Desktop\Work\2023-07-tapioca\tapioca-bar-audit\node_modules\hardhat\src\internal\core\providers\http.ts:88:21)
+      at processTicksAndRejections (node:internal/process/task_queues:95:5)
+      at async getNetworkId (C:\Users\root\Desktop\Work\2023-07-tapioca\tapioca-bar-audit\node_modules\hardhat\src\internal\hardhat-network\provider\utils\makeForkClient.ts:116:28)
+      at async makeForkClient (C:\Users\root\Desktop\Work\2023-07-tapioca\tapioca-bar-audit\node_modules\hardhat\src\internal\hardhat-network\provider\utils\makeForkClient.ts:42:21)
+      at async Function.create (C:\Users\root\Desktop\Work\2023-07-tapioca\tapioca-bar-audit\node_modules\hardhat\src\internal\hardhat-network\provider\node.ts:178:11)
+      at async HardhatNetworkProvider._init (C:\Users\root\Desktop\Work\2023-07-tapioca\tapioca-bar-audit\node_modules\hardhat\src\internal\hardhat-network\provider\provider.ts:258:28)
+      at async HardhatNetworkProvider._send (C:\Users\root\Desktop\Work\2023-07-tapioca\tapioca-bar-audit\node_modules\hardhat\src\internal\hardhat-network\provider\provider.ts:197:5)
+      at async HardhatNetworkProvider.request (C:\Users\root\Desktop\Work\2023-07-tapioca\tapioca-bar-audit\node_modules\hardhat\src\internal\hardhat-network\provider\provider.ts:123:18)
+      at async TracerWrapper.request (C:\Users\root\Desktop\Work\2023-07-tapioca\tapioca-bar-audit\node_modules\hardhat-tracer\src\wrapper.ts:30:16)
+      at async EthersProviderWrapper.send (C:\Users\root\Desktop\Work\2023-07-tapioca\tapioca-bar-audit\node_modules\@nomiclabs\hardhat-ethers\src\internal\ethers-provider-wrapper.ts:13:20)
+
+  55) LiquidationQueue test
+       flow
+         borrow, place bid, activate, collateral drops, liquidate => should rely on LQ liquidation:
+     ProviderError: Must be authenticated!
+      at HttpProvider.request (C:\Users\root\Desktop\Work\2023-07-tapioca\tapioca-bar-audit\node_modules\hardhat\src\internal\core\providers\http.ts:88:21)
+      at processTicksAndRejections (node:internal/process/task_queues:95:5)
+      at async getNetworkId (C:\Users\root\Desktop\Work\2023-07-tapioca\tapioca-bar-audit\node_modules\hardhat\src\internal\hardhat-network\provider\utils\makeForkClient.ts:116:28)
+      at async makeForkClient (C:\Users\root\Desktop\Work\2023-07-tapioca\tapioca-bar-audit\node_modules\hardhat\src\internal\hardhat-network\provider\utils\makeForkClient.ts:42:21)
+      at async Function.create (C:\Users\root\Desktop\Work\2023-07-tapioca\tapioca-bar-audit\node_modules\hardhat\src\internal\hardhat-network\provider\node.ts:178:11)
+      at async HardhatNetworkProvider._init (C:\Users\root\Desktop\Work\2023-07-tapioca\tapioca-bar-audit\node_modules\hardhat\src\internal\hardhat-network\provider\provider.ts:258:28)
+      at async HardhatNetworkProvider._send (C:\Users\root\Desktop\Work\2023-07-tapioca\tapioca-bar-audit\node_modules\hardhat\src\internal\hardhat-network\provider\provider.ts:197:5)
+      at async HardhatNetworkProvider.request (C:\Users\root\Desktop\Work\2023-07-tapioca\tapioca-bar-audit\node_modules\hardhat\src\internal\hardhat-network\provider\provider.ts:123:18)
+      at async TracerWrapper.request (C:\Users\root\Desktop\Work\2023-07-tapioca\tapioca-bar-audit\node_modules\hardhat-tracer\src\wrapper.ts:30:16)
+      at async EthersProviderWrapper.send (C:\Users\root\Desktop\Work\2023-07-tapioca\tapioca-bar-audit\node_modules\@nomiclabs\hardhat-ethers\src\internal\ethers-provider-wrapper.ts:13:20)
+
+  56) Penrose test
+       views
+         Should display Tapioca markets:
+     ProviderError: Must be authenticated!
+      at HttpProvider.request (C:\Users\root\Desktop\Work\2023-07-tapioca\tapioca-bar-audit\node_modules\hardhat\src\internal\core\providers\http.ts:88:21)
+      at processTicksAndRejections (node:internal/process/task_queues:95:5)
+      at async getNetworkId (C:\Users\root\Desktop\Work\2023-07-tapioca\tapioca-bar-audit\node_modules\hardhat\src\internal\hardhat-network\provider\utils\makeForkClient.ts:116:28)
+      at async makeForkClient (C:\Users\root\Desktop\Work\2023-07-tapioca\tapioca-bar-audit\node_modules\hardhat\src\internal\hardhat-network\provider\utils\makeForkClient.ts:42:21)
+      at async Function.create (C:\Users\root\Desktop\Work\2023-07-tapioca\tapioca-bar-audit\node_modules\hardhat\src\internal\hardhat-network\provider\node.ts:178:11)
+      at async HardhatNetworkProvider._init (C:\Users\root\Desktop\Work\2023-07-tapioca\tapioca-bar-audit\node_modules\hardhat\src\internal\hardhat-network\provider\provider.ts:258:28)
+      at async HardhatNetworkProvider._send (C:\Users\root\Desktop\Work\2023-07-tapioca\tapioca-bar-audit\node_modules\hardhat\src\internal\hardhat-network\provider\provider.ts:197:5)
+      at async HardhatNetworkProvider.request (C:\Users\root\Desktop\Work\2023-07-tapioca\tapioca-bar-audit\node_modules\hardhat\src\internal\hardhat-network\provider\provider.ts:123:18)
+      at async TracerWrapper.request (C:\Users\root\Desktop\Work\2023-07-tapioca\tapioca-bar-audit\node_modules\hardhat-tracer\src\wrapper.ts:30:16)
+      at async EthersProviderWrapper.send (C:\Users\root\Desktop\Work\2023-07-tapioca\tapioca-bar-audit\node_modules\@nomiclabs\hardhat-ethers\src\internal\ethers-provider-wrapper.ts:13:20)
+
+  57) Penrose test
+       views
+         should return length of master contracts:
+     ProviderError: Must be authenticated!
+      at HttpProvider.request (C:\Users\root\Desktop\Work\2023-07-tapioca\tapioca-bar-audit\node_modules\hardhat\src\internal\core\providers\http.ts:88:21)
+      at processTicksAndRejections (node:internal/process/task_queues:95:5)
+      at async getNetworkId (C:\Users\root\Desktop\Work\2023-07-tapioca\tapioca-bar-audit\node_modules\hardhat\src\internal\hardhat-network\provider\utils\makeForkClient.ts:116:28)
+      at async makeForkClient (C:\Users\root\Desktop\Work\2023-07-tapioca\tapioca-bar-audit\node_modules\hardhat\src\internal\hardhat-network\provider\utils\makeForkClient.ts:42:21)
+      at async Function.create (C:\Users\root\Desktop\Work\2023-07-tapioca\tapioca-bar-audit\node_modules\hardhat\src\internal\hardhat-network\provider\node.ts:178:11)
+      at async HardhatNetworkProvider._init (C:\Users\root\Desktop\Work\2023-07-tapioca\tapioca-bar-audit\node_modules\hardhat\src\internal\hardhat-network\provider\provider.ts:258:28)
+      at async HardhatNetworkProvider._send (C:\Users\root\Desktop\Work\2023-07-tapioca\tapioca-bar-audit\node_modules\hardhat\src\internal\hardhat-network\provider\provider.ts:197:5)
+      at async HardhatNetworkProvider.request (C:\Users\root\Desktop\Work\2023-07-tapioca\tapioca-bar-audit\node_modules\hardhat\src\internal\hardhat-network\provider\provider.ts:123:18)
+      at async TracerWrapper.request (C:\Users\root\Desktop\Work\2023-07-tapioca\tapioca-bar-audit\node_modules\hardhat-tracer\src\wrapper.ts:30:16)
+      at async EthersProviderWrapper.send (C:\Users\root\Desktop\Work\2023-07-tapioca\tapioca-bar-audit\node_modules\@nomiclabs\hardhat-ethers\src\internal\ethers-provider-wrapper.ts:13:20)
+
+  58) Penrose test
+       views
+         should list all singularity registered markets:
+     ProviderError: Must be authenticated!
+      at HttpProvider.request (C:\Users\root\Desktop\Work\2023-07-tapioca\tapioca-bar-audit\node_modules\hardhat\src\internal\core\providers\http.ts:88:21)
+      at processTicksAndRejections (node:internal/process/task_queues:95:5)
+      at async getNetworkId (C:\Users\root\Desktop\Work\2023-07-tapioca\tapioca-bar-audit\node_modules\hardhat\src\internal\hardhat-network\provider\utils\makeForkClient.ts:116:28)
+      at async makeForkClient (C:\Users\root\Desktop\Work\2023-07-tapioca\tapioca-bar-audit\node_modules\hardhat\src\internal\hardhat-network\provider\utils\makeForkClient.ts:42:21)
+      at async Function.create (C:\Users\root\Desktop\Work\2023-07-tapioca\tapioca-bar-audit\node_modules\hardhat\src\internal\hardhat-network\provider\node.ts:178:11)
+      at async HardhatNetworkProvider._init (C:\Users\root\Desktop\Work\2023-07-tapioca\tapioca-bar-audit\node_modules\hardhat\src\internal\hardhat-network\provider\provider.ts:258:28)
+      at async HardhatNetworkProvider._send (C:\Users\root\Desktop\Work\2023-07-tapioca\tapioca-bar-audit\node_modules\hardhat\src\internal\hardhat-network\provider\provider.ts:197:5)
+      at async HardhatNetworkProvider.request (C:\Users\root\Desktop\Work\2023-07-tapioca\tapioca-bar-audit\node_modules\hardhat\src\internal\hardhat-network\provider\provider.ts:123:18)
+      at async TracerWrapper.request (C:\Users\root\Desktop\Work\2023-07-tapioca\tapioca-bar-audit\node_modules\hardhat-tracer\src\wrapper.ts:30:16)
+      at async EthersProviderWrapper.send (C:\Users\root\Desktop\Work\2023-07-tapioca\tapioca-bar-audit\node_modules\@nomiclabs\hardhat-ethers\src\internal\ethers-provider-wrapper.ts:13:20)
+
+  59) Penrose test
+       allowances
+         should not allow registering singularity without a proper master contract:
+     ProviderError: Must be authenticated!
+      at HttpProvider.request (C:\Users\root\Desktop\Work\2023-07-tapioca\tapioca-bar-audit\node_modules\hardhat\src\internal\core\providers\http.ts:88:21)
+      at processTicksAndRejections (node:internal/process/task_queues:95:5)
+      at async getNetworkId (C:\Users\root\Desktop\Work\2023-07-tapioca\tapioca-bar-audit\node_modules\hardhat\src\internal\hardhat-network\provider\utils\makeForkClient.ts:116:28)
+      at async makeForkClient (C:\Users\root\Desktop\Work\2023-07-tapioca\tapioca-bar-audit\node_modules\hardhat\src\internal\hardhat-network\provider\utils\makeForkClient.ts:42:21)
+      at async Function.create (C:\Users\root\Desktop\Work\2023-07-tapioca\tapioca-bar-audit\node_modules\hardhat\src\internal\hardhat-network\provider\node.ts:178:11)
+      at async HardhatNetworkProvider._init (C:\Users\root\Desktop\Work\2023-07-tapioca\tapioca-bar-audit\node_modules\hardhat\src\internal\hardhat-network\provider\provider.ts:258:28)
+      at async HardhatNetworkProvider._send (C:\Users\root\Desktop\Work\2023-07-tapioca\tapioca-bar-audit\node_modules\hardhat\src\internal\hardhat-network\provider\provider.ts:197:5)
+      at async HardhatNetworkProvider.request (C:\Users\root\Desktop\Work\2023-07-tapioca\tapioca-bar-audit\node_modules\hardhat\src\internal\hardhat-network\provider\provider.ts:123:18)
+      at async TracerWrapper.request (C:\Users\root\Desktop\Work\2023-07-tapioca\tapioca-bar-audit\node_modules\hardhat-tracer\src\wrapper.ts:30:16)
+      at async EthersProviderWrapper.send (C:\Users\root\Desktop\Work\2023-07-tapioca\tapioca-bar-audit\node_modules\@nomiclabs\hardhat-ethers\src\internal\ethers-provider-wrapper.ts:13:20)
+
+  60) Penrose test
+       allowances
+         should not allow registering the same master contract twice:
+     ProviderError: Must be authenticated!
+      at HttpProvider.request (C:\Users\root\Desktop\Work\2023-07-tapioca\tapioca-bar-audit\node_modules\hardhat\src\internal\core\providers\http.ts:88:21)
+      at processTicksAndRejections (node:internal/process/task_queues:95:5)
+      at async getNetworkId (C:\Users\root\Desktop\Work\2023-07-tapioca\tapioca-bar-audit\node_modules\hardhat\src\internal\hardhat-network\provider\utils\makeForkClient.ts:116:28)
+      at async makeForkClient (C:\Users\root\Desktop\Work\2023-07-tapioca\tapioca-bar-audit\node_modules\hardhat\src\internal\hardhat-network\provider\utils\makeForkClient.ts:42:21)
+      at async Function.create (C:\Users\root\Desktop\Work\2023-07-tapioca\tapioca-bar-audit\node_modules\hardhat\src\internal\hardhat-network\provider\node.ts:178:11)
+      at async HardhatNetworkProvider._init (C:\Users\root\Desktop\Work\2023-07-tapioca\tapioca-bar-audit\node_modules\hardhat\src\internal\hardhat-network\provider\provider.ts:258:28)
+      at async HardhatNetworkProvider._send (C:\Users\root\Desktop\Work\2023-07-tapioca\tapioca-bar-audit\node_modules\hardhat\src\internal\hardhat-network\provider\provider.ts:197:5)
+      at async HardhatNetworkProvider.request (C:\Users\root\Desktop\Work\2023-07-tapioca\tapioca-bar-audit\node_modules\hardhat\src\internal\hardhat-network\provider\provider.ts:123:18)
+      at async TracerWrapper.request (C:\Users\root\Desktop\Work\2023-07-tapioca\tapioca-bar-audit\node_modules\hardhat-tracer\src\wrapper.ts:30:16)
+      at async EthersProviderWrapper.send (C:\Users\root\Desktop\Work\2023-07-tapioca\tapioca-bar-audit\node_modules\@nomiclabs\hardhat-ethers\src\internal\ethers-provider-wrapper.ts:13:20)
+
+  61) Penrose test
+       allowances
+         should not allow executing without a proper master contract:
+     ProviderError: Must be authenticated!
+      at HttpProvider.request (C:\Users\root\Desktop\Work\2023-07-tapioca\tapioca-bar-audit\node_modules\hardhat\src\internal\core\providers\http.ts:88:21)
+      at processTicksAndRejections (node:internal/process/task_queues:95:5)
+      at async getNetworkId (C:\Users\root\Desktop\Work\2023-07-tapioca\tapioca-bar-audit\node_modules\hardhat\src\internal\hardhat-network\provider\utils\makeForkClient.ts:116:28)
+      at async makeForkClient (C:\Users\root\Desktop\Work\2023-07-tapioca\tapioca-bar-audit\node_modules\hardhat\src\internal\hardhat-network\provider\utils\makeForkClient.ts:42:21)
+      at async Function.create (C:\Users\root\Desktop\Work\2023-07-tapioca\tapioca-bar-audit\node_modules\hardhat\src\internal\hardhat-network\provider\node.ts:178:11)
+      at async HardhatNetworkProvider._init (C:\Users\root\Desktop\Work\2023-07-tapioca\tapioca-bar-audit\node_modules\hardhat\src\internal\hardhat-network\provider\provider.ts:258:28)
+      at async HardhatNetworkProvider._send (C:\Users\root\Desktop\Work\2023-07-tapioca\tapioca-bar-audit\node_modules\hardhat\src\internal\hardhat-network\provider\provider.ts:197:5)
+      at async HardhatNetworkProvider.request (C:\Users\root\Desktop\Work\2023-07-tapioca\tapioca-bar-audit\node_modules\hardhat\src\internal\hardhat-network\provider\provider.ts:123:18)
+      at async TracerWrapper.request (C:\Users\root\Desktop\Work\2023-07-tapioca\tapioca-bar-audit\node_modules\hardhat-tracer\src\wrapper.ts:30:16)
+      at async EthersProviderWrapper.send (C:\Users\root\Desktop\Work\2023-07-tapioca\tapioca-bar-audit\node_modules\@nomiclabs\hardhat-ethers\src\internal\ethers-provider-wrapper.ts:13:20)
+
+  62) Penrose test
+       allowances
+         should not withdraw for zero address swapper:
+     ProviderError: Must be authenticated!
+      at HttpProvider.request (C:\Users\root\Desktop\Work\2023-07-tapioca\tapioca-bar-audit\node_modules\hardhat\src\internal\core\providers\http.ts:88:21)
+      at processTicksAndRejections (node:internal/process/task_queues:95:5)
+      at async getNetworkId (C:\Users\root\Desktop\Work\2023-07-tapioca\tapioca-bar-audit\node_modules\hardhat\src\internal\hardhat-network\provider\utils\makeForkClient.ts:116:28)
+      at async makeForkClient (C:\Users\root\Desktop\Work\2023-07-tapioca\tapioca-bar-audit\node_modules\hardhat\src\internal\hardhat-network\provider\utils\makeForkClient.ts:42:21)
+      at async Function.create (C:\Users\root\Desktop\Work\2023-07-tapioca\tapioca-bar-audit\node_modules\hardhat\src\internal\hardhat-network\provider\node.ts:178:11)
+      at async HardhatNetworkProvider._init (C:\Users\root\Desktop\Work\2023-07-tapioca\tapioca-bar-audit\node_modules\hardhat\src\internal\hardhat-network\provider\provider.ts:258:28)
+      at async HardhatNetworkProvider._send (C:\Users\root\Desktop\Work\2023-07-tapioca\tapioca-bar-audit\node_modules\hardhat\src\internal\hardhat-network\provider\provider.ts:197:5)
+      at async HardhatNetworkProvider.request (C:\Users\root\Desktop\Work\2023-07-tapioca\tapioca-bar-audit\node_modules\hardhat\src\internal\hardhat-network\provider\provider.ts:123:18)
+      at async TracerWrapper.request (C:\Users\root\Desktop\Work\2023-07-tapioca\tapioca-bar-audit\node_modules\hardhat-tracer\src\wrapper.ts:30:16)
+      at async EthersProviderWrapper.send (C:\Users\root\Desktop\Work\2023-07-tapioca\tapioca-bar-audit\node_modules\@nomiclabs\hardhat-ethers\src\internal\ethers-provider-wrapper.ts:13:20)
+
+  63) Penrose test
+       allowances
+         should not allow to call withdraw when paused:
+     ProviderError: Must be authenticated!
+      at HttpProvider.request (C:\Users\root\Desktop\Work\2023-07-tapioca\tapioca-bar-audit\node_modules\hardhat\src\internal\core\providers\http.ts:88:21)
+      at processTicksAndRejections (node:internal/process/task_queues:95:5)
+      at async getNetworkId (C:\Users\root\Desktop\Work\2023-07-tapioca\tapioca-bar-audit\node_modules\hardhat\src\internal\hardhat-network\provider\utils\makeForkClient.ts:116:28)
+      at async makeForkClient (C:\Users\root\Desktop\Work\2023-07-tapioca\tapioca-bar-audit\node_modules\hardhat\src\internal\hardhat-network\provider\utils\makeForkClient.ts:42:21)
+      at async Function.create (C:\Users\root\Desktop\Work\2023-07-tapioca\tapioca-bar-audit\node_modules\hardhat\src\internal\hardhat-network\provider\node.ts:178:11)
+      at async HardhatNetworkProvider._init (C:\Users\root\Desktop\Work\2023-07-tapioca\tapioca-bar-audit\node_modules\hardhat\src\internal\hardhat-network\provider\provider.ts:258:28)
+      at async HardhatNetworkProvider._send (C:\Users\root\Desktop\Work\2023-07-tapioca\tapioca-bar-audit\node_modules\hardhat\src\internal\hardhat-network\provider\provider.ts:197:5)
+      at async HardhatNetworkProvider.request (C:\Users\root\Desktop\Work\2023-07-tapioca\tapioca-bar-audit\node_modules\hardhat\src\internal\hardhat-network\provider\provider.ts:123:18)
+      at async TracerWrapper.request (C:\Users\root\Desktop\Work\2023-07-tapioca\tapioca-bar-audit\node_modules\hardhat-tracer\src\wrapper.ts:30:16)
+      at async EthersProviderWrapper.send (C:\Users\root\Desktop\Work\2023-07-tapioca\tapioca-bar-audit\node_modules\@nomiclabs\hardhat-ethers\src\internal\ethers-provider-wrapper.ts:13:20)
+
+  64) Penrose test
+       allowances
+         should not allow to call execute when paused:
+     ProviderError: Must be authenticated!
+      at HttpProvider.request (C:\Users\root\Desktop\Work\2023-07-tapioca\tapioca-bar-audit\node_modules\hardhat\src\internal\core\providers\http.ts:88:21)
+      at processTicksAndRejections (node:internal/process/task_queues:95:5)
+      at async getNetworkId (C:\Users\root\Desktop\Work\2023-07-tapioca\tapioca-bar-audit\node_modules\hardhat\src\internal\hardhat-network\provider\utils\makeForkClient.ts:116:28)
+      at async makeForkClient (C:\Users\root\Desktop\Work\2023-07-tapioca\tapioca-bar-audit\node_modules\hardhat\src\internal\hardhat-network\provider\utils\makeForkClient.ts:42:21)
+      at async Function.create (C:\Users\root\Desktop\Work\2023-07-tapioca\tapioca-bar-audit\node_modules\hardhat\src\internal\hardhat-network\provider\node.ts:178:11)
+      at async HardhatNetworkProvider._init (C:\Users\root\Desktop\Work\2023-07-tapioca\tapioca-bar-audit\node_modules\hardhat\src\internal\hardhat-network\provider\provider.ts:258:28)
+      at async HardhatNetworkProvider._send (C:\Users\root\Desktop\Work\2023-07-tapioca\tapioca-bar-audit\node_modules\hardhat\src\internal\hardhat-network\provider\provider.ts:197:5)
+      at async HardhatNetworkProvider.request (C:\Users\root\Desktop\Work\2023-07-tapioca\tapioca-bar-audit\node_modules\hardhat\src\internal\hardhat-network\provider\provider.ts:123:18)
+      at async TracerWrapper.request (C:\Users\root\Desktop\Work\2023-07-tapioca\tapioca-bar-audit\node_modules\hardhat-tracer\src\wrapper.ts:30:16)
+      at async EthersProviderWrapper.send (C:\Users\root\Desktop\Work\2023-07-tapioca\tapioca-bar-audit\node_modules\@nomiclabs\hardhat-ethers\src\internal\ethers-provider-wrapper.ts:13:20)
+
+  65) Penrose test
+       setters
+         should register a master contract:
+     ProviderError: Must be authenticated!
+      at HttpProvider.request (C:\Users\root\Desktop\Work\2023-07-tapioca\tapioca-bar-audit\node_modules\hardhat\src\internal\core\providers\http.ts:88:21)
+      at processTicksAndRejections (node:internal/process/task_queues:95:5)
+      at async getNetworkId (C:\Users\root\Desktop\Work\2023-07-tapioca\tapioca-bar-audit\node_modules\hardhat\src\internal\hardhat-network\provider\utils\makeForkClient.ts:116:28)
+      at async makeForkClient (C:\Users\root\Desktop\Work\2023-07-tapioca\tapioca-bar-audit\node_modules\hardhat\src\internal\hardhat-network\provider\utils\makeForkClient.ts:42:21)
+      at async Function.create (C:\Users\root\Desktop\Work\2023-07-tapioca\tapioca-bar-audit\node_modules\hardhat\src\internal\hardhat-network\provider\node.ts:178:11)
+      at async HardhatNetworkProvider._init (C:\Users\root\Desktop\Work\2023-07-tapioca\tapioca-bar-audit\node_modules\hardhat\src\internal\hardhat-network\provider\provider.ts:258:28)
+      at async HardhatNetworkProvider._send (C:\Users\root\Desktop\Work\2023-07-tapioca\tapioca-bar-audit\node_modules\hardhat\src\internal\hardhat-network\provider\provider.ts:197:5)
+      at async HardhatNetworkProvider.request (C:\Users\root\Desktop\Work\2023-07-tapioca\tapioca-bar-audit\node_modules\hardhat\src\internal\hardhat-network\provider\provider.ts:123:18)
+      at async TracerWrapper.request (C:\Users\root\Desktop\Work\2023-07-tapioca\tapioca-bar-audit\node_modules\hardhat-tracer\src\wrapper.ts:30:16)
+      at async EthersProviderWrapper.send (C:\Users\root\Desktop\Work\2023-07-tapioca\tapioca-bar-audit\node_modules\@nomiclabs\hardhat-ethers\src\internal\ethers-provider-wrapper.ts:13:20)
+
+  66) Singularity test
+       setters
+         should be able to set mutable properties:
+     ProviderError: Must be authenticated!
+      at HttpProvider.request (C:\Users\root\Desktop\Work\2023-07-tapioca\tapioca-bar-audit\node_modules\hardhat\src\internal\core\providers\http.ts:88:21)
+      at processTicksAndRejections (node:internal/process/task_queues:95:5)
+      at async getNetworkId (C:\Users\root\Desktop\Work\2023-07-tapioca\tapioca-bar-audit\node_modules\hardhat\src\internal\hardhat-network\provider\utils\makeForkClient.ts:116:28)
+      at async makeForkClient (C:\Users\root\Desktop\Work\2023-07-tapioca\tapioca-bar-audit\node_modules\hardhat\src\internal\hardhat-network\provider\utils\makeForkClient.ts:42:21)
+      at async Function.create (C:\Users\root\Desktop\Work\2023-07-tapioca\tapioca-bar-audit\node_modules\hardhat\src\internal\hardhat-network\provider\node.ts:178:11)
+      at async HardhatNetworkProvider._init (C:\Users\root\Desktop\Work\2023-07-tapioca\tapioca-bar-audit\node_modules\hardhat\src\internal\hardhat-network\provider\provider.ts:258:28)
+      at async HardhatNetworkProvider._send (C:\Users\root\Desktop\Work\2023-07-tapioca\tapioca-bar-audit\node_modules\hardhat\src\internal\hardhat-network\provider\provider.ts:197:5)
+      at async HardhatNetworkProvider.request (C:\Users\root\Desktop\Work\2023-07-tapioca\tapioca-bar-audit\node_modules\hardhat\src\internal\hardhat-network\provider\provider.ts:123:18)
+      at async TracerWrapper.request (C:\Users\root\Desktop\Work\2023-07-tapioca\tapioca-bar-audit\node_modules\hardhat-tracer\src\wrapper.ts:30:16)
+      at async EthersProviderWrapper.send (C:\Users\root\Desktop\Work\2023-07-tapioca\tapioca-bar-audit\node_modules\@nomiclabs\hardhat-ethers\src\internal\ethers-provider-wrapper.ts:13:20)
+
+  67) Singularity test
+       reverts
+         should not be allowed to initialize twice:
+     ProviderError: Must be authenticated!
+      at HttpProvider.request (C:\Users\root\Desktop\Work\2023-07-tapioca\tapioca-bar-audit\node_modules\hardhat\src\internal\core\providers\http.ts:88:21)
+      at processTicksAndRejections (node:internal/process/task_queues:95:5)
+      at async getNetworkId (C:\Users\root\Desktop\Work\2023-07-tapioca\tapioca-bar-audit\node_modules\hardhat\src\internal\hardhat-network\provider\utils\makeForkClient.ts:116:28)
+      at async makeForkClient (C:\Users\root\Desktop\Work\2023-07-tapioca\tapioca-bar-audit\node_modules\hardhat\src\internal\hardhat-network\provider\utils\makeForkClient.ts:42:21)
+      at async Function.create (C:\Users\root\Desktop\Work\2023-07-tapioca\tapioca-bar-audit\node_modules\hardhat\src\internal\hardhat-network\provider\node.ts:178:11)
+      at async HardhatNetworkProvider._init (C:\Users\root\Desktop\Work\2023-07-tapioca\tapioca-bar-audit\node_modules\hardhat\src\internal\hardhat-network\provider\provider.ts:258:28)
+      at async HardhatNetworkProvider._send (C:\Users\root\Desktop\Work\2023-07-tapioca\tapioca-bar-audit\node_modules\hardhat\src\internal\hardhat-network\provider\provider.ts:197:5)
+      at async HardhatNetworkProvider.request (C:\Users\root\Desktop\Work\2023-07-tapioca\tapioca-bar-audit\node_modules\hardhat\src\internal\hardhat-network\provider\provider.ts:123:18)
+      at async TracerWrapper.request (C:\Users\root\Desktop\Work\2023-07-tapioca\tapioca-bar-audit\node_modules\hardhat-tracer\src\wrapper.ts:30:16)
+      at async EthersProviderWrapper.send (C:\Users\root\Desktop\Work\2023-07-tapioca\tapioca-bar-audit\node_modules\@nomiclabs\hardhat-ethers\src\internal\ethers-provider-wrapper.ts:13:20)
+
+  68) Singularity test
+       reverts
+         removing everything should not be allowed:
+     ProviderError: Must be authenticated!
+      at HttpProvider.request (C:\Users\root\Desktop\Work\2023-07-tapioca\tapioca-bar-audit\node_modules\hardhat\src\internal\core\providers\http.ts:88:21)
+      at processTicksAndRejections (node:internal/process/task_queues:95:5)
+      at async getNetworkId (C:\Users\root\Desktop\Work\2023-07-tapioca\tapioca-bar-audit\node_modules\hardhat\src\internal\hardhat-network\provider\utils\makeForkClient.ts:116:28)
+      at async makeForkClient (C:\Users\root\Desktop\Work\2023-07-tapioca\tapioca-bar-audit\node_modules\hardhat\src\internal\hardhat-network\provider\utils\makeForkClient.ts:42:21)
+      at async Function.create (C:\Users\root\Desktop\Work\2023-07-tapioca\tapioca-bar-audit\node_modules\hardhat\src\internal\hardhat-network\provider\node.ts:178:11)
+      at async HardhatNetworkProvider._init (C:\Users\root\Desktop\Work\2023-07-tapioca\tapioca-bar-audit\node_modules\hardhat\src\internal\hardhat-network\provider\provider.ts:258:28)
+      at async HardhatNetworkProvider._send (C:\Users\root\Desktop\Work\2023-07-tapioca\tapioca-bar-audit\node_modules\hardhat\src\internal\hardhat-network\provider\provider.ts:197:5)
+      at async HardhatNetworkProvider.request (C:\Users\root\Desktop\Work\2023-07-tapioca\tapioca-bar-audit\node_modules\hardhat\src\internal\hardhat-network\provider\provider.ts:123:18)
+      at async TracerWrapper.request (C:\Users\root\Desktop\Work\2023-07-tapioca\tapioca-bar-audit\node_modules\hardhat-tracer\src\wrapper.ts:30:16)
+      at async EthersProviderWrapper.send (C:\Users\root\Desktop\Work\2023-07-tapioca\tapioca-bar-audit\node_modules\@nomiclabs\hardhat-ethers\src\internal\ethers-provider-wrapper.ts:13:20)
+
+  69) Singularity test
+       reverts
+         actions should not work when the contract is paused:
+     ProviderError: Must be authenticated!
+      at HttpProvider.request (C:\Users\root\Desktop\Work\2023-07-tapioca\tapioca-bar-audit\node_modules\hardhat\src\internal\core\providers\http.ts:88:21)
+      at processTicksAndRejections (node:internal/process/task_queues:95:5)
+      at async getNetworkId (C:\Users\root\Desktop\Work\2023-07-tapioca\tapioca-bar-audit\node_modules\hardhat\src\internal\hardhat-network\provider\utils\makeForkClient.ts:116:28)
+      at async makeForkClient (C:\Users\root\Desktop\Work\2023-07-tapioca\tapioca-bar-audit\node_modules\hardhat\src\internal\hardhat-network\provider\utils\makeForkClient.ts:42:21)
+      at async Function.create (C:\Users\root\Desktop\Work\2023-07-tapioca\tapioca-bar-audit\node_modules\hardhat\src\internal\hardhat-network\provider\node.ts:178:11)
+      at async HardhatNetworkProvider._init (C:\Users\root\Desktop\Work\2023-07-tapioca\tapioca-bar-audit\node_modules\hardhat\src\internal\hardhat-network\provider\provider.ts:258:28)
+      at async HardhatNetworkProvider._send (C:\Users\root\Desktop\Work\2023-07-tapioca\tapioca-bar-audit\node_modules\hardhat\src\internal\hardhat-network\provider\provider.ts:197:5)
+      at async HardhatNetworkProvider.request (C:\Users\root\Desktop\Work\2023-07-tapioca\tapioca-bar-audit\node_modules\hardhat\src\internal\hardhat-network\provider\provider.ts:123:18)
+      at async TracerWrapper.request (C:\Users\root\Desktop\Work\2023-07-tapioca\tapioca-bar-audit\node_modules\hardhat-tracer\src\wrapper.ts:30:16)
+      at async EthersProviderWrapper.send (C:\Users\root\Desktop\Work\2023-07-tapioca\tapioca-bar-audit\node_modules\@nomiclabs\hardhat-ethers\src\internal\ethers-provider-wrapper.ts:13:20)
+
+  70) Singularity test
+       reverts
+         should not execute when module does not exist:
+     ProviderError: Must be authenticated!
+      at HttpProvider.request (C:\Users\root\Desktop\Work\2023-07-tapioca\tapioca-bar-audit\node_modules\hardhat\src\internal\core\providers\http.ts:88:21)
+      at processTicksAndRejections (node:internal/process/task_queues:95:5)
+      at async getNetworkId (C:\Users\root\Desktop\Work\2023-07-tapioca\tapioca-bar-audit\node_modules\hardhat\src\internal\hardhat-network\provider\utils\makeForkClient.ts:116:28)
+      at async makeForkClient (C:\Users\root\Desktop\Work\2023-07-tapioca\tapioca-bar-audit\node_modules\hardhat\src\internal\hardhat-network\provider\utils\makeForkClient.ts:42:21)
+      at async Function.create (C:\Users\root\Desktop\Work\2023-07-tapioca\tapioca-bar-audit\node_modules\hardhat\src\internal\hardhat-network\provider\node.ts:178:11)
+      at async HardhatNetworkProvider._init (C:\Users\root\Desktop\Work\2023-07-tapioca\tapioca-bar-audit\node_modules\hardhat\src\internal\hardhat-network\provider\provider.ts:258:28)
+      at async HardhatNetworkProvider._send (C:\Users\root\Desktop\Work\2023-07-tapioca\tapioca-bar-audit\node_modules\hardhat\src\internal\hardhat-network\provider\provider.ts:197:5)
+      at async HardhatNetworkProvider.request (C:\Users\root\Desktop\Work\2023-07-tapioca\tapioca-bar-audit\node_modules\hardhat\src\internal\hardhat-network\provider\provider.ts:123:18)
+      at async TracerWrapper.request (C:\Users\root\Desktop\Work\2023-07-tapioca\tapioca-bar-audit\node_modules\hardhat-tracer\src\wrapper.ts:30:16)
+      at async EthersProviderWrapper.send (C:\Users\root\Desktop\Work\2023-07-tapioca\tapioca-bar-audit\node_modules\@nomiclabs\hardhat-ethers\src\internal\ethers-provider-wrapper.ts:13:20)
+
+  71) Singularity test
+       reverts
+         should not allow initialization with bad arguments:
+     ProviderError: Must be authenticated!
+      at HttpProvider.request (C:\Users\root\Desktop\Work\2023-07-tapioca\tapioca-bar-audit\node_modules\hardhat\src\internal\core\providers\http.ts:88:21)
+      at processTicksAndRejections (node:internal/process/task_queues:95:5)
+      at async getNetworkId (C:\Users\root\Desktop\Work\2023-07-tapioca\tapioca-bar-audit\node_modules\hardhat\src\internal\hardhat-network\provider\utils\makeForkClient.ts:116:28)
+      at async makeForkClient (C:\Users\root\Desktop\Work\2023-07-tapioca\tapioca-bar-audit\node_modules\hardhat\src\internal\hardhat-network\provider\utils\makeForkClient.ts:42:21)
+      at async Function.create (C:\Users\root\Desktop\Work\2023-07-tapioca\tapioca-bar-audit\node_modules\hardhat\src\internal\hardhat-network\provider\node.ts:178:11)
+      at async HardhatNetworkProvider._init (C:\Users\root\Desktop\Work\2023-07-tapioca\tapioca-bar-audit\node_modules\hardhat\src\internal\hardhat-network\provider\provider.ts:258:28)
+      at async HardhatNetworkProvider._send (C:\Users\root\Desktop\Work\2023-07-tapioca\tapioca-bar-audit\node_modules\hardhat\src\internal\hardhat-network\provider\provider.ts:197:5)
+      at async HardhatNetworkProvider.request (C:\Users\root\Desktop\Work\2023-07-tapioca\tapioca-bar-audit\node_modules\hardhat\src\internal\hardhat-network\provider\provider.ts:123:18)
+      at async TracerWrapper.request (C:\Users\root\Desktop\Work\2023-07-tapioca\tapioca-bar-audit\node_modules\hardhat-tracer\src\wrapper.ts:30:16)
+      at async EthersProviderWrapper.send (C:\Users\root\Desktop\Work\2023-07-tapioca\tapioca-bar-audit\node_modules\@nomiclabs\hardhat-ethers\src\internal\ethers-provider-wrapper.ts:13:20)
+
+  72) Singularity test
+       reverts
+         Should deposit Usdc collateral and borrow Weth in a single tx without lenders but revert with the right error code:
+     ProviderError: Must be authenticated!
+      at HttpProvider.request (C:\Users\root\Desktop\Work\2023-07-tapioca\tapioca-bar-audit\node_modules\hardhat\src\internal\core\providers\http.ts:88:21)
+      at processTicksAndRejections (node:internal/process/task_queues:95:5)
+      at async getNetworkId (C:\Users\root\Desktop\Work\2023-07-tapioca\tapioca-bar-audit\node_modules\hardhat\src\internal\hardhat-network\provider\utils\makeForkClient.ts:116:28)
+      at async makeForkClient (C:\Users\root\Desktop\Work\2023-07-tapioca\tapioca-bar-audit\node_modules\hardhat\src\internal\hardhat-network\provider\utils\makeForkClient.ts:42:21)
+      at async Function.create (C:\Users\root\Desktop\Work\2023-07-tapioca\tapioca-bar-audit\node_modules\hardhat\src\internal\hardhat-network\provider\node.ts:178:11)
+      at async HardhatNetworkProvider._init (C:\Users\root\Desktop\Work\2023-07-tapioca\tapioca-bar-audit\node_modules\hardhat\src\internal\hardhat-network\provider\provider.ts:258:28)
+      at async HardhatNetworkProvider._send (C:\Users\root\Desktop\Work\2023-07-tapioca\tapioca-bar-audit\node_modules\hardhat\src\internal\hardhat-network\provider\provider.ts:197:5)
+      at async HardhatNetworkProvider.request (C:\Users\root\Desktop\Work\2023-07-tapioca\tapioca-bar-audit\node_modules\hardhat\src\internal\hardhat-network\provider\provider.ts:123:18)
+      at async TracerWrapper.request (C:\Users\root\Desktop\Work\2023-07-tapioca\tapioca-bar-audit\node_modules\hardhat-tracer\src\wrapper.ts:30:16)
+      at async EthersProviderWrapper.send (C:\Users\root\Desktop\Work\2023-07-tapioca\tapioca-bar-audit\node_modules\@nomiclabs\hardhat-ethers\src\internal\ethers-provider-wrapper.ts:13:20)
+
+  73) Singularity test
+       reverts
+         Should deposit Usdc collateral and borrow Weth in a single tx without lenders and decode the error codes:
+     ProviderError: Must be authenticated!
+      at HttpProvider.request (C:\Users\root\Desktop\Work\2023-07-tapioca\tapioca-bar-audit\node_modules\hardhat\src\internal\core\providers\http.ts:88:21)
+      at processTicksAndRejections (node:internal/process/task_queues:95:5)
+      at async getNetworkId (C:\Users\root\Desktop\Work\2023-07-tapioca\tapioca-bar-audit\node_modules\hardhat\src\internal\hardhat-network\provider\utils\makeForkClient.ts:116:28)
+      at async makeForkClient (C:\Users\root\Desktop\Work\2023-07-tapioca\tapioca-bar-audit\node_modules\hardhat\src\internal\hardhat-network\provider\utils\makeForkClient.ts:42:21)
+      at async Function.create (C:\Users\root\Desktop\Work\2023-07-tapioca\tapioca-bar-audit\node_modules\hardhat\src\internal\hardhat-network\provider\node.ts:178:11)
+      at async HardhatNetworkProvider._init (C:\Users\root\Desktop\Work\2023-07-tapioca\tapioca-bar-audit\node_modules\hardhat\src\internal\hardhat-network\provider\provider.ts:258:28)
+      at async HardhatNetworkProvider._send (C:\Users\root\Desktop\Work\2023-07-tapioca\tapioca-bar-audit\node_modules\hardhat\src\internal\hardhat-network\provider\provider.ts:197:5)
+      at async HardhatNetworkProvider.request (C:\Users\root\Desktop\Work\2023-07-tapioca\tapioca-bar-audit\node_modules\hardhat\src\internal\hardhat-network\provider\provider.ts:123:18)
+      at async TracerWrapper.request (C:\Users\root\Desktop\Work\2023-07-tapioca\tapioca-bar-audit\node_modules\hardhat-tracer\src\wrapper.ts:30:16)
+      at async EthersProviderWrapper.send (C:\Users\root\Desktop\Work\2023-07-tapioca\tapioca-bar-audit\node_modules\@nomiclabs\hardhat-ethers\src\internal\ethers-provider-wrapper.ts:13:20)
+
+  74) Singularity test
+       lending
+         Should lend Weth, deposit Usdc collateral and borrow Weth and be liquidated for price drop:
+     ProviderError: Must be authenticated!
+      at HttpProvider.request (C:\Users\root\Desktop\Work\2023-07-tapioca\tapioca-bar-audit\node_modules\hardhat\src\internal\core\providers\http.ts:88:21)
+      at processTicksAndRejections (node:internal/process/task_queues:95:5)
+      at async getNetworkId (C:\Users\root\Desktop\Work\2023-07-tapioca\tapioca-bar-audit\node_modules\hardhat\src\internal\hardhat-network\provider\utils\makeForkClient.ts:116:28)
+      at async makeForkClient (C:\Users\root\Desktop\Work\2023-07-tapioca\tapioca-bar-audit\node_modules\hardhat\src\internal\hardhat-network\provider\utils\makeForkClient.ts:42:21)
+      at async Function.create (C:\Users\root\Desktop\Work\2023-07-tapioca\tapioca-bar-audit\node_modules\hardhat\src\internal\hardhat-network\provider\node.ts:178:11)
+      at async HardhatNetworkProvider._init (C:\Users\root\Desktop\Work\2023-07-tapioca\tapioca-bar-audit\node_modules\hardhat\src\internal\hardhat-network\provider\provider.ts:258:28)
+      at async HardhatNetworkProvider._send (C:\Users\root\Desktop\Work\2023-07-tapioca\tapioca-bar-audit\node_modules\hardhat\src\internal\hardhat-network\provider\provider.ts:197:5)
+      at async HardhatNetworkProvider.request (C:\Users\root\Desktop\Work\2023-07-tapioca\tapioca-bar-audit\node_modules\hardhat\src\internal\hardhat-network\provider\provider.ts:123:18)
+      at async TracerWrapper.request (C:\Users\root\Desktop\Work\2023-07-tapioca\tapioca-bar-audit\node_modules\hardhat-tracer\src\wrapper.ts:30:16)
+      at async EthersProviderWrapper.send (C:\Users\root\Desktop\Work\2023-07-tapioca\tapioca-bar-audit\node_modules\@nomiclabs\hardhat-ethers\src\internal\ethers-provider-wrapper.ts:13:20)
+
+  75) Singularity test
+       lending
+         Should lend WBTC, deposit Usdc collateral and borrow WBTC and be liquidated for price drop:
+     ProviderError: Must be authenticated!
+      at HttpProvider.request (C:\Users\root\Desktop\Work\2023-07-tapioca\tapioca-bar-audit\node_modules\hardhat\src\internal\core\providers\http.ts:88:21)
+      at processTicksAndRejections (node:internal/process/task_queues:95:5)
+      at async getNetworkId (C:\Users\root\Desktop\Work\2023-07-tapioca\tapioca-bar-audit\node_modules\hardhat\src\internal\hardhat-network\provider\utils\makeForkClient.ts:116:28)
+      at async makeForkClient (C:\Users\root\Desktop\Work\2023-07-tapioca\tapioca-bar-audit\node_modules\hardhat\src\internal\hardhat-network\provider\utils\makeForkClient.ts:42:21)
+      at async Function.create (C:\Users\root\Desktop\Work\2023-07-tapioca\tapioca-bar-audit\node_modules\hardhat\src\internal\hardhat-network\provider\node.ts:178:11)
+      at async HardhatNetworkProvider._init (C:\Users\root\Desktop\Work\2023-07-tapioca\tapioca-bar-audit\node_modules\hardhat\src\internal\hardhat-network\provider\provider.ts:258:28)
+      at async HardhatNetworkProvider._send (C:\Users\root\Desktop\Work\2023-07-tapioca\tapioca-bar-audit\node_modules\hardhat\src\internal\hardhat-network\provider\provider.ts:197:5)
+      at async HardhatNetworkProvider.request (C:\Users\root\Desktop\Work\2023-07-tapioca\tapioca-bar-audit\node_modules\hardhat\src\internal\hardhat-network\provider\provider.ts:123:18)
+      at async TracerWrapper.request (C:\Users\root\Desktop\Work\2023-07-tapioca\tapioca-bar-audit\node_modules\hardhat-tracer\src\wrapper.ts:30:16)
+      at async EthersProviderWrapper.send (C:\Users\root\Desktop\Work\2023-07-tapioca\tapioca-bar-audit\node_modules\@nomiclabs\hardhat-ethers\src\internal\ethers-provider-wrapper.ts:13:20)
+
+  76) Singularity test
+       lending
+         should add addset, remove asset and update exchange rate in a single tx:
+     ProviderError: Must be authenticated!
+      at HttpProvider.request (C:\Users\root\Desktop\Work\2023-07-tapioca\tapioca-bar-audit\node_modules\hardhat\src\internal\core\providers\http.ts:88:21)
+      at processTicksAndRejections (node:internal/process/task_queues:95:5)
+      at async getNetworkId (C:\Users\root\Desktop\Work\2023-07-tapioca\tapioca-bar-audit\node_modules\hardhat\src\internal\hardhat-network\provider\utils\makeForkClient.ts:116:28)
+      at async makeForkClient (C:\Users\root\Desktop\Work\2023-07-tapioca\tapioca-bar-audit\node_modules\hardhat\src\internal\hardhat-network\provider\utils\makeForkClient.ts:42:21)
+      at async Function.create (C:\Users\root\Desktop\Work\2023-07-tapioca\tapioca-bar-audit\node_modules\hardhat\src\internal\hardhat-network\provider\node.ts:178:11)
+      at async HardhatNetworkProvider._init (C:\Users\root\Desktop\Work\2023-07-tapioca\tapioca-bar-audit\node_modules\hardhat\src\internal\hardhat-network\provider\provider.ts:258:28)
+      at async HardhatNetworkProvider._send (C:\Users\root\Desktop\Work\2023-07-tapioca\tapioca-bar-audit\node_modules\hardhat\src\internal\hardhat-network\provider\provider.ts:197:5)
+      at async HardhatNetworkProvider.request (C:\Users\root\Desktop\Work\2023-07-tapioca\tapioca-bar-audit\node_modules\hardhat\src\internal\hardhat-network\provider\provider.ts:123:18)
+      at async TracerWrapper.request (C:\Users\root\Desktop\Work\2023-07-tapioca\tapioca-bar-audit\node_modules\hardhat-tracer\src\wrapper.ts:30:16)
+      at async EthersProviderWrapper.send (C:\Users\root\Desktop\Work\2023-07-tapioca\tapioca-bar-audit\node_modules\@nomiclabs\hardhat-ethers\src\internal\ethers-provider-wrapper.ts:13:20)
+
+  77) Singularity test
+       lending
+         Should lend Weth, deposit Usdc collateral and borrow Weth in a single tx:
+     ProviderError: Must be authenticated!
+      at HttpProvider.request (C:\Users\root\Desktop\Work\2023-07-tapioca\tapioca-bar-audit\node_modules\hardhat\src\internal\core\providers\http.ts:88:21)
+      at processTicksAndRejections (node:internal/process/task_queues:95:5)
+      at async getNetworkId (C:\Users\root\Desktop\Work\2023-07-tapioca\tapioca-bar-audit\node_modules\hardhat\src\internal\hardhat-network\provider\utils\makeForkClient.ts:116:28)
+      at async makeForkClient (C:\Users\root\Desktop\Work\2023-07-tapioca\tapioca-bar-audit\node_modules\hardhat\src\internal\hardhat-network\provider\utils\makeForkClient.ts:42:21)
+      at async Function.create (C:\Users\root\Desktop\Work\2023-07-tapioca\tapioca-bar-audit\node_modules\hardhat\src\internal\hardhat-network\provider\node.ts:178:11)
+      at async HardhatNetworkProvider._init (C:\Users\root\Desktop\Work\2023-07-tapioca\tapioca-bar-audit\node_modules\hardhat\src\internal\hardhat-network\provider\provider.ts:258:28)
+      at async HardhatNetworkProvider._send (C:\Users\root\Desktop\Work\2023-07-tapioca\tapioca-bar-audit\node_modules\hardhat\src\internal\hardhat-network\provider\provider.ts:197:5)
+      at async HardhatNetworkProvider.request (C:\Users\root\Desktop\Work\2023-07-tapioca\tapioca-bar-audit\node_modules\hardhat\src\internal\hardhat-network\provider\provider.ts:123:18)
+      at async TracerWrapper.request (C:\Users\root\Desktop\Work\2023-07-tapioca\tapioca-bar-audit\node_modules\hardhat-tracer\src\wrapper.ts:30:16)
+      at async EthersProviderWrapper.send (C:\Users\root\Desktop\Work\2023-07-tapioca\tapioca-bar-audit\node_modules\@nomiclabs\hardhat-ethers\src\internal\ethers-provider-wrapper.ts:13:20)
+
+  78) Singularity test
+       lending
+         Should deposit to yieldBox, add asset to singularity, remove asset and withdraw:
+     ProviderError: Must be authenticated!
+      at HttpProvider.request (C:\Users\root\Desktop\Work\2023-07-tapioca\tapioca-bar-audit\node_modules\hardhat\src\internal\core\providers\http.ts:88:21)
+      at processTicksAndRejections (node:internal/process/task_queues:95:5)
+      at async getNetworkId (C:\Users\root\Desktop\Work\2023-07-tapioca\tapioca-bar-audit\node_modules\hardhat\src\internal\hardhat-network\provider\utils\makeForkClient.ts:116:28)
+      at async makeForkClient (C:\Users\root\Desktop\Work\2023-07-tapioca\tapioca-bar-audit\node_modules\hardhat\src\internal\hardhat-network\provider\utils\makeForkClient.ts:42:21)
+      at async Function.create (C:\Users\root\Desktop\Work\2023-07-tapioca\tapioca-bar-audit\node_modules\hardhat\src\internal\hardhat-network\provider\node.ts:178:11)
+      at async HardhatNetworkProvider._init (C:\Users\root\Desktop\Work\2023-07-tapioca\tapioca-bar-audit\node_modules\hardhat\src\internal\hardhat-network\provider\provider.ts:258:28)
+      at async HardhatNetworkProvider._send (C:\Users\root\Desktop\Work\2023-07-tapioca\tapioca-bar-audit\node_modules\hardhat\src\internal\hardhat-network\provider\provider.ts:197:5)
+      at async HardhatNetworkProvider.request (C:\Users\root\Desktop\Work\2023-07-tapioca\tapioca-bar-audit\node_modules\hardhat\src\internal\hardhat-network\provider\provider.ts:123:18)
+      at async TracerWrapper.request (C:\Users\root\Desktop\Work\2023-07-tapioca\tapioca-bar-audit\node_modules\hardhat-tracer\src\wrapper.ts:30:16)
+      at async EthersProviderWrapper.send (C:\Users\root\Desktop\Work\2023-07-tapioca\tapioca-bar-audit\node_modules\@nomiclabs\hardhat-ethers\src\internal\ethers-provider-wrapper.ts:13:20)
+
+  79) Singularity test
+       views
+         should compute permit share:
+     ProviderError: Must be authenticated!
+      at HttpProvider.request (C:\Users\root\Desktop\Work\2023-07-tapioca\tapioca-bar-audit\node_modules\hardhat\src\internal\core\providers\http.ts:88:21)
+      at processTicksAndRejections (node:internal/process/task_queues:95:5)
+      at async getNetworkId (C:\Users\root\Desktop\Work\2023-07-tapioca\tapioca-bar-audit\node_modules\hardhat\src\internal\hardhat-network\provider\utils\makeForkClient.ts:116:28)
+      at async makeForkClient (C:\Users\root\Desktop\Work\2023-07-tapioca\tapioca-bar-audit\node_modules\hardhat\src\internal\hardhat-network\provider\utils\makeForkClient.ts:42:21)
+      at async Function.create (C:\Users\root\Desktop\Work\2023-07-tapioca\tapioca-bar-audit\node_modules\hardhat\src\internal\hardhat-network\provider\node.ts:178:11)
+      at async HardhatNetworkProvider._init (C:\Users\root\Desktop\Work\2023-07-tapioca\tapioca-bar-audit\node_modules\hardhat\src\internal\hardhat-network\provider\provider.ts:258:28)
+      at async HardhatNetworkProvider._send (C:\Users\root\Desktop\Work\2023-07-tapioca\tapioca-bar-audit\node_modules\hardhat\src\internal\hardhat-network\provider\provider.ts:197:5)
+      at async HardhatNetworkProvider.request (C:\Users\root\Desktop\Work\2023-07-tapioca\tapioca-bar-audit\node_modules\hardhat\src\internal\hardhat-network\provider\provider.ts:123:18)
+      at async TracerWrapper.request (C:\Users\root\Desktop\Work\2023-07-tapioca\tapioca-bar-audit\node_modules\hardhat-tracer\src\wrapper.ts:30:16)
+      at async EthersProviderWrapper.send (C:\Users\root\Desktop\Work\2023-07-tapioca\tapioca-bar-audit\node_modules\@nomiclabs\hardhat-ethers\src\internal\ethers-provider-wrapper.ts:13:20)
+
+  80) Singularity test
+       views
+         should test yieldBoxShares:
+     ProviderError: Must be authenticated!
+      at HttpProvider.request (C:\Users\root\Desktop\Work\2023-07-tapioca\tapioca-bar-audit\node_modules\hardhat\src\internal\core\providers\http.ts:88:21)
+      at processTicksAndRejections (node:internal/process/task_queues:95:5)
+      at async getNetworkId (C:\Users\root\Desktop\Work\2023-07-tapioca\tapioca-bar-audit\node_modules\hardhat\src\internal\hardhat-network\provider\utils\makeForkClient.ts:116:28)
+      at async makeForkClient (C:\Users\root\Desktop\Work\2023-07-tapioca\tapioca-bar-audit\node_modules\hardhat\src\internal\hardhat-network\provider\utils\makeForkClient.ts:42:21)
+      at async Function.create (C:\Users\root\Desktop\Work\2023-07-tapioca\tapioca-bar-audit\node_modules\hardhat\src\internal\hardhat-network\provider\node.ts:178:11)
+      at async HardhatNetworkProvider._init (C:\Users\root\Desktop\Work\2023-07-tapioca\tapioca-bar-audit\node_modules\hardhat\src\internal\hardhat-network\provider\provider.ts:258:28)
+      at async HardhatNetworkProvider._send (C:\Users\root\Desktop\Work\2023-07-tapioca\tapioca-bar-audit\node_modules\hardhat\src\internal\hardhat-network\provider\provider.ts:197:5)
+      at async HardhatNetworkProvider.request (C:\Users\root\Desktop\Work\2023-07-tapioca\tapioca-bar-audit\node_modules\hardhat\src\internal\hardhat-network\provider\provider.ts:123:18)
+      at async TracerWrapper.request (C:\Users\root\Desktop\Work\2023-07-tapioca\tapioca-bar-audit\node_modules\hardhat-tracer\src\wrapper.ts:30:16)
+      at async EthersProviderWrapper.send (C:\Users\root\Desktop\Work\2023-07-tapioca\tapioca-bar-audit\node_modules\@nomiclabs\hardhat-ethers\src\internal\ethers-provider-wrapper.ts:13:20)
+
+  81) Singularity test
+       views
+         should get correct amount from borrow part:
+     ProviderError: Must be authenticated!
+      at HttpProvider.request (C:\Users\root\Desktop\Work\2023-07-tapioca\tapioca-bar-audit\node_modules\hardhat\src\internal\core\providers\http.ts:88:21)
+      at processTicksAndRejections (node:internal/process/task_queues:95:5)
+      at async getNetworkId (C:\Users\root\Desktop\Work\2023-07-tapioca\tapioca-bar-audit\node_modules\hardhat\src\internal\hardhat-network\provider\utils\makeForkClient.ts:116:28)
+      at async makeForkClient (C:\Users\root\Desktop\Work\2023-07-tapioca\tapioca-bar-audit\node_modules\hardhat\src\internal\hardhat-network\provider\utils\makeForkClient.ts:42:21)
+      at async Function.create (C:\Users\root\Desktop\Work\2023-07-tapioca\tapioca-bar-audit\node_modules\hardhat\src\internal\hardhat-network\provider\node.ts:178:11)
+      at async HardhatNetworkProvider._init (C:\Users\root\Desktop\Work\2023-07-tapioca\tapioca-bar-audit\node_modules\hardhat\src\internal\hardhat-network\provider\provider.ts:258:28)
+      at async HardhatNetworkProvider._send (C:\Users\root\Desktop\Work\2023-07-tapioca\tapioca-bar-audit\node_modules\hardhat\src\internal\hardhat-network\provider\provider.ts:197:5)
+      at async HardhatNetworkProvider.request (C:\Users\root\Desktop\Work\2023-07-tapioca\tapioca-bar-audit\node_modules\hardhat\src\internal\hardhat-network\provider\provider.ts:123:18)
+      at async TracerWrapper.request (C:\Users\root\Desktop\Work\2023-07-tapioca\tapioca-bar-audit\node_modules\hardhat-tracer\src\wrapper.ts:30:16)
+      at async EthersProviderWrapper.send (C:\Users\root\Desktop\Work\2023-07-tapioca\tapioca-bar-audit\node_modules\@nomiclabs\hardhat-ethers\src\internal\ethers-provider-wrapper.ts:13:20)
+
+  82) Singularity test
+       views
+         should compute fee withdrawals and execute:
+     ProviderError: Must be authenticated!
+      at HttpProvider.request (C:\Users\root\Desktop\Work\2023-07-tapioca\tapioca-bar-audit\node_modules\hardhat\src\internal\core\providers\http.ts:88:21)
+      at processTicksAndRejections (node:internal/process/task_queues:95:5)
+      at async getNetworkId (C:\Users\root\Desktop\Work\2023-07-tapioca\tapioca-bar-audit\node_modules\hardhat\src\internal\hardhat-network\provider\utils\makeForkClient.ts:116:28)
+      at async makeForkClient (C:\Users\root\Desktop\Work\2023-07-tapioca\tapioca-bar-audit\node_modules\hardhat\src\internal\hardhat-network\provider\utils\makeForkClient.ts:42:21)
+      at async Function.create (C:\Users\root\Desktop\Work\2023-07-tapioca\tapioca-bar-audit\node_modules\hardhat\src\internal\hardhat-network\provider\node.ts:178:11)
+      at async HardhatNetworkProvider._init (C:\Users\root\Desktop\Work\2023-07-tapioca\tapioca-bar-audit\node_modules\hardhat\src\internal\hardhat-network\provider\provider.ts:258:28)
+      at async HardhatNetworkProvider._send (C:\Users\root\Desktop\Work\2023-07-tapioca\tapioca-bar-audit\node_modules\hardhat\src\internal\hardhat-network\provider\provider.ts:197:5)
+      at async HardhatNetworkProvider.request (C:\Users\root\Desktop\Work\2023-07-tapioca\tapioca-bar-audit\node_modules\hardhat\src\internal\hardhat-network\provider\provider.ts:123:18)
+      at async TracerWrapper.request (C:\Users\root\Desktop\Work\2023-07-tapioca\tapioca-bar-audit\node_modules\hardhat-tracer\src\wrapper.ts:30:16)
+      at async EthersProviderWrapper.send (C:\Users\root\Desktop\Work\2023-07-tapioca\tapioca-bar-audit\node_modules\@nomiclabs\hardhat-ethers\src\internal\ethers-provider-wrapper.ts:13:20)
+
+  83) Singularity test
+       views
+         should compute amount to solvency for nothing borrowed:
+     ProviderError: Must be authenticated!
+      at HttpProvider.request (C:\Users\root\Desktop\Work\2023-07-tapioca\tapioca-bar-audit\node_modules\hardhat\src\internal\core\providers\http.ts:88:21)
+      at processTicksAndRejections (node:internal/process/task_queues:95:5)
+      at async getNetworkId (C:\Users\root\Desktop\Work\2023-07-tapioca\tapioca-bar-audit\node_modules\hardhat\src\internal\hardhat-network\provider\utils\makeForkClient.ts:116:28)
+      at async makeForkClient (C:\Users\root\Desktop\Work\2023-07-tapioca\tapioca-bar-audit\node_modules\hardhat\src\internal\hardhat-network\provider\utils\makeForkClient.ts:42:21)
+      at async Function.create (C:\Users\root\Desktop\Work\2023-07-tapioca\tapioca-bar-audit\node_modules\hardhat\src\internal\hardhat-network\provider\node.ts:178:11)
+      at async HardhatNetworkProvider._init (C:\Users\root\Desktop\Work\2023-07-tapioca\tapioca-bar-audit\node_modules\hardhat\src\internal\hardhat-network\provider\provider.ts:258:28)
+      at async HardhatNetworkProvider._send (C:\Users\root\Desktop\Work\2023-07-tapioca\tapioca-bar-audit\node_modules\hardhat\src\internal\hardhat-network\provider\provider.ts:197:5)
+      at async HardhatNetworkProvider.request (C:\Users\root\Desktop\Work\2023-07-tapioca\tapioca-bar-audit\node_modules\hardhat\src\internal\hardhat-network\provider\provider.ts:123:18)
+      at async TracerWrapper.request (C:\Users\root\Desktop\Work\2023-07-tapioca\tapioca-bar-audit\node_modules\hardhat-tracer\src\wrapper.ts:30:16)
+      at async EthersProviderWrapper.send (C:\Users\root\Desktop\Work\2023-07-tapioca\tapioca-bar-audit\node_modules\@nomiclabs\hardhat-ethers\src\internal\ethers-provider-wrapper.ts:13:20)
+
+  84) Singularity test
+       views
+         should return ERC20 properties:
+     ProviderError: Must be authenticated!
+      at HttpProvider.request (C:\Users\root\Desktop\Work\2023-07-tapioca\tapioca-bar-audit\node_modules\hardhat\src\internal\core\providers\http.ts:88:21)
+      at processTicksAndRejections (node:internal/process/task_queues:95:5)
+      at async getNetworkId (C:\Users\root\Desktop\Work\2023-07-tapioca\tapioca-bar-audit\node_modules\hardhat\src\internal\hardhat-network\provider\utils\makeForkClient.ts:116:28)
+      at async makeForkClient (C:\Users\root\Desktop\Work\2023-07-tapioca\tapioca-bar-audit\node_modules\hardhat\src\internal\hardhat-network\provider\utils\makeForkClient.ts:42:21)
+      at async Function.create (C:\Users\root\Desktop\Work\2023-07-tapioca\tapioca-bar-audit\node_modules\hardhat\src\internal\hardhat-network\provider\node.ts:178:11)
+      at async HardhatNetworkProvider._init (C:\Users\root\Desktop\Work\2023-07-tapioca\tapioca-bar-audit\node_modules\hardhat\src\internal\hardhat-network\provider\provider.ts:258:28)
+      at async HardhatNetworkProvider._send (C:\Users\root\Desktop\Work\2023-07-tapioca\tapioca-bar-audit\node_modules\hardhat\src\internal\hardhat-network\provider\provider.ts:197:5)
+      at async HardhatNetworkProvider.request (C:\Users\root\Desktop\Work\2023-07-tapioca\tapioca-bar-audit\node_modules\hardhat\src\internal\hardhat-network\provider\provider.ts:123:18)
+      at async TracerWrapper.request (C:\Users\root\Desktop\Work\2023-07-tapioca\tapioca-bar-audit\node_modules\hardhat-tracer\src\wrapper.ts:30:16)
+      at async EthersProviderWrapper.send (C:\Users\root\Desktop\Work\2023-07-tapioca\tapioca-bar-audit\node_modules\@nomiclabs\hardhat-ethers\src\internal\ethers-provider-wrapper.ts:13:20)
+
+  85) Singularity test
+       caps & limits
+         should accrue when utilization is over & under target:
+     ProviderError: Must be authenticated!
+      at HttpProvider.request (C:\Users\root\Desktop\Work\2023-07-tapioca\tapioca-bar-audit\node_modules\hardhat\src\internal\core\providers\http.ts:88:21)
+      at processTicksAndRejections (node:internal/process/task_queues:95:5)
+      at async getNetworkId (C:\Users\root\Desktop\Work\2023-07-tapioca\tapioca-bar-audit\node_modules\hardhat\src\internal\hardhat-network\provider\utils\makeForkClient.ts:116:28)
+      at async makeForkClient (C:\Users\root\Desktop\Work\2023-07-tapioca\tapioca-bar-audit\node_modules\hardhat\src\internal\hardhat-network\provider\utils\makeForkClient.ts:42:21)
+      at async Function.create (C:\Users\root\Desktop\Work\2023-07-tapioca\tapioca-bar-audit\node_modules\hardhat\src\internal\hardhat-network\provider\node.ts:178:11)
+      at async HardhatNetworkProvider._init (C:\Users\root\Desktop\Work\2023-07-tapioca\tapioca-bar-audit\node_modules\hardhat\src\internal\hardhat-network\provider\provider.ts:258:28)
+      at async HardhatNetworkProvider._send (C:\Users\root\Desktop\Work\2023-07-tapioca\tapioca-bar-audit\node_modules\hardhat\src\internal\hardhat-network\provider\provider.ts:197:5)
+      at async HardhatNetworkProvider.request (C:\Users\root\Desktop\Work\2023-07-tapioca\tapioca-bar-audit\node_modules\hardhat\src\internal\hardhat-network\provider\provider.ts:123:18)
+      at async TracerWrapper.request (C:\Users\root\Desktop\Work\2023-07-tapioca\tapioca-bar-audit\node_modules\hardhat-tracer\src\wrapper.ts:30:16)
+      at async EthersProviderWrapper.send (C:\Users\root\Desktop\Work\2023-07-tapioca\tapioca-bar-audit\node_modules\@nomiclabs\hardhat-ethers\src\internal\ethers-provider-wrapper.ts:13:20)
+
+  86) Singularity test
+       caps & limits
+         should not update exchange rate:
+     ProviderError: Must be authenticated!
+      at HttpProvider.request (C:\Users\root\Desktop\Work\2023-07-tapioca\tapioca-bar-audit\node_modules\hardhat\src\internal\core\providers\http.ts:88:21)
+      at processTicksAndRejections (node:internal/process/task_queues:95:5)
+      at async getNetworkId (C:\Users\root\Desktop\Work\2023-07-tapioca\tapioca-bar-audit\node_modules\hardhat\src\internal\hardhat-network\provider\utils\makeForkClient.ts:116:28)
+      at async makeForkClient (C:\Users\root\Desktop\Work\2023-07-tapioca\tapioca-bar-audit\node_modules\hardhat\src\internal\hardhat-network\provider\utils\makeForkClient.ts:42:21)
+      at async Function.create (C:\Users\root\Desktop\Work\2023-07-tapioca\tapioca-bar-audit\node_modules\hardhat\src\internal\hardhat-network\provider\node.ts:178:11)
+      at async HardhatNetworkProvider._init (C:\Users\root\Desktop\Work\2023-07-tapioca\tapioca-bar-audit\node_modules\hardhat\src\internal\hardhat-network\provider\provider.ts:258:28)
+      at async HardhatNetworkProvider._send (C:\Users\root\Desktop\Work\2023-07-tapioca\tapioca-bar-audit\node_modules\hardhat\src\internal\hardhat-network\provider\provider.ts:197:5)
+      at async HardhatNetworkProvider.request (C:\Users\root\Desktop\Work\2023-07-tapioca\tapioca-bar-audit\node_modules\hardhat\src\internal\hardhat-network\provider\provider.ts:123:18)
+      at async TracerWrapper.request (C:\Users\root\Desktop\Work\2023-07-tapioca\tapioca-bar-audit\node_modules\hardhat-tracer\src\wrapper.ts:30:16)
+      at async EthersProviderWrapper.send (C:\Users\root\Desktop\Work\2023-07-tapioca\tapioca-bar-audit\node_modules\@nomiclabs\hardhat-ethers\src\internal\ethers-provider-wrapper.ts:13:20)
+
+  87) Singularity test
+       caps & limits
+         should not be able to borrow when cap is reached:
+     ProviderError: Must be authenticated!
+      at HttpProvider.request (C:\Users\root\Desktop\Work\2023-07-tapioca\tapioca-bar-audit\node_modules\hardhat\src\internal\core\providers\http.ts:88:21)
+      at processTicksAndRejections (node:internal/process/task_queues:95:5)
+      at async getNetworkId (C:\Users\root\Desktop\Work\2023-07-tapioca\tapioca-bar-audit\node_modules\hardhat\src\internal\hardhat-network\provider\utils\makeForkClient.ts:116:28)
+      at async makeForkClient (C:\Users\root\Desktop\Work\2023-07-tapioca\tapioca-bar-audit\node_modules\hardhat\src\internal\hardhat-network\provider\utils\makeForkClient.ts:42:21)
+      at async Function.create (C:\Users\root\Desktop\Work\2023-07-tapioca\tapioca-bar-audit\node_modules\hardhat\src\internal\hardhat-network\provider\node.ts:178:11)
+      at async HardhatNetworkProvider._init (C:\Users\root\Desktop\Work\2023-07-tapioca\tapioca-bar-audit\node_modules\hardhat\src\internal\hardhat-network\provider\provider.ts:258:28)
+      at async HardhatNetworkProvider._send (C:\Users\root\Desktop\Work\2023-07-tapioca\tapioca-bar-audit\node_modules\hardhat\src\internal\hardhat-network\provider\provider.ts:197:5)
+      at async HardhatNetworkProvider.request (C:\Users\root\Desktop\Work\2023-07-tapioca\tapioca-bar-audit\node_modules\hardhat\src\internal\hardhat-network\provider\provider.ts:123:18)
+      at async TracerWrapper.request (C:\Users\root\Desktop\Work\2023-07-tapioca\tapioca-bar-audit\node_modules\hardhat-tracer\src\wrapper.ts:30:16)
+      at async EthersProviderWrapper.send (C:\Users\root\Desktop\Work\2023-07-tapioca\tapioca-bar-audit\node_modules\@nomiclabs\hardhat-ethers\src\internal\ethers-provider-wrapper.ts:13:20)
+
+  88) Singularity test
+       fees & liquidations
+         should test liquidator rewards & closing factor:
+     ProviderError: Must be authenticated!
+      at HttpProvider.request (C:\Users\root\Desktop\Work\2023-07-tapioca\tapioca-bar-audit\node_modules\hardhat\src\internal\core\providers\http.ts:88:21)
+      at processTicksAndRejections (node:internal/process/task_queues:95:5)
+      at async getNetworkId (C:\Users\root\Desktop\Work\2023-07-tapioca\tapioca-bar-audit\node_modules\hardhat\src\internal\hardhat-network\provider\utils\makeForkClient.ts:116:28)
+      at async makeForkClient (C:\Users\root\Desktop\Work\2023-07-tapioca\tapioca-bar-audit\node_modules\hardhat\src\internal\hardhat-network\provider\utils\makeForkClient.ts:42:21)
+      at async Function.create (C:\Users\root\Desktop\Work\2023-07-tapioca\tapioca-bar-audit\node_modules\hardhat\src\internal\hardhat-network\provider\node.ts:178:11)
+      at async HardhatNetworkProvider._init (C:\Users\root\Desktop\Work\2023-07-tapioca\tapioca-bar-audit\node_modules\hardhat\src\internal\hardhat-network\provider\provider.ts:258:28)
+      at async HardhatNetworkProvider._send (C:\Users\root\Desktop\Work\2023-07-tapioca\tapioca-bar-audit\node_modules\hardhat\src\internal\hardhat-network\provider\provider.ts:197:5)
+      at async HardhatNetworkProvider.request (C:\Users\root\Desktop\Work\2023-07-tapioca\tapioca-bar-audit\node_modules\hardhat\src\internal\hardhat-network\provider\provider.ts:123:18)
+      at async TracerWrapper.request (C:\Users\root\Desktop\Work\2023-07-tapioca\tapioca-bar-audit\node_modules\hardhat-tracer\src\wrapper.ts:30:16)
+      at async EthersProviderWrapper.send (C:\Users\root\Desktop\Work\2023-07-tapioca\tapioca-bar-audit\node_modules\@nomiclabs\hardhat-ethers\src\internal\ethers-provider-wrapper.ts:13:20)
+
+  89) Singularity test
+       fees & liquidations
+         Should accumulate fees for lender:
+     ProviderError: Must be authenticated!
+      at HttpProvider.request (C:\Users\root\Desktop\Work\2023-07-tapioca\tapioca-bar-audit\node_modules\hardhat\src\internal\core\providers\http.ts:88:21)
+      at processTicksAndRejections (node:internal/process/task_queues:95:5)
+      at async getNetworkId (C:\Users\root\Desktop\Work\2023-07-tapioca\tapioca-bar-audit\node_modules\hardhat\src\internal\hardhat-network\provider\utils\makeForkClient.ts:116:28)
+      at async makeForkClient (C:\Users\root\Desktop\Work\2023-07-tapioca\tapioca-bar-audit\node_modules\hardhat\src\internal\hardhat-network\provider\utils\makeForkClient.ts:42:21)
+      at async Function.create (C:\Users\root\Desktop\Work\2023-07-tapioca\tapioca-bar-audit\node_modules\hardhat\src\internal\hardhat-network\provider\node.ts:178:11)
+      at async HardhatNetworkProvider._init (C:\Users\root\Desktop\Work\2023-07-tapioca\tapioca-bar-audit\node_modules\hardhat\src\internal\hardhat-network\provider\provider.ts:258:28)
+      at async HardhatNetworkProvider._send (C:\Users\root\Desktop\Work\2023-07-tapioca\tapioca-bar-audit\node_modules\hardhat\src\internal\hardhat-network\provider\provider.ts:197:5)
+      at async HardhatNetworkProvider.request (C:\Users\root\Desktop\Work\2023-07-tapioca\tapioca-bar-audit\node_modules\hardhat\src\internal\hardhat-network\provider\provider.ts:123:18)
+      at async TracerWrapper.request (C:\Users\root\Desktop\Work\2023-07-tapioca\tapioca-bar-audit\node_modules\hardhat-tracer\src\wrapper.ts:30:16)
+      at async EthersProviderWrapper.send (C:\Users\root\Desktop\Work\2023-07-tapioca\tapioca-bar-audit\node_modules\@nomiclabs\hardhat-ethers\src\internal\ethers-provider-wrapper.ts:13:20)
+
+  90) Singularity test
+       fees & liquidations
+         Should accumulate fees and harvest them as collateral:
+     ProviderError: Must be authenticated!
+      at HttpProvider.request (C:\Users\root\Desktop\Work\2023-07-tapioca\tapioca-bar-audit\node_modules\hardhat\src\internal\core\providers\http.ts:88:21)
+      at processTicksAndRejections (node:internal/process/task_queues:95:5)
+      at async getNetworkId (C:\Users\root\Desktop\Work\2023-07-tapioca\tapioca-bar-audit\node_modules\hardhat\src\internal\hardhat-network\provider\utils\makeForkClient.ts:116:28)
+      at async makeForkClient (C:\Users\root\Desktop\Work\2023-07-tapioca\tapioca-bar-audit\node_modules\hardhat\src\internal\hardhat-network\provider\utils\makeForkClient.ts:42:21)
+      at async Function.create (C:\Users\root\Desktop\Work\2023-07-tapioca\tapioca-bar-audit\node_modules\hardhat\src\internal\hardhat-network\provider\node.ts:178:11)
+      at async HardhatNetworkProvider._init (C:\Users\root\Desktop\Work\2023-07-tapioca\tapioca-bar-audit\node_modules\hardhat\src\internal\hardhat-network\provider\provider.ts:258:28)
+      at async HardhatNetworkProvider._send (C:\Users\root\Desktop\Work\2023-07-tapioca\tapioca-bar-audit\node_modules\hardhat\src\internal\hardhat-network\provider\provider.ts:197:5)
+      at async HardhatNetworkProvider.request (C:\Users\root\Desktop\Work\2023-07-tapioca\tapioca-bar-audit\node_modules\hardhat\src\internal\hardhat-network\provider\provider.ts:123:18)
+      at async TracerWrapper.request (C:\Users\root\Desktop\Work\2023-07-tapioca\tapioca-bar-audit\node_modules\hardhat-tracer\src\wrapper.ts:30:16)
+      at async EthersProviderWrapper.send (C:\Users\root\Desktop\Work\2023-07-tapioca\tapioca-bar-audit\node_modules\@nomiclabs\hardhat-ethers\src\internal\ethers-provider-wrapper.ts:13:20)
+
+  91) Singularity test
+       fees & liquidations
+         deposit fees to yieldbox should not work for inexistent swapper:
+     ProviderError: Must be authenticated!
+      at HttpProvider.request (C:\Users\root\Desktop\Work\2023-07-tapioca\tapioca-bar-audit\node_modules\hardhat\src\internal\core\providers\http.ts:88:21)
+      at processTicksAndRejections (node:internal/process/task_queues:95:5)
+      at async getNetworkId (C:\Users\root\Desktop\Work\2023-07-tapioca\tapioca-bar-audit\node_modules\hardhat\src\internal\hardhat-network\provider\utils\makeForkClient.ts:116:28)
+      at async makeForkClient (C:\Users\root\Desktop\Work\2023-07-tapioca\tapioca-bar-audit\node_modules\hardhat\src\internal\hardhat-network\provider\utils\makeForkClient.ts:42:21)
+      at async Function.create (C:\Users\root\Desktop\Work\2023-07-tapioca\tapioca-bar-audit\node_modules\hardhat\src\internal\hardhat-network\provider\node.ts:178:11)
+      at async HardhatNetworkProvider._init (C:\Users\root\Desktop\Work\2023-07-tapioca\tapioca-bar-audit\node_modules\hardhat\src\internal\hardhat-network\provider\provider.ts:258:28)
+      at async HardhatNetworkProvider._send (C:\Users\root\Desktop\Work\2023-07-tapioca\tapioca-bar-audit\node_modules\hardhat\src\internal\hardhat-network\provider\provider.ts:197:5)
+      at async HardhatNetworkProvider.request (C:\Users\root\Desktop\Work\2023-07-tapioca\tapioca-bar-audit\node_modules\hardhat\src\internal\hardhat-network\provider\provider.ts:123:18)
+      at async TracerWrapper.request (C:\Users\root\Desktop\Work\2023-07-tapioca\tapioca-bar-audit\node_modules\hardhat-tracer\src\wrapper.ts:30:16)
+      at async EthersProviderWrapper.send (C:\Users\root\Desktop\Work\2023-07-tapioca\tapioca-bar-audit\node_modules\@nomiclabs\hardhat-ethers\src\internal\ethers-provider-wrapper.ts:13:20)
+
+  92) Singularity test
+       borrowing
+         should allow multiple borrowers:
+     ProviderError: Must be authenticated!
+      at HttpProvider.request (C:\Users\root\Desktop\Work\2023-07-tapioca\tapioca-bar-audit\node_modules\hardhat\src\internal\core\providers\http.ts:88:21)
+      at processTicksAndRejections (node:internal/process/task_queues:95:5)
+      at async getNetworkId (C:\Users\root\Desktop\Work\2023-07-tapioca\tapioca-bar-audit\node_modules\hardhat\src\internal\hardhat-network\provider\utils\makeForkClient.ts:116:28)
+      at async makeForkClient (C:\Users\root\Desktop\Work\2023-07-tapioca\tapioca-bar-audit\node_modules\hardhat\src\internal\hardhat-network\provider\utils\makeForkClient.ts:42:21)
+      at async Function.create (C:\Users\root\Desktop\Work\2023-07-tapioca\tapioca-bar-audit\node_modules\hardhat\src\internal\hardhat-network\provider\node.ts:178:11)
+      at async HardhatNetworkProvider._init (C:\Users\root\Desktop\Work\2023-07-tapioca\tapioca-bar-audit\node_modules\hardhat\src\internal\hardhat-network\provider\provider.ts:258:28)
+      at async HardhatNetworkProvider._send (C:\Users\root\Desktop\Work\2023-07-tapioca\tapioca-bar-audit\node_modules\hardhat\src\internal\hardhat-network\provider\provider.ts:197:5)
+      at async HardhatNetworkProvider.request (C:\Users\root\Desktop\Work\2023-07-tapioca\tapioca-bar-audit\node_modules\hardhat\src\internal\hardhat-network\provider\provider.ts:123:18)
+      at async TracerWrapper.request (C:\Users\root\Desktop\Work\2023-07-tapioca\tapioca-bar-audit\node_modules\hardhat-tracer\src\wrapper.ts:30:16)
+      at async EthersProviderWrapper.send (C:\Users\root\Desktop\Work\2023-07-tapioca\tapioca-bar-audit\node_modules\@nomiclabs\hardhat-ethers\src\internal\ethers-provider-wrapper.ts:13:20)
+
+  93) Singularity test
+       Permit
+         should test permit lend & borrow:
+     ProviderError: Must be authenticated!
+      at HttpProvider.request (C:\Users\root\Desktop\Work\2023-07-tapioca\tapioca-bar-audit\node_modules\hardhat\src\internal\core\providers\http.ts:88:21)
+      at processTicksAndRejections (node:internal/process/task_queues:95:5)
+      at async getNetworkId (C:\Users\root\Desktop\Work\2023-07-tapioca\tapioca-bar-audit\node_modules\hardhat\src\internal\hardhat-network\provider\utils\makeForkClient.ts:116:28)
+      at async makeForkClient (C:\Users\root\Desktop\Work\2023-07-tapioca\tapioca-bar-audit\node_modules\hardhat\src\internal\hardhat-network\provider\utils\makeForkClient.ts:42:21)
+      at async Function.create (C:\Users\root\Desktop\Work\2023-07-tapioca\tapioca-bar-audit\node_modules\hardhat\src\internal\hardhat-network\provider\node.ts:178:11)
+      at async HardhatNetworkProvider._init (C:\Users\root\Desktop\Work\2023-07-tapioca\tapioca-bar-audit\node_modules\hardhat\src\internal\hardhat-network\provider\provider.ts:258:28)
+      at async HardhatNetworkProvider._send (C:\Users\root\Desktop\Work\2023-07-tapioca\tapioca-bar-audit\node_modules\hardhat\src\internal\hardhat-network\provider\provider.ts:197:5)
+      at async HardhatNetworkProvider.request (C:\Users\root\Desktop\Work\2023-07-tapioca\tapioca-bar-audit\node_modules\hardhat\src\internal\hardhat-network\provider\provider.ts:123:18)
+      at async TracerWrapper.request (C:\Users\root\Desktop\Work\2023-07-tapioca\tapioca-bar-audit\node_modules\hardhat-tracer\src\wrapper.ts:30:16)
+      at async EthersProviderWrapper.send (C:\Users\root\Desktop\Work\2023-07-tapioca\tapioca-bar-audit\node_modules\@nomiclabs\hardhat-ethers\src\internal\ethers-provider-wrapper.ts:13:20)
+
+  94) Singularity test
+       usdo SGL
+         should create and test wethUsd0 singularity:
+     ProviderError: Must be authenticated!
+      at HttpProvider.request (C:\Users\root\Desktop\Work\2023-07-tapioca\tapioca-bar-audit\node_modules\hardhat\src\internal\core\providers\http.ts:88:21)
+      at processTicksAndRejections (node:internal/process/task_queues:95:5)
+      at async getNetworkId (C:\Users\root\Desktop\Work\2023-07-tapioca\tapioca-bar-audit\node_modules\hardhat\src\internal\hardhat-network\provider\utils\makeForkClient.ts:116:28)
+      at async makeForkClient (C:\Users\root\Desktop\Work\2023-07-tapioca\tapioca-bar-audit\node_modules\hardhat\src\internal\hardhat-network\provider\utils\makeForkClient.ts:42:21)
+      at async Function.create (C:\Users\root\Desktop\Work\2023-07-tapioca\tapioca-bar-audit\node_modules\hardhat\src\internal\hardhat-network\provider\node.ts:178:11)
+      at async HardhatNetworkProvider._init (C:\Users\root\Desktop\Work\2023-07-tapioca\tapioca-bar-audit\node_modules\hardhat\src\internal\hardhat-network\provider\provider.ts:258:28)
+      at async HardhatNetworkProvider._send (C:\Users\root\Desktop\Work\2023-07-tapioca\tapioca-bar-audit\node_modules\hardhat\src\internal\hardhat-network\provider\provider.ts:197:5)
+      at async HardhatNetworkProvider.request (C:\Users\root\Desktop\Work\2023-07-tapioca\tapioca-bar-audit\node_modules\hardhat\src\internal\hardhat-network\provider\provider.ts:123:18)
+      at async TracerWrapper.request (C:\Users\root\Desktop\Work\2023-07-tapioca\tapioca-bar-audit\node_modules\hardhat-tracer\src\wrapper.ts:30:16)
+      at async EthersProviderWrapper.send (C:\Users\root\Desktop\Work\2023-07-tapioca\tapioca-bar-audit\node_modules\@nomiclabs\hardhat-ethers\src\internal\ethers-provider-wrapper.ts:13:20)
+
+  95) Singularity test
+       multiHopBuyCollateral()
+         should bounce between 2 chains:
+     ProviderError: Must be authenticated!
+      at HttpProvider.request (C:\Users\root\Desktop\Work\2023-07-tapioca\tapioca-bar-audit\node_modules\hardhat\src\internal\core\providers\http.ts:88:21)
+      at processTicksAndRejections (node:internal/process/task_queues:95:5)
+      at async getNetworkId (C:\Users\root\Desktop\Work\2023-07-tapioca\tapioca-bar-audit\node_modules\hardhat\src\internal\hardhat-network\provider\utils\makeForkClient.ts:116:28)
+      at async makeForkClient (C:\Users\root\Desktop\Work\2023-07-tapioca\tapioca-bar-audit\node_modules\hardhat\src\internal\hardhat-network\provider\utils\makeForkClient.ts:42:21)
+      at async Function.create (C:\Users\root\Desktop\Work\2023-07-tapioca\tapioca-bar-audit\node_modules\hardhat\src\internal\hardhat-network\provider\node.ts:178:11)
+      at async HardhatNetworkProvider._init (C:\Users\root\Desktop\Work\2023-07-tapioca\tapioca-bar-audit\node_modules\hardhat\src\internal\hardhat-network\provider\provider.ts:258:28)
+      at async HardhatNetworkProvider._send (C:\Users\root\Desktop\Work\2023-07-tapioca\tapioca-bar-audit\node_modules\hardhat\src\internal\hardhat-network\provider\provider.ts:197:5)
+      at async HardhatNetworkProvider.request (C:\Users\root\Desktop\Work\2023-07-tapioca\tapioca-bar-audit\node_modules\hardhat\src\internal\hardhat-network\provider\provider.ts:123:18)
+      at async TracerWrapper.request (C:\Users\root\Desktop\Work\2023-07-tapioca\tapioca-bar-audit\node_modules\hardhat-tracer\src\wrapper.ts:30:16)
+      at async EthersProviderWrapper.send (C:\Users\root\Desktop\Work\2023-07-tapioca\tapioca-bar-audit\node_modules\@nomiclabs\hardhat-ethers\src\internal\ethers-provider-wrapper.ts:13:20)
+
+  96) USDO
+       views
+         should test initial values:
+     ProviderError: Must be authenticated!
+      at HttpProvider.request (C:\Users\root\Desktop\Work\2023-07-tapioca\tapioca-bar-audit\node_modules\hardhat\src\internal\core\providers\http.ts:88:21)
+      at processTicksAndRejections (node:internal/process/task_queues:95:5)
+      at async getNetworkId (C:\Users\root\Desktop\Work\2023-07-tapioca\tapioca-bar-audit\node_modules\hardhat\src\internal\hardhat-network\provider\utils\makeForkClient.ts:116:28)
+      at async makeForkClient (C:\Users\root\Desktop\Work\2023-07-tapioca\tapioca-bar-audit\node_modules\hardhat\src\internal\hardhat-network\provider\utils\makeForkClient.ts:42:21)
+      at async Function.create (C:\Users\root\Desktop\Work\2023-07-tapioca\tapioca-bar-audit\node_modules\hardhat\src\internal\hardhat-network\provider\node.ts:178:11)
+      at async HardhatNetworkProvider._init (C:\Users\root\Desktop\Work\2023-07-tapioca\tapioca-bar-audit\node_modules\hardhat\src\internal\hardhat-network\provider\provider.ts:258:28)
+      at async HardhatNetworkProvider._send (C:\Users\root\Desktop\Work\2023-07-tapioca\tapioca-bar-audit\node_modules\hardhat\src\internal\hardhat-network\provider\provider.ts:197:5)
+      at async HardhatNetworkProvider.request (C:\Users\root\Desktop\Work\2023-07-tapioca\tapioca-bar-audit\node_modules\hardhat\src\internal\hardhat-network\provider\provider.ts:123:18)
+      at async TracerWrapper.request (C:\Users\root\Desktop\Work\2023-07-tapioca\tapioca-bar-audit\node_modules\hardhat-tracer\src\wrapper.ts:30:16)
+      at async EthersProviderWrapper.send (C:\Users\root\Desktop\Work\2023-07-tapioca\tapioca-bar-audit\node_modules\@nomiclabs\hardhat-ethers\src\internal\ethers-provider-wrapper.ts:13:20)
+
+  97) USDO
+       mint & burn
+         should set minters and burners:
+     ProviderError: Must be authenticated!
+      at HttpProvider.request (C:\Users\root\Desktop\Work\2023-07-tapioca\tapioca-bar-audit\node_modules\hardhat\src\internal\core\providers\http.ts:88:21)
+      at processTicksAndRejections (node:internal/process/task_queues:95:5)
+      at async getNetworkId (C:\Users\root\Desktop\Work\2023-07-tapioca\tapioca-bar-audit\node_modules\hardhat\src\internal\hardhat-network\provider\utils\makeForkClient.ts:116:28)
+      at async makeForkClient (C:\Users\root\Desktop\Work\2023-07-tapioca\tapioca-bar-audit\node_modules\hardhat\src\internal\hardhat-network\provider\utils\makeForkClient.ts:42:21)
+      at async Function.create (C:\Users\root\Desktop\Work\2023-07-tapioca\tapioca-bar-audit\node_modules\hardhat\src\internal\hardhat-network\provider\node.ts:178:11)
+      at async HardhatNetworkProvider._init (C:\Users\root\Desktop\Work\2023-07-tapioca\tapioca-bar-audit\node_modules\hardhat\src\internal\hardhat-network\provider\provider.ts:258:28)
+      at async HardhatNetworkProvider._send (C:\Users\root\Desktop\Work\2023-07-tapioca\tapioca-bar-audit\node_modules\hardhat\src\internal\hardhat-network\provider\provider.ts:197:5)
+      at async HardhatNetworkProvider.request (C:\Users\root\Desktop\Work\2023-07-tapioca\tapioca-bar-audit\node_modules\hardhat\src\internal\hardhat-network\provider\provider.ts:123:18)
+      at async TracerWrapper.request (C:\Users\root\Desktop\Work\2023-07-tapioca\tapioca-bar-audit\node_modules\hardhat-tracer\src\wrapper.ts:30:16)
+      at async EthersProviderWrapper.send (C:\Users\root\Desktop\Work\2023-07-tapioca\tapioca-bar-audit\node_modules\@nomiclabs\hardhat-ethers\src\internal\ethers-provider-wrapper.ts:13:20)
+
+  98) USDO
+       mint & burn
+         should mint and burn:
+     ProviderError: Must be authenticated!
+      at HttpProvider.request (C:\Users\root\Desktop\Work\2023-07-tapioca\tapioca-bar-audit\node_modules\hardhat\src\internal\core\providers\http.ts:88:21)
+      at processTicksAndRejections (node:internal/process/task_queues:95:5)
+      at async getNetworkId (C:\Users\root\Desktop\Work\2023-07-tapioca\tapioca-bar-audit\node_modules\hardhat\src\internal\hardhat-network\provider\utils\makeForkClient.ts:116:28)
+      at async makeForkClient (C:\Users\root\Desktop\Work\2023-07-tapioca\tapioca-bar-audit\node_modules\hardhat\src\internal\hardhat-network\provider\utils\makeForkClient.ts:42:21)
+      at async Function.create (C:\Users\root\Desktop\Work\2023-07-tapioca\tapioca-bar-audit\node_modules\hardhat\src\internal\hardhat-network\provider\node.ts:178:11)
+      at async HardhatNetworkProvider._init (C:\Users\root\Desktop\Work\2023-07-tapioca\tapioca-bar-audit\node_modules\hardhat\src\internal\hardhat-network\provider\provider.ts:258:28)
+      at async HardhatNetworkProvider._send (C:\Users\root\Desktop\Work\2023-07-tapioca\tapioca-bar-audit\node_modules\hardhat\src\internal\hardhat-network\provider\provider.ts:197:5)
+      at async HardhatNetworkProvider.request (C:\Users\root\Desktop\Work\2023-07-tapioca\tapioca-bar-audit\node_modules\hardhat\src\internal\hardhat-network\provider\provider.ts:123:18)
+      at async TracerWrapper.request (C:\Users\root\Desktop\Work\2023-07-tapioca\tapioca-bar-audit\node_modules\hardhat-tracer\src\wrapper.ts:30:16)
+      at async EthersProviderWrapper.send (C:\Users\root\Desktop\Work\2023-07-tapioca\tapioca-bar-audit\node_modules\@nomiclabs\hardhat-ethers\src\internal\ethers-provider-wrapper.ts:13:20)
+
+  99) USDO
+       flashMint
+         should flashMint successfully:
+     ProviderError: Must be authenticated!
+      at HttpProvider.request (C:\Users\root\Desktop\Work\2023-07-tapioca\tapioca-bar-audit\node_modules\hardhat\src\internal\core\providers\http.ts:88:21)
+      at processTicksAndRejections (node:internal/process/task_queues:95:5)
+      at async getNetworkId (C:\Users\root\Desktop\Work\2023-07-tapioca\tapioca-bar-audit\node_modules\hardhat\src\internal\hardhat-network\provider\utils\makeForkClient.ts:116:28)
+      at async makeForkClient (C:\Users\root\Desktop\Work\2023-07-tapioca\tapioca-bar-audit\node_modules\hardhat\src\internal\hardhat-network\provider\utils\makeForkClient.ts:42:21)
+      at async Function.create (C:\Users\root\Desktop\Work\2023-07-tapioca\tapioca-bar-audit\node_modules\hardhat\src\internal\hardhat-network\provider\node.ts:178:11)
+      at async HardhatNetworkProvider._init (C:\Users\root\Desktop\Work\2023-07-tapioca\tapioca-bar-audit\node_modules\hardhat\src\internal\hardhat-network\provider\provider.ts:258:28)
+      at async HardhatNetworkProvider._send (C:\Users\root\Desktop\Work\2023-07-tapioca\tapioca-bar-audit\node_modules\hardhat\src\internal\hardhat-network\provider\provider.ts:197:5)
+      at async HardhatNetworkProvider.request (C:\Users\root\Desktop\Work\2023-07-tapioca\tapioca-bar-audit\node_modules\hardhat\src\internal\hardhat-network\provider\provider.ts:123:18)
+      at async TracerWrapper.request (C:\Users\root\Desktop\Work\2023-07-tapioca\tapioca-bar-audit\node_modules\hardhat-tracer\src\wrapper.ts:30:16)
+      at async EthersProviderWrapper.send (C:\Users\root\Desktop\Work\2023-07-tapioca\tapioca-bar-audit\node_modules\@nomiclabs\hardhat-ethers\src\internal\ethers-provider-wrapper.ts:13:20)
+
+  100) USDO
+       flashMint
+         should not flashMint for a malicious operator:
+     ProviderError: Must be authenticated!
+      at HttpProvider.request (C:\Users\root\Desktop\Work\2023-07-tapioca\tapioca-bar-audit\node_modules\hardhat\src\internal\core\providers\http.ts:88:21)
+      at processTicksAndRejections (node:internal/process/task_queues:95:5)
+      at async getNetworkId (C:\Users\root\Desktop\Work\2023-07-tapioca\tapioca-bar-audit\node_modules\hardhat\src\internal\hardhat-network\provider\utils\makeForkClient.ts:116:28)
+      at async makeForkClient (C:\Users\root\Desktop\Work\2023-07-tapioca\tapioca-bar-audit\node_modules\hardhat\src\internal\hardhat-network\provider\utils\makeForkClient.ts:42:21)
+      at async Function.create (C:\Users\root\Desktop\Work\2023-07-tapioca\tapioca-bar-audit\node_modules\hardhat\src\internal\hardhat-network\provider\node.ts:178:11)
+      at async HardhatNetworkProvider._init (C:\Users\root\Desktop\Work\2023-07-tapioca\tapioca-bar-audit\node_modules\hardhat\src\internal\hardhat-network\provider\provider.ts:258:28)
+      at async HardhatNetworkProvider._send (C:\Users\root\Desktop\Work\2023-07-tapioca\tapioca-bar-audit\node_modules\hardhat\src\internal\hardhat-network\provider\provider.ts:197:5)
+      at async HardhatNetworkProvider.request (C:\Users\root\Desktop\Work\2023-07-tapioca\tapioca-bar-audit\node_modules\hardhat\src\internal\hardhat-network\provider\provider.ts:123:18)
+      at async TracerWrapper.request (C:\Users\root\Desktop\Work\2023-07-tapioca\tapioca-bar-audit\node_modules\hardhat-tracer\src\wrapper.ts:30:16)
+      at async EthersProviderWrapper.send (C:\Users\root\Desktop\Work\2023-07-tapioca\tapioca-bar-audit\node_modules\@nomiclabs\hardhat-ethers\src\internal\ethers-provider-wrapper.ts:13:20)
+
+
+
+An unexpected error occurred:
+
+ProviderError: Must be authenticated!
+    at HttpProvider.request (C:\Users\root\Desktop\Work\2023-07-tapioca\tapioca-bar-audit\node_modules\hardhat\src\internal\core\providers\http.ts:88:21)
+    at processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async getNetworkId (C:\Users\root\Desktop\Work\2023-07-tapioca\tapioca-bar-audit\node_modules\hardhat\src\internal\hardhat-network\provider\utils\makeForkClient.ts:116:28)
+    at async makeForkClient (C:\Users\root\Desktop\Work\2023-07-tapioca\tapioca-bar-audit\node_modules\hardhat\src\internal\hardhat-network\provider\utils\makeForkClient.ts:42:21)
+    at async Function.create (C:\Users\root\Desktop\Work\2023-07-tapioca\tapioca-bar-audit\node_modules\hardhat\src\internal\hardhat-network\provider\node.ts:178:11)
+    at async HardhatNetworkProvider._init (C:\Users\root\Desktop\Work\2023-07-tapioca\tapioca-bar-audit\node_modules\hardhat\src\internal\hardhat-network\provider\provider.ts:258:28)
+    at async HardhatNetworkProvider._send (C:\Users\root\Desktop\Work\2023-07-tapioca\tapioca-bar-audit\node_modules\hardhat\src\internal\hardhat-network\provider\provider.ts:197:5)
+    at async HardhatNetworkProvider.request (C:\Users\root\Desktop\Work\2023-07-tapioca\tapioca-bar-audit\node_modules\hardhat\src\internal\hardhat-network\provider\provider.ts:123:18)
+    at async TracerWrapper.request (C:\Users\root\Desktop\Work\2023-07-tapioca\tapioca-bar-audit\node_modules\hardhat-tracer\src\wrapper.ts:30:16)
+    at async SimpleTaskDefinition.action (C:\Users\root\Desktop\Work\2023-07-tapioca\tapioca-bar-audit\node_modules\hardhat\src\builtin-tasks\test.ts:199:37)
+
+C:\Users\root\Desktop\Work\2023-07-tapioca\tapioca-bar-audit>

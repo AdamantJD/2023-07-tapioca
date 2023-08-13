@@ -1,0 +1,106 @@
+  AirdropBroker
+    √ should claim oTAP and TAP (724ms)
+    √ should check initial values (54ms)
+    √ Should get correct OTC details (2462ms)
+    √ should exercise an option fully or partially per allowed amount (2895ms)
+    √ should set a payment token (41ms)
+    √ should increment the epoch (40ms)
+    √ should set payment beneficiary
+    √ should collect payment token (2010ms)
+    Phase 1
+      √ Should register users (1008ms)
+      √ Should participate (2524ms)
+    Phase 2
+      √ Should merkle roots for phase 2 on each role (251ms)
+      √ Should participate (970ms)
+    Phase 3
+      √ Should participate (356ms)
+    Phase 4
+      √ Should participate (1778ms)
+
+  TapiocaOptionBroker
+    √ should claim oTAP and TAP (523ms)
+    √ should participate (484ms)
+    √ should exit position (486ms)
+    √ should enter and exit multiple positions (346ms)
+    √ should set a payment token
+    √ should increment the epoch (106ms)
+    √ should return correct OTC details (555ms)
+    √ should exercise an option fully or partially per allowed epoch amount (891ms)
+    √ should set payment beneficiary
+    √ should collect payment token (311ms)
+    √ Should be able to use permit on TapOFT (276ms)
+
+  TapiocaOptionLiquidityProvision
+    √ should check initial state
+    √ should register a singularity (60ms)
+    √ should unregister a singularity (69ms)
+    √ should create a lock (258ms)
+    √ Should unlock a lock (242ms)
+    √ Should should set an SGL pool weight (42ms)
+    √ Should be able to use permit (229ms)
+
+  tapOFT
+    √ Should send the correct amount of tokens to each receiver (121ms)
+    reverts
+      √ should not burn when paused (41ms)
+      √ should not mint when paused
+      √ should not allow emit from another chain (84ms)
+      √ should not be able to deploy with an empty LayerZero endpoint
+    emissions
+      √ should emit for each week (45ms)
+      √ should test weekly emissions (3665ms)
+    permit
+      √ Should be able to use permit (50ms)
+    burn
+      √ should burn
+    checks
+      √ should check initial state (43ms)
+    setters
+      √ should be able to set the governance chain identifier
+      √ should set minter (52ms)
+    views
+      √ should compute week based on timestamp correctly (377ms)
+    extract
+      √ should transfer unused TAP for next week (46ms)
+      √ should extract minted from minter (65ms)
+    twTAP cross-chain
+      √ Should make a cross-chain twTAP participation (183ms)
+      √ Should make a cross-chain twTAP exit (226ms)
+      √ Should make a cross-chain twTAP reward claim (217ms)
+
+  twTAP
+    √ should participate (421ms)
+    √ should exit position (108ms)
+    √ should enter and exit multiple positions (90ms)
+    √ Should not distribute rewards if there are no lockers
+    √ Should not distribute rewards in week 0 (47ms)
+    √ Should distribute rewards after week 0 (88ms)
+    √ Should not distribute if totals are not up to date (48ms)
+    √ Should tally up votes up to current week (223ms)
+    √ Should allow only the owner to add reward tokens (51ms)
+    √ Should allow claiming rewards immediately (155ms)
+    √ Should allow claiming rewards after expiration (382ms)
+    √ Should allow claiming rewards after exiting position (118ms)
+    √ Should allow claiming rewards for someone else (84ms)
+    √ Should allow claiming rewards of someone who approved (107ms)
+    √ Should show 0 claimable for empty positions
+    √ Should allow participation in the "future": (103ms)
+    √ Should show no votes in the view right after expiry (44ms)
+    √ Should allow exiting a position to another recipient (46ms)
+    √ Should do nothing if exiting a position twice (47ms)
+    √ Should not update cumulative on exiting small positions (56ms)
+    √ Should not allow an expiry time that overflows (45ms)
+
+  Vesting
+    init
+      √ should test init (146ms)
+    register
+      √ should register users (138ms)
+    claim
+      √ should test claim (449ms)
+    totals
+      √ should test total vesting (192ms)
+
+
+  75 passing (29s)
